@@ -11,7 +11,17 @@ ff7anim
     easing: "easeOutQuad",
     scale: [0, 0.8],
     delay: 1000,
-    duration: 500,
+    duration: 1000,
+    opacity: 1,
+  })
+  .add({
+    targets: ".premier",
+    transformOrigin: ["50% 100%", "50% 100%"],
+    easing: "easeOutQuad",
+    scale: [0.8, 0],
+    delay: 1000,
+    duration: 1000,
+    opacity: [1, 0],
   })
   .add({
     targets: ".second",
@@ -19,8 +29,8 @@ ff7anim
     transformOrigin: ["50% 100%", "50% 100%"],
     easing: "easeOutQuad",
     scale: [0, 0.8],
-    delay: 3000,
-    duration: 500,
+    delay: 100,
+    opacity: 1,
   });
 
 cardAnim
