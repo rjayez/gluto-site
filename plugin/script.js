@@ -22,6 +22,7 @@ ff7anim
     delay: 1000,
     duration: 1000,
     opacity: [1, 0],
+    easing: 'easeInOutExpo'
   })
   .add({
     targets: ".second",
@@ -31,6 +32,7 @@ ff7anim
     scale: [0, 0.8],
     delay: 100,
     opacity: 1,
+    easing: 'easeInOutExpo'
   });
 
 cardAnim
