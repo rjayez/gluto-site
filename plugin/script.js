@@ -1,6 +1,7 @@
 var animationDone = false;
 var cardAnim = anime.timeline();
 var ff7anim = anime.timeline();
+var valeurcarte = anime.timeline();
 var cardCount = $(".achievement-card-box").length;
 
 ff7anim
@@ -81,14 +82,30 @@ cardAnim
     translateX: function (el, i) {
       return Math.floor(cardCount / 2) * -112 + i * 112 + "px";
     },
-    boxShadow: ["0 0 0px rgba(128,128,255,0)", "0 0 40px rgba(128,128,255,1)"],
-    elasticity: 100,
-    duration: 800,
     complete: function () {
       animationDone = true;
       pulse();
     },
+    elasticity: 100,
+    duration: 800,
   });
+
+
+  valeurcarte.add({
+    targets: ".rare",
+    boxShadow: ["0 0 0px rgba(5,255,245,0)", "0 0 40px rgba(5,255,245,1)"],
+    easing: "easeInOutCubic",
+    loop: true,
+  })
+
+  .add({
+    targets: ".legendaire",
+    boxShadow: ["0 0 0px rgba(255,184,67,0)", "0 0 40px rgba(255,184,67,1)"],
+    easing: "easeInOutCubic",
+    loop: true,
+  })
+
+  
 
 function pulse() {
   cardAnim = anime({
@@ -103,7 +120,6 @@ function pulse() {
     translateX: function (el, i) {
       return Math.floor(cardCount / 2) * -112 + i * 112 + "px";
     },
-    boxShadow: ["0 0 40px rgba(128,128,255,1)", "0 0 60px rgba(128,128,255,1)"],
     easing: "easeInOutCubic",
     duration: 5000,
     loop: true,
