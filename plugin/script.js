@@ -1,8 +1,8 @@
-var animationDone = false;
-var cardAnim = anime.timeline();
-var ff7anim = anime.timeline();
-var valeurcarte = anime.timeline();
-var cardCount = $(".achievement-card-box").length;
+let animationDone = false;
+let cardAnim = anime.timeline();
+let ff7anim = anime.timeline();
+let valeurcarte = anime.timeline();
+let cardCount = document.querySelectorAll(".achievement-card-box").length;
 
 ff7anim
   .add({
@@ -23,7 +23,7 @@ ff7anim
     delay: 1000,
     duration: 1000,
     opacity: [1, 0],
-    easing: 'easeInOutExpo'
+    // easing: 'easeInOutExpo'
   })
   .add({
     targets: ".second",
@@ -33,7 +33,7 @@ ff7anim
     scale: [0, 0.8],
     delay: 100,
     opacity: 1,
-    easing: 'easeInOutExpo'
+    // easing: 'easeInOutExpo'
   });
 
 cardAnim
@@ -126,3 +126,4 @@ function pulse() {
     direction: "alternate",
   });
 }
+
