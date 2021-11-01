@@ -1,14 +1,16 @@
 import anime from "animejs";
 
 let animationDone = false;
-let cardAnim = anime.timeline();
 let ff7anim = anime.timeline();
+let cardAnim = anime.timeline();
 let valeurcarte = anime.timeline();
-let cardCount = document.getElementsByClassName(".achievement-card-box").length;
-
+// let cardCount = document.getElementsByClassName(".achievement-card-box").length;
+let cardCount = 5;
+console.log("cardCount",cardCount);
 
 export function launchAnimation () {
-    ff7anim
+    console.log("coucou anim")
+    anime.timeline()
         .add({
             targets: ".premier",
             translateY: [150, 0],
@@ -37,11 +39,11 @@ export function launchAnimation () {
             scale: [0, 0.8],
             delay: 100,
             opacity: 1,
-            easing: 'easeInOutExpo'
-        });
+            easing: 'easeInOutExpo',
+            complete: () => console.log("anim1 fini")
+        }).play();
 
-    cardAnim
-        .add({
+    anime.timeline().add({
             targets: ".achievement-card-box",
             rotateY: [180, 1080],
             translateY: [150, 0],
@@ -76,7 +78,6 @@ export function launchAnimation () {
             duration: 400,
             offset: "-=200",
         })
-
         .add({
             targets: ".achievement-card-box",
             scale: [0.8, 1],
@@ -88,31 +89,33 @@ export function launchAnimation () {
             },
             complete: function () {
                 animationDone = true;
+                console.log("anim2 fini");
                 pulse();
             },
             elasticity: 100,
             duration: 800,
-        });
 
+        }).play();
 
-    valeurcarte.add({
+    anime.timeline().add({
         targets: ".rare",
         boxShadow: ["0 0 0px rgba(5,255,245,0)", "0 0 40px rgba(5,255,245,1)"],
         easing: "easeInOutCubic",
         loop: true,
     })
-
         .add({
             targets: ".legendaire",
             boxShadow: ["0 0 0px rgba(255,184,67,0)", "0 0 40px rgba(255,184,67,1)"],
             easing: "easeInOutCubic",
             loop: true,
+            complete: () => console.log("anim3 fini")
         })
+        .play();
 }
 
 
 function pulse() {
-    cardAnim = anime({
+    anime({
         targets: ".achievement-card-box",
         scale: [1, 0.95],
         rotateZ: function (el, i) {
@@ -128,5 +131,5 @@ function pulse() {
         duration: 5000,
         loop: true,
         direction: "alternate",
-    });
+    }).play();
 }

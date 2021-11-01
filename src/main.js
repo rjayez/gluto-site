@@ -1,5 +1,4 @@
 import { createApp, h} from 'vue'
-import Vuetify from "Vuetify";
 
 import App from './App.vue'
 import Drops from "./Drops.vue"
@@ -30,7 +29,7 @@ const Router = {
 
 
 // if (process.env.NODE_ENV === 'development') {
-    devtools.connect();
+//     devtools.connect();
 // }
 
 createApp(Router)

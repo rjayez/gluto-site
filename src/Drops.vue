@@ -1,8 +1,8 @@
 <template>
-  <h4>Drops the cards !</h4>
-  <vs-button @click="switch">Coucou</vs-button>
 
-  <div v-if="seen">
+  <h4>Drops the cards !</h4>
+  <button @click="handleClick">Lance l'anim !</button>
+  <div v-show="seen">
     <div id="achievement-box">
       <div id="achievement-card-container">
         <div class="achievement-card-box">
@@ -34,7 +34,7 @@
           style="position: relative; left: -50%; opacity: 0"
       >
         <h1>Glutobox</h1>
-        <p>Nous avons trouvé un nouveau booster de cartes pour {pseudo} !</p>
+        <p>Nous avons trouvé un nouveau booster de cartes pour {{ this.pseudo }} !</p>
       </div>
     </div>
 
@@ -45,7 +45,7 @@
       >
         <h1>Glutobox</h1>
         <p>
-          Joli tirage {pseudo} ! Ces cartes sont maintenant disponibles dans ta
+          Joli tirage {{ pseudo }} ! Ces cartes sont maintenant disponibles dans ta
           collection !
         </p>
       </div>
@@ -59,29 +59,69 @@
 <script>
 import {socket} from "./services/socket";
 import {launchAnimation} from "./animation";
+import {defineComponent, ref} from "vue";
 
-export default {
+export default defineComponent({
   data: () => ({
-        seen: true
-      }),
-  mounted: () => {
-    launchAnimation();
-  },
+    seen: ref(true),
+    pseudo: "tEsT"
+  }),
+
   methods: {
-    switch() {
-      this.seen = !this.seen;
-      console.log("coucou!")
+
+    handleClick() {
+      this.seen = true;
+      launchAnimation();
+      setTimeout(() => {
+        this.seen = false;
+      }, 10 * 1000);
+    },
+    handleAnimation() {
+      console.log("handleAnimation");
+      this.seen = true;
+      launchAnimation();
+      setTimeout(() => {
+        this.seen = false;
+      }, 10 * 1000);
     }
-  }
+  },
+  mounted() {
+    socket.on("notif", args => {
+      console.log("mounted socket");
+      console.log("notif args", args);
+      this.pseudo = args.pseudo;
+      this.seen = true;
+      launchAnimation();
+      setTimeout(() => {
+        this.seen = false;
+      }, 10 * 1000);
 
-}
+    })
 
+  },
 
-socket.on("connect", () => {
-  console.log("connected")
 })
 
+
 </script>
+
+<!--<script setup>-->
+<!--import {socket} from "./services/socket";-->
+<!--import {launchAnimation} from "./animation";-->
+
+<!--// socket.on("notif", args => {console.log("notif", args)})-->
+<!--socket.on("notif", args => {-->
+<!--  console.log("tryc", args);-->
+<!--  // this.seen = true;-->
+
+<!--  handleClick();-->
+<!--  setTimeout(() => {-->
+<!--    // this.seen = false;-->
+<!--  }, 10 * 1000);-->
+<!--})-->
+
+
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
 
 
 <style>
@@ -140,8 +180,8 @@ div.ff7 * {
   height: 279px;
   position: absolute;
   transform-style: preserve-3d;
-  /*transform: rotateY(180deg);*/
-  /*transform: scale(0);*/
+  transform: rotateY(180deg);
+  transform: scale(0);
   border-radius: 15px;
 }
 

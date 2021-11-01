@@ -84,7 +84,7 @@ cardAnim
     },
     complete: function () {
       animationDone = true;
-      pulse();
+      // pulse();
     },
     elasticity: 100,
     duration: 800,
