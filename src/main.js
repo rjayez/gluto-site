@@ -3,6 +3,7 @@ import { createApp, h} from 'vue'
 import App from './App.vue'
 import Drops from "./Drops.vue"
 import devtools from '@vue/devtools'
+import "../index.css";
 
 
 const NotFoundComponent = { template: '<p>Page not found</p>' }

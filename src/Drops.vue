@@ -2,54 +2,8 @@
 
   <h4>Drops the cards !</h4>
   <button @click="handleClick">Lance l'anim !</button>
-  <div v-show="seen">
-    <div id="achievement-box">
-      <div id="achievement-card-container">
-        <div class="achievement-card-box">
-          <div class="a-card-back"></div>
-          <div class="a-card-image image-5 rare"></div>
-        </div>
-        <div class="achievement-card-box">
-          <div class="a-card-back"></div>
-          <div class="a-card-image image-4 commune"></div>
-        </div>
-        <div class="achievement-card-box">
-          <div class="a-card-back"></div>
-          <div class="a-card-image image-3 commune"></div>
-        </div>
-        <div class="achievement-card-box">
-          <div class="a-card-back"></div>
-          <div class="a-card-image image-2 rare"></div>
-        </div>
-        <div class="achievement-card-box">
-          <div class="a-card-back"></div>
-          <div class="a-card-image image-1 legendaire"></div>
-        </div>
-      </div>
-    </div>
-
-    <div style="position: absolute; left: 50%">
-      <div
-          class="ff7 premier"
-          style="position: relative; left: -50%; opacity: 0"
-      >
-        <h1>Glutobox</h1>
-        <p>Nous avons trouvé un nouveau booster de cartes pour {{ this.pseudo }} !</p>
-      </div>
-    </div>
-
-    <div style="position: absolute; left: 50%">
-      <div
-          class="ff7 second"
-          style="position: relative; left: -50%; opacity: 0"
-      >
-        <h1>Glutobox</h1>
-        <p>
-          Joli tirage {{ pseudo }} ! Ces cartes sont maintenant disponibles dans ta
-          collection !
-        </p>
-      </div>
-    </div>
+  <div v-if="seen">
+    <Cards :pseudo="pseudo"></Cards>
   </div>
 
 
@@ -58,40 +12,28 @@
 
 <script>
 import {socket} from "./services/socket";
-import {launchAnimation} from "./animation";
+// import {launchAnimation} from "./animation";
 import {defineComponent, ref} from "vue";
+import Cards from "./components/Cards.vue";
 
 export default defineComponent({
+  components: {Cards},
   data: () => ({
-    seen: ref(true),
+    seen: ref(false),
     pseudo: "tEsT"
   }),
-
   methods: {
-
     handleClick() {
       this.seen = true;
-      launchAnimation();
       setTimeout(() => {
         this.seen = false;
       }, 10 * 1000);
     },
-    handleAnimation() {
-      console.log("handleAnimation");
-      this.seen = true;
-      launchAnimation();
-      setTimeout(() => {
-        this.seen = false;
-      }, 10 * 1000);
-    }
   },
   mounted() {
     socket.on("notif", args => {
-      console.log("mounted socket");
-      console.log("notif args", args);
       this.pseudo = args.pseudo;
       this.seen = true;
-      launchAnimation();
       setTimeout(() => {
         this.seen = false;
       }, 10 * 1000);
@@ -104,24 +46,6 @@ export default defineComponent({
 
 
 </script>
-
-<!--<script setup>-->
-<!--import {socket} from "./services/socket";-->
-<!--import {launchAnimation} from "./animation";-->
-
-<!--// socket.on("notif", args => {console.log("notif", args)})-->
-<!--socket.on("notif", args => {-->
-<!--  console.log("tryc", args);-->
-<!--  // this.seen = true;-->
-
-<!--  handleClick();-->
-<!--  setTimeout(() => {-->
-<!--    // this.seen = false;-->
-<!--  }, 10 * 1000);-->
-<!--})-->
-
-
-<!--&lt;!&ndash;</script>&ndash;&gt;-->
 
 
 <style>
