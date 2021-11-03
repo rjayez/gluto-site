@@ -1,0 +1,7 @@
+.menu-item-triangle{
+    @apply bg-transparent inline-block fill-current text-indigo-150 opacity-0 group-hover:opacity-100 ml-auto;
+}
+
+.menu-item{
+    @apply py-2 flex cursor-pointer;
+}

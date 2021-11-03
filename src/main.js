@@ -2,7 +2,6 @@ import { createApp, h} from 'vue'
 
 import App from './App.vue'
 import Drops from "./Drops.vue"
-import devtools from '@vue/devtools'
 import "../index.css";
 
 
@@ -20,7 +19,7 @@ const Router = {
     }),
     computed:{
         CurrentComponent(){
-            return routes[this.currentRoute] || NotFoundComponent
+            return routes[this.currentRoute] || App
         }
     },
     render() {
