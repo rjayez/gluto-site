@@ -12,6 +12,9 @@ module.exports = {
       }
 
     },
+    fontFamily:{
+      EarwigFactory : ["EarwigFactory", "helvetica"]
+    }
   },
   variants: {
     extend: {},

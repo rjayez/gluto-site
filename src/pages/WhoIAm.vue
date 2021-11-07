@@ -1,9 +1,9 @@
 <template>
   <div id="page">
-    <h1 class="text-3xl text-indigo-950 font-bold">Bonjour</h1>
+    <h1 class="block text-3xl text-indigo-950 font-bold">Bonjour</h1>
     <h2>{{titre}}</h2>
     <h4 class="text-mg text-indigo-950 font-bold">Ici c'est la fête tous les jours (sauf le lundi)</h4>
-    <div class="shadow-2xl m-16 bg-indigo-950 p-5 text-left border-2 border-solid rounded-md text-indigo-150">
+    <div class="shadow-2xl my-16 bg-indigo-950 p-5 text-left border-2 border-solid rounded-md text-indigo-150">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum blandit lorem sit amet volutpat. In sem
         ex,
         efficitur et tempor non, finibus ut dui. Donec vestibulum tincidunt sem ut sollicitudin. Aenean vitae volutpat

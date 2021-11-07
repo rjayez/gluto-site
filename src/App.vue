@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-cols-6 grid-flow-col auto-cols-min bg-indigo-150">
-    <SideMenu />
-    <component class="col-span-5 mt-6" :is="CurrentComponent"/>
+  <div class="flex bg-indigo-150">
+    <SideMenu class="flex-none w-64" />
+    <component class="mt-6 mx-16 flex-auto" :is="CurrentComponent"/>
   </div>
 
 </template>
@@ -47,8 +47,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 </style>
 
