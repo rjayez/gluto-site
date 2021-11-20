@@ -3,18 +3,23 @@
     <h1 class="block text-5xl text-center">Planning </h1>
 
 
-    <div v-bind:class="clazz">
-      <div class="justify-items-center" v-for="stream in streams">
+    <div :class="`grid grid-cols-${streams.length} gap-6 mx-10 mt-10 flex h-full justify-items-center`">
+      <div class="justify-items-center w-52" v-for="stream in streams">
         <div class="font-EarwigFactory text-center text-5xl">{{ getJourSemaine(stream.debut) }}</div>
         <div class="text-xl text-center mt-2">{{ getDateJourMois(stream.debut) }}</div>
-          <div class="p-3 mt-3 bg-cover bg-no-repeat bg-center text-white h-96 shadow-2xl rounded-lg" v-bind:style="stream.style_url">
-            <div class="text-left">{{ stream.jeu }}</div>
-            <div class="text-left">Débute à {{ new Date(stream.debut).toLocaleTimeString(undefined, {hour : "2-digit", minute : "2-digit"}) }}</div>
+        <div :class="`p-3 mt-3 bg-cover bg-no-repeat bg-center text-white h-96 ${stream.estPassee && 'opacity-40'}   shadow-2xl rounded-lg`"
+             v-bind:style="stream.style_url">
+          <div class="text-left">{{ stream.jeu }}</div>
+          <div class="text-left">Débute à {{
+              new Date(stream.debut).toLocaleTimeString(undefined, {
+                hour: "2-digit",
+                minute: "2-digit"
+              })
+            }}
           </div>
+        </div>
       </div>
-
     </div>
-
   </div>
 </template>
 
@@ -39,11 +44,10 @@ export default {
       this.streams = schedule.map(stream => {
         return {
           ...stream,
-          style_url: `background-image: linear-gradient(to bottom, rgba(24,29,83,100), rgba(255,255,255,0)), url(${this.getUrlWithSize(stream.image_jeu_url, 700, 700)})`
+          style_url: `background-image: linear-gradient(to bottom, rgba(24,29,83,100), rgba(255,255,255,0)), url(${this.getUrlWithSize(stream.image_jeu_url, 750, 1000)})`
         }
-      })
-      .slice(0);
-      this.clazz = `grid grid-cols-${this.streams.length} gap-5 mx-10 mt-10 flex h-full`
+      });
+      this.clazz = `grid grid-cols-${this.streams.length} gap-8 mx-10 mt-10 flex h-full`
       console.timeEnd();
     },
     getJourSemaine: function (date) {
