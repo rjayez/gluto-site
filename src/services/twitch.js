@@ -9,3 +9,10 @@ export function getSchedule() {
         .then(res => res.data);
     
 }
+
+export function getIsLive() {
+
+    return axios.get(`${URL}/stream`)
+        .then(res => res.data?.isLive);
+
+}
