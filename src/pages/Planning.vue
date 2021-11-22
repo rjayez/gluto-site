@@ -1,9 +1,9 @@
 <template>
-  <div class="block">
-    <h1 class="block text-5xl text-center">Planning </h1>
+  <div class="block h-auto">
+    <h1 class="block page-title">Planning </h1>
 
 
-    <div :class="`grid grid-cols-${streams.length} gap-6 mx-10 mt-10 flex h-full justify-items-center`">
+    <div :class="`grid grid-cols-${streams.length} gap-6 px-10 mt-10 flex justify-items-center`">
       <div class="justify-items-center w-52" v-for="stream in streams">
         <div class="font-EarwigFactory text-center text-5xl">{{ getJourSemaine(stream.debut) }}</div>
         <div class="text-xl text-center mt-2">{{ getDateJourMois(stream.debut) }}</div>

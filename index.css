@@ -3,3 +3,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@layer components{
+
+    .page-title{
+        @apply text-4xl text-center text-indigo-950 font-bold
+    }
+
+    .menu-item-triangle{
+        @apply bg-transparent inline-block fill-current text-indigo-150 opacity-0 group-hover:opacity-100 ml-auto;
+    }
+
+    .menu-item{
+        @apply py-2 flex cursor-pointer;
+    }
+
+}
+

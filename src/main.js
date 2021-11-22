@@ -27,6 +27,7 @@ const Router = {
     }
 }
 
+console.log("meta", import.meta.env);
 
 // if (process.env.NODE_ENV === 'development') {
 //     devtools.connect();

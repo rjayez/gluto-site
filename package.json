@@ -2,28 +2,29 @@
   "name": "gluto-site",
   "version": "0.0.1",
   "scripts": {
-    "serve": "vite preview",
+    "serve": "vite preview --port 3000",
     "build": "vite build",
     "dev": "vite"
   },
   "dependencies": {
     "@vue/cli": "~4.5.14",
     "animejs": "~3.2.1",
+    "axios": "~0.24.0",
     "chalk": "~4.1.2",
+    "dotenv": "^10.0.0",
     "roboto-fontface": "*",
     "socket.io-client": "~4.3.2",
     "tailwindcss": "~2.2.19",
-    "vue": "~3.2.20",
-    "axios": "~0.24.0"
+    "vue": "~3.2.20"
   },
   "devDependencies": {
-    "autoprefixer": "~10.4.0",
-    "postcss": "~8.3.11",
     "@rollup/plugin-babel": "~5.3.0",
     "@vitejs/plugin-vue": "~1.9.3",
     "@vue/cli-service": "~5.0.0-beta.3",
     "@vue/devtools": "~5.3.4",
+    "autoprefixer": "~10.4.0",
     "deepmerge": "~4.2.2",
+    "postcss": "~8.3.11",
     "vite": "~2.6.4"
   },
   "license": "Beerware"

@@ -1,6 +1,7 @@
 <template>
   <div id="side-menu"
-       class="border-solid shadow-lg h-screen bg-indigo-950 pl-3 text-gray-100 font-bold text-indigo-150">
+       class="border-solid shadow-lg h-screen
+        bg-indigo-950 pl-3 text-gray-100 font-bold text-indigo-150">
     <div class="-mt-20"><img src="../assets/logo.png" alt="Logo du streamer Tetryl"/></div>
 
     <div class="">
