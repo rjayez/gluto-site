@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "Bot"
+  name: "Bot!"
 }
 </script>
 
