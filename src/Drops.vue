@@ -11,7 +11,7 @@
 
 
 <script>
-import {socket} from "./services/socket";
+// import {socket} from "./services/socket";
 // import {launchAnimation} from "./animation";
 import {defineComponent, ref} from "vue";
 import Cards from "./components/Cards.vue";
@@ -31,14 +31,14 @@ export default defineComponent({
     },
   },
   mounted() {
-    socket.on("notif", args => {
-      this.pseudo = args.pseudo;
-      this.seen = true;
-      setTimeout(() => {
-        this.seen = false;
-      }, 10 * 1000);
-
-    })
+    // socket.on("notif", args => {
+    //   this.pseudo = args.pseudo;
+    //   this.seen = true;
+    //   setTimeout(() => {
+    //     this.seen = false;
+    //   }, 10 * 1000);
+    //
+    // })
 
   },
 
