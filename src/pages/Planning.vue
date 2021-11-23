@@ -3,7 +3,7 @@
     <h1 class="block page-title">Planning </h1>
 
 
-    <div :class="`grid grid-cols-${streams.length} gap-6 px-10 mt-10 flex justify-items-center`">
+    <div class="grid gap-6 px-10 mt-10 flex justify-items-center" :class="gridCol">
       <div class="justify-items-center w-52" v-for="stream in streams">
         <div class="font-EarwigFactory text-center text-5xl">{{ getJourSemaine(stream.debut) }}</div>
         <div class="text-xl text-center mt-2">{{ getDateJourMois(stream.debut) }}</div>
@@ -31,11 +31,14 @@ export default {
   name: "Planning",
   data: function () {
     return {
-      streams: [],
-      clazz: "",
+      streams: []
     }
   },
-
+  computed:{
+    gridCol(){
+      return `grid-cols-${this.streams.length}`
+    }
+  },
   methods: {
     fetchSchedules: async function () {
       console.time();
@@ -47,7 +50,6 @@ export default {
           style_url: `background-image: linear-gradient(to bottom, rgba(24,29,83,100), rgba(255,255,255,0)), url(${this.getUrlWithSize(stream.image_jeu_url, 750, 1000)})`
         }
       });
-      this.clazz = `grid grid-cols-${this.streams.length} gap-8 mx-10 mt-10 flex h-full`
       console.timeEnd();
     },
     getJourSemaine: function (date) {
