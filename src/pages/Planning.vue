@@ -1,7 +1,6 @@
 <template>
-  <div class="block h-auto">
+  <div class="block">
     <h1 class="block page-title">Planning </h1>
-
 
     <div class="grid gap-6 px-10 mt-10 flex justify-items-center" :class="gridCol">
       <div class="justify-items-center w-52" v-for="stream in streams">

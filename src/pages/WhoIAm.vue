@@ -1,5 +1,5 @@
 <template>
-  <div id="page">
+  <div id="page" class="block">
     <h1 class="block page-title">Bonjour</h1>
     <h2 class="text-center">{{titre}}</h2>
     <h4 class="text-mg text-center text-indigo-950 font-bold">Ici c'est la fête tous les jours (sauf le lundi)</h4>

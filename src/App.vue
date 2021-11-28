@@ -1,7 +1,11 @@
 <template>
-  <div class="flex bg-indigo-150">
-    <SideMenu class="flex-none w-64"/>
-    <component class="mt-6 mx-16 flex-auto" :is="CurrentComponent"/>
+  <div class="h-full">
+    <SideMenu class="w-64 h-full"/>
+    <!--  Div avec une marge de la largeur du side menu pour compenser la fixed position -->
+    <div class="ml-64">
+      <component class="mt-6 mx-16 flex-auto" :is="CurrentComponent"/>
+
+    </div>
     <LiveNotification/>
   </div>
 
@@ -44,10 +48,20 @@ export default {
 </script>
 
 <style>
+
+html, body {
+  height: 100%;
+  background-color: #F3F4F6;
+
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /*height: 100%;*/
 }
+
+
 </style>
 

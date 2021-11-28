@@ -1,9 +1,11 @@
-@import "src/app.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+@font-face {
+    font-family: EarwigFactory;
+    src: url("src/assets/font/earwig_factory_rg.ttf");
+}
 
 @layer components{
 
