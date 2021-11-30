@@ -2,7 +2,7 @@
   <div class="block">
     <h1 class="block page-title">Planning </h1>
 
-    <div class="grid gap-6 px-10 mt-10 flex justify-items-center" :class="gridCol">
+    <div class="grid gap-3 md:gap-6 pb-4 md:px-10 mt-10 flex justify-items-center" :class="gridCol">
       <div class="justify-items-center w-52" v-for="stream in streams">
         <div class="font-EarwigFactory text-center text-5xl">{{ getJourSemaine(stream.debut) }}</div>
         <div class="text-xl text-center mt-2">{{ getDateJourMois(stream.debut) }}</div>
@@ -35,7 +35,7 @@ export default {
   },
   computed:{
     gridCol(){
-      return `grid-cols-${this.streams.length}`
+      return `md:grid-cols-${this.streams.length}`
     }
   },
   methods: {
