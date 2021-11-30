@@ -1,7 +1,7 @@
 <template>
   <div v-show="isLoad"
        class="animation-notif transition delay-1000 notif absolute
-      top-0 right-0 p-2 text-indigo-150 bg-indigo-950 mr-6 rounded-b-2xl border-b-8 border-solid border-indigo-750">
+      top-0 right-0 p-2 text-indigo-150 bg-indigo-950 mr-2 md:mr-6 rounded-b-2xl border-b-8 border-solid border-indigo-750">
     <a href="https://twitch.tv/letetryl" class="cursor-pointer">
       <img class="h-9 w-9 m-auto mb-1" src="../assets/gluant-notif-live.png" alt="Image Notif Gluto">
       <span class="flex inline align-center mb-2 justify-center">
