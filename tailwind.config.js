@@ -2,7 +2,7 @@ module.exports = {
   purge: {
     content : ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
     options: {
-      safelist: [/^grid-cols-/]
+      safelist: [/^.{2}:grid-cols-/]
     }
   },
   darkMode: false, // or 'media' or 'class'
