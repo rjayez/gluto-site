@@ -35,7 +35,7 @@ export default {
   },
   computed:{
     gridCol(){
-      return `md:grid-cols-${this.streams.length}`
+      return `md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-${this.streams.length}`
     }
   },
   methods: {
