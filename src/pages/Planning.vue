@@ -1,7 +1,7 @@
 <template>
   <div class="block">
-    <h1 class="block page-title">Planning </h1>
-
+    <h1 class="block page-title">Planning</h1>
+    <h2 class="block page-subtitle">{{getSubtitle()}}</h2>
     <div class="grid gap-3 md:gap-6 pb-4 md:px-10 mt-10 flex justify-items-center" :class="gridCol">
       <div class="justify-items-center w-52" v-for="stream in streams">
         <div class="font-EarwigFactory text-center text-5xl">{{ getJourSemaine(stream.debut) }}</div>
@@ -24,6 +24,7 @@
 
 <script>
 import {getSchedule} from "../services/twitch";
+import {DateTime} from "luxon";
 
 
 export default {
@@ -60,6 +61,13 @@ export default {
     },
     getUrlWithSize: function (url, width, height) {
       return url.replace("{width}", width).replace("{height}", height);
+    },
+    getSubtitle: function (){
+      const debutSemaine = DateTime.now().set({weekday: 1});
+      const finSemaine =  debutSemaine.plus({ 'day' : 6});
+
+      return `du ${debutSemaine.get('day')} ${debutSemaine.toFormat("LLL")} au ${finSemaine.get('day')} ${finSemaine.toFormat("LLL")}.`;
+
     }
   },
   created: function () {
