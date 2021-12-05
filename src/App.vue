@@ -1,13 +1,12 @@
 <template>
   <div class="h-full">
-    <SideMenu/>
+    <SideMenu />
     <!--  Div avec une marge de la largeur du side menu pour compenser la fixed position -->
     <div class="lg:ml-64">
-      <component id="page-component" class="mt-6 mx-5 md:mx-8 lg:mx-16 flex-auto" :is="CurrentComponent"/>
+      <component id="page-component" class="mt-6 mx-5 md:mx-8 lg:mx-16 flex-auto" :is="CurrentComponent" />
     </div>
-    <LiveNotification/>
+    <LiveNotification />
   </div>
-
 </template>
 
 <script>
@@ -19,39 +18,35 @@ import Collection from "./pages/Collection.vue";
 import Bot from "./pages/Bot.vue";
 import LiveNotification from "./components/LiveNotification.vue";
 
-
 const routes = {
-  '/': WhoIAm,
-  '/test': HelloWorld,
-  '/planning': Planning,
-  '/collection': Collection,
-  '/bot': Bot
-}
+  "/": WhoIAm,
+  "/test": HelloWorld,
+  "/planning": Planning,
+  "/collection": Collection,
+  "/bot": Bot,
+};
 
 export default {
-  components: {LiveNotification, SideMenu},
+  components: { LiveNotification, SideMenu },
   props: {
-    titre: String
+    titre: String,
   },
   data: () => ({
-    currentRoute: window.location.pathname
+    currentRoute: window.location.pathname,
   }),
   computed: {
     CurrentComponent() {
-      return routes[this.currentRoute]
-    }
-  }
-}
-
-
+      return routes[this.currentRoute];
+    },
+  },
+};
 </script>
 
 <style>
-
-html, body {
+html,
+body {
   height: 100%;
-  background-color: #F3F4F6;
-
+  background-color: #f3f4f6;
 }
 
 #app {
@@ -60,7 +55,4 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   /*height: 100%;*/
 }
-
-
 </style>
-

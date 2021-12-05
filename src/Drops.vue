@@ -1,26 +1,22 @@
 <template>
-
   <h4>Drops the cards !</h4>
   <button @click="handleClick">Lance l'anim !</button>
   <div v-if="seen">
     <Cards :pseudo="pseudo"></Cards>
   </div>
-
-
 </template>
-
 
 <script>
 // import {socket} from "./services/socket";
 // import {launchAnimation} from "./animation";
-import {defineComponent, ref} from "vue";
+import { defineComponent, ref } from "vue";
 import Cards from "./components/Cards.vue";
 
 export default defineComponent({
-  components: {Cards},
+  components: { Cards },
   data: () => ({
     seen: ref(false),
-    pseudo: "tEsT"
+    pseudo: "tEsT",
   }),
   methods: {
     handleClick() {
@@ -39,33 +35,20 @@ export default defineComponent({
     //   }, 10 * 1000);
     //
     // })
-
   },
-
-})
-
-
+});
 </script>
 
-
 <style>
-
-
 div.ff7 {
   border: solid 1px #424542;
-  box-shadow: 1px 1px #e7dfe7, -1px -1px #e7dfe7, 1px -1px #e7dfe7,
-  -1px 1px #e7dfe7, 0 -2px #9c9a9c, -2px 0 #7b757b, 0 2px #424542;
+  box-shadow: 1px 1px #e7dfe7, -1px -1px #e7dfe7, 1px -1px #e7dfe7, -1px 1px #e7dfe7, 0 -2px #9c9a9c, -2px 0 #7b757b,
+    0 2px #424542;
   padding: 5px 10px;
 
   background: #6b13d4;
   background: -moz-linear-gradient(top, #6b13d4 0%, #340094 100%);
-  background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      color-stop(0%, #6b13d4),
-      color-stop(100%, #340094)
-  );
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6b13d4), color-stop(100%, #340094));
   background: -webkit-linear-gradient(top, #6b13d4 0%, #340094 100%);
   background: -o-linear-gradient(top, #6b13d4 0%, #340094 100%);
   background: -ms-linear-gradient(top, #6b13d4 0%, #340094 100%);
@@ -158,5 +141,4 @@ div.ff7 * {
 .image-5 {
   background-image: url("../src/cards/front.png");
 }
-
 </style>

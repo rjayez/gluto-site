@@ -1,11 +1,15 @@
 <template>
   <div id="page" class="block">
     <h1 class="block page-title">Bonjour</h1>
-    <h2 class="text-center">{{titre}}</h2>
-    <h4 class="text-lg mt-7 md:mt-1 text-center text-indigo-950 font-bold">Ici c'est la fête tous les jours (sauf le lundi)</h4>
+    <h2 class="text-center">{{ titre }}</h2>
+    <h4 class="text-lg mt-7 md:mt-1 text-center text-indigo-950 font-bold">Ici c'est la fête tous les jours (sauf le
+      lundi)</h4>
     <div class="grid lg:grid-cols-2 md:gap-16">
-      <img class=" my-3 md:my-16 border-2 border-solid rounded-md border-indigo-150" src="../assets/millie-bg.jpg" alt="Millie La BG"/>
-      <div class="shadow-2xl my-3 md:my-16 bg-indigo-950 p-5 text-left border-2 border-solid rounded-md text-indigo-150">
+      <img class="my-3 md:my-16 border-2 border-solid rounded-md border-indigo-150"
+           src="../assets/millie-bg.jpg"
+           alt="Millie La BG" />
+      <div
+        class="shadow-2xl my-3 md:my-16 bg-indigo-950 p-5 text-left border-2 border-solid rounded-md text-indigo-150">
         <h2 class="font-semibold mb-8">Salut c'est Tétryl</h2>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum blandit lorem sit amet volutpat. In sem
@@ -32,9 +36,9 @@
 export default {
   name: "WhoIAm",
   props: {
-    titre: String
-  }
-}
+    titre: String,
+  },
+};
 </script>
 
 <style scoped>
