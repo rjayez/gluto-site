@@ -109,8 +109,6 @@ export default {
         // Go up the DOM
         targetEl = targetEl.parentNode;
       } while (targetEl);
-      // This is a click outside.
-      console.log("Clicked outside");
     });
 
   }

@@ -1,22 +1,11 @@
 <template>
   <div class="block">
-    <h1 class="block page-title">Planning</h1>
-    <h2 class="block page-subtitle">{{getSubtitle()}}</h2>
+    <h1 class="page-title">Planning</h1>
+    <h2 class="page-subtitle">{{getSubtitle()}}</h2>
+    <Loader :loading="loading"/>
     <div class="grid gap-3 md:gap-6 pb-4 md:px-10 mt-10 flex justify-items-center" :class="gridCol">
       <div class="justify-items-center w-52" v-for="stream in streams">
-        <div class="font-EarwigFactory text-center text-5xl">{{ getJourSemaine(stream.debut) }}</div>
-        <div class="text-xl text-center mt-2">{{ getDateJourMois(stream.debut) }}</div>
-        <div class="p-3 mt-3 bg-cover bg-no-repeat bg-center text-white h-96 shadow-2xl rounded-lg" :class="{'opacity-40' : stream.estPassee}"
-             v-bind:style="stream.style_url">
-          <div class="text-left">{{ stream.jeu }}</div>
-          <div class="text-left">Débute à {{
-              new Date(stream.debut).toLocaleTimeString(undefined, {
-                hour: "2-digit",
-                minute: "2-digit"
-              })
-            }}
-          </div>
-        </div>
+        <Stream :stream="stream"/>
       </div>
     </div>
   </div>
@@ -25,18 +14,22 @@
 <script>
 import {getSchedule} from "../services/twitch";
 import {DateTime} from "luxon";
+import Loader from "../components/Loader.vue";
+import Stream from "../components/Stream.vue";
 
 
 export default {
   name: "Planning",
+  components: {Stream, Loader},
   data: function () {
     return {
-      streams: []
+      streams: [],
+      loading: true
     }
   },
   computed:{
     gridCol(){
-      return `md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-${this.streams.length}`
+      return `md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-5`
     }
   },
   methods: {
@@ -52,13 +45,6 @@ export default {
       });
       console.timeEnd();
     },
-    getJourSemaine: function (date) {
-      return new Date(date).toLocaleString("fr-FR", {weekday: "long"})
-          .replace(/^\w/, c => c.toUpperCase());
-    },
-    getDateJourMois: function (date) {
-      return new Date(date).toLocaleString(undefined, {day: '2-digit', month: "2-digit"});
-    },
     getUrlWithSize: function (url, width, height) {
       return url.replace("{width}", width).replace("{height}", height);
     },
@@ -71,11 +57,9 @@ export default {
     }
   },
   created: function () {
-    this.fetchSchedules();
+    this.fetchSchedules()
+    .finally(() => this.loading = false);
   }
 }
 </script>
 
-<style scoped>
-
-</style>
