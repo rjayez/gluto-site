@@ -7,10 +7,8 @@
 
 <script>
 export default {
-  name: "Collection"
-}
+  name: "Collection",
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,37 +1,28 @@
-import { createApp, h} from 'vue'
+import { createApp, h } from "vue";
 
-import App from './App.vue'
-import Drops from "./Drops.vue"
+import App from "./App.vue";
+import Drops from "./Drops.vue";
 import "../index.css";
 
-
-const NotFoundComponent = { template: '<p>Page not found</p>' }
-
+const NotFoundComponent = { template: "<p>Page not found</p>" };
 
 const routes = {
-    '/': App,
-    '/drops': Drops
-}
+  "/": App,
+  "/drops": Drops,
+};
 
 const Router = {
-    data : () => ({
-        currentRoute: window.location.pathname
-    }),
-    computed:{
-        CurrentComponent(){
-            return routes[this.currentRoute] || App
-        }
+  data: () => ({
+    currentRoute: window.location.pathname,
+  }),
+  computed: {
+    CurrentComponent() {
+      return routes[this.currentRoute] || App;
     },
-    render() {
-        return h(this.CurrentComponent)
-    }
-}
+  },
+  render() {
+    return h(this.CurrentComponent);
+  },
+};
 
-console.log("meta", import.meta.env);
-
-// if (process.env.NODE_ENV === 'development') {
-//     devtools.connect();
-// }
-
-createApp(Router)
-    .mount('#app')
+createApp(Router).mount("#app");
