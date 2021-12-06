@@ -5,7 +5,7 @@
     <!--    <h2 class="text-5xl mt-20 text-center align-item-center">Bientôt sur votre écran !</h2>-->
     <div class="bg-indigo-950 p-4 mt-8 border-t-4 border-indigo-750 rounded-sm">
       <div class="flex flex-col lg:flex-row justify-center align-middle">
-          <img src="src/assets/Glutobot.png" class="w-40 h-40 mb-5 lg:mb-0 mx-auto lg:mx-0" alt="Glutobot" />
+          <img src="../assets/Glutobot.png" class="w-40 h-40 mb-5 lg:mb-0 mx-auto lg:mx-0" alt="Glutobot" />
         <div class="lg:my-auto">
           <p
             class="bg-gradient-to-r from-indigo-775 to-indigo-650 rounded-md ring-2 ring-gray-200 p-2 lg:p-4  text-white md:mx-10">
