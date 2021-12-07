@@ -9,3 +9,5 @@ dist-ssr
 .vscode/
 
 *.log
+
+package-lock.json

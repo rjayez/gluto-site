@@ -29,30 +29,30 @@
       :class="{ 'translate-x-0': showMenu, '-translate-x-full': !showMenu }"
     >
       <div class="my-4 mr-3 flex justify-center">
-        <img src="../assets/logo.png" height="200" width="200" alt="Logo du streamer Tetryl" />
+        <img src="../assets/svg/logo.svg" height="200" width="200" alt="Logo du streamer Tetryl" />
       </div>
       <div class="flex justify-evenly mx-8 gap-4">
         <a class="hover:opacity-80" href="https://www.twitch.tv/letetryl"
-          ><img class="h-5" src="../assets/rs-twitch.png" alt="icone twitch"
+          ><img class="h-5" src="../assets/svg/rs-twitch.svg" alt="icone twitch"
         /></a>
         <a class="hover:opacity-80" href="https://www.youtube.com/user/DilanNoKaze"
-          ><img class="h-5" src="../assets/rs-youtube.png" alt="icone youtube"
+          ><img class="h-5" src="../assets/svg/rs-youtube.svg" alt="icone youtube"
         /></a>
         <a class="hover:opacity-80" href="https://twitter.com/LeTetryl"
-          ><img class="h-5" src="../assets/rs-twitter.png" alt="icone twitter"
+          ><img class="h-5" src="../assets/svg/rs-twitter.svg" alt="icone twitter"
         /></a>
         <a class="hover:opacity-80" href="https://www.instagram.com/tetryl_"
-          ><img class="h-5" src="../assets/rs-insta.png" alt="icone instagram"
+          ><img class="h-5" src="../assets/svg/rs-insta.svg" alt="icone instagram"
         /></a>
         <a class="hover:opacity-80" href="https://discord.gg/K22x6Qkwwu"
-          ><img class="h-5" src="../assets/rs-discord.png" alt="icone discord"
+          ><img class="h-5" src="../assets/svg/rs-discord.svg" alt="icone discord"
         /></a>
       </div>
 
       <nav class="pl-3 mt-10">
         <div class="py-2 flex cursor-pointer group" @click="go('')">
           <div class="flex justify-center w-1/5 pr-3 h-6">
-            <img src="../assets/btn-qui-suisje.png" alt="" class="box-border h-6" />
+            <img src="../assets/svg/btn-qui-suis-je.svg" alt="" class="box-border h-6" />
           </div>
           <span class="group-hover:text-indigo-300">Qui-suis je ?</span>
           <svg width="20" height="25" class="menu-item-triangle">
@@ -61,7 +61,7 @@
         </div>
         <div class="menu-item group" @click="go('planning')">
           <div class="flex justify-center w-1/5 pr-3">
-            <img src="../assets/btn-planning.png" alt="" class="box-border h-6" />
+            <img src="../assets/svg/btn-planning.svg" alt="" class="box-border h-6" />
           </div>
           <span class="group-hover:text-indigo-300">Planning</span>
           <svg width="20" height="25" class="menu-item-triangle">
@@ -70,7 +70,7 @@
         </div>
         <div class="menu-item group" @click="go('bot')">
           <div class="flex justify-center w-1/5 pr-3">
-            <img src="../assets/btn-bot.png" alt="" class="h-6 justify-self-end" />
+            <img src="../assets/svg/btn-bot.svg" alt="" class="h-6 justify-self-end" />
           </div>
           <span class="group-hover:text-indigo-300">Demandez à GlutoBot</span>
           <svg width="20" height="25" class="menu-item-triangle">
@@ -79,7 +79,7 @@
         </div>
         <div class="menu-item group" @click="go('collection')">
           <div class="flex justify-center w-1/5 pr-3">
-            <img src="../assets/btn-ma-collec.png" alt="" class="h-6 inline" />
+            <img src="../assets/svg/btn-ma-collec.svg" alt="" class="h-6 inline" />
           </div>
           <span class="group-hover:text-indigo-300">Votre collection</span>
           <svg width="20" height="25" class="menu-item-triangle">
