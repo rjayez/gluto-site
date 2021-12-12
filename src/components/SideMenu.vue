@@ -6,7 +6,7 @@
           class="absolute block top-0 left-0 h-0 w-7 ring-2 transition duration-1000 ease-in-out"
           :class="{
             'transform rotate-45 origin-top-left ring-indigo-150': showMenu,
-            '-rotate-45 origin-top-left ring-indigo-950': !showMenu,
+            '-rotate-0 origin-top-left ring-indigo-950': !showMenu,
           }"
         ></span>
         <span
@@ -17,7 +17,7 @@
           class="absolute block bottom-0 left-0 h-0 w-7 ring-2 transition duration-1000 ease-in-out"
           :class="{
             'transform -rotate-45 origin-bottom-left ring-2 ring-indigo-150': showMenu,
-            'rotate-45 origin-bottom-left ring-2 ring-indigo-950': !showMenu,
+            'rotate-0 origin-bottom-left ring-2 ring-indigo-950': !showMenu,
           }"
         ></span>
       </label>
