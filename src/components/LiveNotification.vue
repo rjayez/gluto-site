@@ -21,11 +21,8 @@ export default {
     isLoad: false,
   }),
   created: async function () {
-
     setTimeout(() => {
-      getIsLive().then(isLive => this.isLoad = isLive)
-      console.log("livenotif !");
-      this.isLoad = isLive;
+      getIsLive().then(isLive => (this.isLoad = isLive));
     }, 3000);
   },
 };

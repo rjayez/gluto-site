@@ -105,7 +105,7 @@ div.ff7 * {
 }
 
 .a-card-back {
-  background-image: url("../src/cards/back.png");
+  background-image: url("assets/cards/back.png");
   transform: rotateY(180deg);
 }
 
@@ -123,22 +123,22 @@ div.ff7 * {
 }
 
 .image-1 {
-  background-image: url("../src/cards/front.png");
+  background-image: url("assets/cards/front.png");
 }
 
 .image-2 {
-  background-image: url("../src/cards/front.png");
+  background-image: url("assets/cards/front.png");
 }
 
 .image-3 {
-  background-image: url("../src/cards/front.png");
+  background-image: url("assets/cards/front.png");
 }
 
 .image-4 {
-  background-image: url("../src/cards/front.png");
+  background-image: url("assets/cards/front.png");
 }
 
 .image-5 {
-  background-image: url("../src/cards/front.png");
+  background-image: url("assets/cards/front.png");
 }
 </style>
