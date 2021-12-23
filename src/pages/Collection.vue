@@ -43,7 +43,7 @@
       alt="Carte detaille"
       class="object-scale-down pt-32 mb-8 max-w-[390px] px-10 hover:shadow-2xl hover:shadow-violet-500 rounded-xl cursor-pointer"
     />
-    <div class="text-indigo-150 max-w-[390px] text-xl mb-32 lg:ml-10">
+    <div class="text-indigo-150 max-w-[390px] text-xl px-4 mb-32 lg:ml-10">
       <p>Description</p>
       <p class="my-10">Incarnation : Glutobot</p>
       <p>Bienvenue dans la secte, installez vous, on a du fromage !</p>
