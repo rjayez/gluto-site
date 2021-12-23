@@ -18,21 +18,21 @@
         <h2 class="font-semibold mb-8">Salut c'est Tétryl</h2>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum blandit lorem sit amet volutpat. In sem
-          ex, efficitur et tempor non, finibus ut dui. Donec vestibulum tincidunt sem ut sollicitudin. Aenean vitae
-          volutpat tortor. Quisque faucibus nulla quis nisl varius accumsan. Proin eget iaculis augue. Sed eget magna
-          convallis velit fermentum porttitor quis at dui. Aenean euismod eu augue ut aliquet. Aliquam vehicula in
-          libero sit amet blandit. Fusce et nisi commodo, ultricies nulla at, finibus lorem. Cras in nisl nunc. Nam
-          iaculis, ipsum eu blandit malesuada, eros ligula tincidunt erat, eget efficitur ex erat eu risus.
+          Ça se prononce [Té-Trille] Moi, c'est Tetryl, je joue aux jeux vidéo depuis fort longtemps. J'aime beaucoup
+          les RPG, et c'est même le thème principal de cette chaîne, mais je joue à beaucoup de choses.
         </p>
 
         <p>
-          Nunc sed commodo sem, ornare congue orci. Sed placerat magna justo, in scelerisque tortor rhoncus at. Mauris
-          feugiat dui quis pretium volutpat. Suspendisse ante neque, pretium ut cursus eu, hendrerit a mauris. Duis in
-          urna et massa blandit vulputate in vel diam. Fusce ultrices, ligula vitae condimentum congue, justo augue
-          facilisis quam, nec tempus sapien massa sed nunc. Cras id finibus lectus. Phasellus tempor vulputate magna
-          eget feugiat. Fusce ligula eros, malesuada nec bibendum vel, interdum eget diam. Vivamus sit amet pellentesque
-          lorem, condimentum commodo velit. Vivamus a egestas magna.
+          Pourquoi Twitch ? J'ai créé cette chaîne Twitch pour partager ma passion du RPG et ma bonne humeur. C'est une
+          façon sympa d'être au plus proche des gens et, je l'espère, partager ma passion avec vous ! J’ai autant
+          d’envie de faire découvrir / découvrir des jeux, mais aussi des gens. Je pense que Twitch est un lieu de
+          rencontre et d’échange formidable.
+        </p>
+
+        <p>
+          Tout ce que vous verrez comme Overlay, emote, alerte est réalisée avec amour par moi-même ! J’ai envie que
+          cette chaîne me ressemble, c’est pour cela que je cherche à faire un maximum de choses avec mes petites mains.
+          Vous comprenez donc que chaque soutien, peu importe la forme, est d’autant plus gratifiant pour moi.
         </p>
       </div>
     </div>
@@ -48,4 +48,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+p {
+  @apply mb-4;
+}
+</style>

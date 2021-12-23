@@ -93,7 +93,7 @@ export default {
       {
         id: 1,
         url: cards.card3,
-        revealed: true,
+        revealed: false,
         rarete: "",
       },
       {
