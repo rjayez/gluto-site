@@ -14,7 +14,7 @@
     }
 
     .page-subtitle{
-        @apply text-lg mt-7 md:mt-1 text-center text-indigo-950 font-bold
+        @apply text-lg mt-7 md:mt-1 px-2 text-center text-indigo-950 font-bold
     }
 
     .menu-item-triangle{
