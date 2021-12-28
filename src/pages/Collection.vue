@@ -41,7 +41,7 @@
     <img
       :src="imgCard.card3"
       alt="Carte detaille"
-      class="object-scale-down pt-32 mb-8 max-w-[390px] px-10 hover:shadow-2xl hover:shadow-violet-500 rounded-xl cursor-pointer"
+      class="object-scale-down mt-32 mb-8 max-w-[390px] mx-10 hover:shadow-2xl hover:shadow-violet-500 rounded-2xl cursor-pointer"
     />
     <div class="text-indigo-150 max-w-[390px] text-xl px-4 mb-32 lg:ml-10">
       <p>Description</p>
