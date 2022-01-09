@@ -14,6 +14,9 @@ module.exports = {
           950: "#130623",
         },
       },
+      screens: {
+        "3xl": "1920px",
+      },
     },
     fontFamily: {
       EarwigFactory: ["EarwigFactory", "helvetica"],
