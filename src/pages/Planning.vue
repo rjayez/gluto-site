@@ -3,6 +3,9 @@
     <h1 class="page-title">Planning</h1>
     <h2 class="page-subtitle">{{ getSubtitle() }}</h2>
     <Loader :loading="loading" />
+    <div v-if="!loading && streams.length === 0" class="mt-24 text-xl text-center font-bold">
+      Désolé, mais GlutoBot n'a pas réussi à trouver le planning !
+    </div>
     <div class="grid gap-3 md:gap-6 pb-4 md:px-10 mt-10 flex justify-items-center" :class="gridCol">
       <div class="justify-items-center w-52" v-for="stream in streams">
         <Stream :planning="stream" />
@@ -34,6 +37,7 @@ export default {
   methods: {
     fetchSchedules: async function () {
       this.streams = await getSchedule();
+      console.log(this.streams);
     },
     getSubtitle: function () {
       const debutSemaine = DateTime.now().set({ weekday: 1 });

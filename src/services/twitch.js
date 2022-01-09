@@ -3,7 +3,10 @@ import axios from "axios";
 const URL = `${import.meta.env.VITE_APP_HOST_API}/twitch`;
 
 export function getSchedule() {
-  return axios.get(`${URL}/schedule`).then(res => res.data);
+  return axios
+    .get(`${URL}/schedule`)
+    .then(res => res.data)
+    .catch(_ => []);
 }
 
 export function getIsLive() {
