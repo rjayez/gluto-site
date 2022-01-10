@@ -4,9 +4,8 @@
 
   <div
     v-if="planning.streams.length === 0"
-    class="p-3 mt-3 bg-cover bg-no-repeat bg-center text-white h-96 shadow-2xl rounded-lg"
+    class="p-3 mt-3 bg-cover bg-no-repeat bg-center text-white h-96 shadow-2xl rounded-lg bg-no-stream"
     :class="{ 'opacity-40': planning.estPassee }"
-    v-bind:style="getBackgroundNoStreamStyle()"
   >
     <div class="text-left">Pas de stream prévu !</div>
   </div>
@@ -72,10 +71,6 @@ export default {
     getBackgroundStyle: function (imageJeuUrl) {
       return `background-image: linear-gradient(to bottom, rgba(24,29,83,100), rgba(255,255,255,0)),
       url(${this.getUrlWithSize(imageJeuUrl, 750, 1000)})`;
-    },
-    getBackgroundNoStreamStyle: function () {
-      return `background-image: linear-gradient(to bottom, rgba(24,29,83,100), rgba(255,255,255,0)),
-      url('src/assets/planning/NoStream.svg')`;
     },
   },
 };

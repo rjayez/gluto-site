@@ -17,6 +17,10 @@ module.exports = {
       screens: {
         "3xl": "1920px",
       },
+      backgroundImage: {
+        "no-stream":
+          "linear-gradient(to bottom, rgba(24,29,83,100), rgba(255,255,255,0)), url('./src/assets/planning/NoStream.svg')",
+      },
     },
     fontFamily: {
       EarwigFactory: ["EarwigFactory", "helvetica"],
