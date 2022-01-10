@@ -6,7 +6,7 @@
     <div v-if="!loading && streams.length === 0" class="mt-24 text-xl text-center font-bold">
       Désolé, mais GlutoBot n'a pas réussi à trouver le planning !
     </div>
-    <div class="grid gap-3 md:gap-6 pb-4 md:px-10 mt-10 flex justify-items-center" :class="gridCol">
+    <div class="grid gap-3 md:gap-6 pb-4 md:px-10 lg:px-0 mt-10 flex justify-items-center" :class="gridCol">
       <div class="justify-items-center w-52" v-for="stream in streams">
         <Stream :planning="stream" />
       </div>

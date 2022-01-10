@@ -1,5 +1,5 @@
 <template>
-  <div class="font-EarwigFactory text-center text-5xl">{{ planning.jour }}</div>
+  <div class="font-EarwigFactory text-center text-4xl">{{ planning.jour }}</div>
   <div class="text-xl text-center mt-2">{{ getDateJourMois(planning.date) }}</div>
 
   <div
@@ -7,7 +7,7 @@
     class="p-3 mt-3 bg-cover bg-no-repeat bg-center text-white h-96 shadow-2xl rounded-lg bg-no-stream"
     :class="{ 'opacity-40': planning.estPassee }"
   >
-    <div class="text-left">Pas de stream prévu !</div>
+    <div class="text-left mt-4">Pas de stream prévu !</div>
   </div>
 
   <div
@@ -16,7 +16,7 @@
     :class="{ 'opacity-40': planning.streams[0].estPassee }"
     v-bind:style="getBackgroundStyle(planning.streams[0].imageJeuUrl)"
   >
-    <div class="text-left">{{ planning.streams[0].titre }}</div>
+    <div class="text-left mt-4">{{ planning.streams[0].titre }}</div>
     <div class="text-left">{{ planning.streams[0].jeu }}</div>
     <div class="text-left">
       Débute à
@@ -30,7 +30,7 @@
       :class="{ 'opacity-40': planning.streams[0].estPassee }"
       v-bind:style="getBackgroundStyle(planning.streams[0].imageJeuUrl)"
     >
-      <div class="text-left">{{ planning.streams[0].titre }}</div>
+      <div class="text-left mt-4">{{ planning.streams[0].titre }}</div>
       <div class="text-left">{{ planning.streams[0].jeu }}</div>
       <div class="text-left">
         Débute à
@@ -43,7 +43,7 @@
       :class="{ 'opacity-40': planning.streams[1].estPassee }"
       v-bind:style="getBackgroundStyle(planning.streams[1].imageJeuUrl)"
     >
-      <div class="text-left">{{ planning.streams[1].titre }}</div>
+      <div class="text-left mt-4">{{ planning.streams[1].titre }}</div>
       <div class="text-left">{{ planning.streams[1].jeu }}</div>
       <div class="text-left">
         Débute à
