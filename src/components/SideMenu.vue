@@ -61,7 +61,7 @@
         </div>
         <div class="menu-item group" @click="go('planning')">
           <div class="flex justify-center w-1/5 pr-3">
-            <img src="../assets/svg/btn-planning.svg" alt="" class="box-border h-6" />
+            <img src="../assets/svg/btn-planning.svg" alt="logo planning" class="box-border h-6" />
           </div>
           <span class="group-hover:text-indigo-300">Planning</span>
           <svg width="20" height="25" class="menu-item-triangle">
@@ -70,7 +70,7 @@
         </div>
         <div class="menu-item group" @click="go('bot')">
           <div class="flex justify-center w-1/5 pr-3">
-            <img src="../assets/svg/btn-bot.svg" alt="" class="h-6 justify-self-end" />
+            <img src="../assets/svg/btn-bot.svg" alt="logo bot" class="h-6 justify-self-end" />
           </div>
           <span class="group-hover:text-indigo-300">Demandez à GlutoBot</span>
           <svg width="20" height="25" class="menu-item-triangle">
@@ -79,7 +79,7 @@
         </div>
         <div class="menu-item group" @click="go('collection')">
           <div class="flex justify-center w-1/5 pr-3">
-            <img src="../assets/svg/btn-ma-collec.svg" alt="" class="h-6 inline" />
+            <img src="../assets/svg/btn-ma-collec.svg" alt="logo collection" class="h-6 inline" />
           </div>
           <span class="group-hover:text-indigo-300">Votre collection</span>
           <svg width="20" height="25" class="menu-item-triangle">
