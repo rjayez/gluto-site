@@ -28,7 +28,7 @@
       class="border-solid shadow-lg transition duration-500 ease-in-out w-64 bg-indigo-950 h-full text-gray-100 font-bold text-indigo-150 fixed top-0 left-0 transform lg:transform-none z-10"
       :class="{ 'translate-x-0': showMenu, '-translate-x-full': !showMenu }"
     >
-      <div class="my-4 mr-3 flex justify-center">
+      <div class="mt-4 mb-6 mr-3 flex justify-center">
         <img src="../assets/svg/logo.svg" height="200" width="200" alt="Logo du streamer Tetryl" />
       </div>
       <div class="flex justify-evenly mx-8 gap-4">

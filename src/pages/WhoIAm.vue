@@ -13,7 +13,7 @@
         alt="Millie La BG"
       />
       <div class="shadow-xl my-3 lg:my-16 bg-indigo-950 p-5 text-left border-2 border-solid rounded-md text-indigo-150">
-        <h3 class="text-2xl mb-5">&#8226; Ça se prononce [Té-Trille]</h3>
+        <h3 class="text-2xl font-bold mb-5">Ça se prononce [Té-Trille]</h3>
         <p>
           Moi, c'est Tetryl, je joue aux jeux vidéo depuis fort longtemps. J'aime beaucoup les RPG, et c'est même le
           thème principal de cette chaîne, mais je joue à beaucoup de choses.
@@ -23,7 +23,7 @@
           <img class="m-4" src="../assets/emotes/Emote_Salut.svg" width="32" height="32" alt="emote salut les glutos" />
           <img class="m-4" src="../assets/emotes/Emote_Salut.svg" width="32" height="32" alt="emote salut les glutos" />
         </p>
-        <h3 class="text-2xl my-5">&#8226; Pourquoi Twitch ?</h3>
+        <h3 class="text-2xl font-bold my-5">Pourquoi Twitch ?</h3>
         <p>
           J'ai créé cette chaîne Twitch pour partager ma passion du RPG et ma bonne humeur. C'est une façon sympa d'être
           au plus proche des gens et, je l'espère, partager ma passion avec vous ! J’ai autant d’envie de faire
@@ -34,7 +34,7 @@
         <p>
           Tout ce que vous verrez comme Overlay, emote, alerte est réalisée avec amour par moi-même ! J’ai envie que
           cette chaîne me ressemble, c’est pour cela que je cherche à faire un maximum de choses avec mes petites mains.
-          Vous comprenez donc que chaque soutien, peu importe la forme, est d’autant plus gratifiant pour moi.
+          Vous comprendez donc que chaque soutien, peu importe la forme, est d’autant plus gratifiant pour moi.
         </p>
         <p class="flex flex-row justify-center">
           <img class="m-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote salut les glutos" />

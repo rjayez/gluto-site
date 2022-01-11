@@ -15,7 +15,7 @@
           </p>
         </div>
       </div>
-      <h3 class="text-indigo-150 font-bold mt-10">Point de chaine</h3>
+      <h3 class="text-indigo-150 text-lg font-bold mt-10">Point de chaine</h3>
       <table class="table bg-indigo-950 text-white p-2 text-sm w-full">
         <thead class="border-4 border-indigo-950">
           <tr>
@@ -25,11 +25,27 @@
         </thead>
         <tbody class="border-indigo-950 m-4">
           <tr class="table-row m-2">
-            <td>Ceci ne fait absolument rien</td>
+            <td>
+              <img
+                class=""
+                src="../assets/rewards/ne_fait_rien.svg"
+                alt="logo Ne fait rien"
+                width="32"
+                height="32"
+              />Ceci ne fait absolument rien
+            </td>
             <td>C’est vrai, ne vous donnez pas la peine de l’utiliser. Ça met GlutoBot de mauvaise humeur.</td>
           </tr>
           <tr class="table-row">
-            <td>Mettre mon message en avant</td>
+            <td>
+              <img
+                class=""
+                src="../assets/rewards/message_avant.svg"
+                alt="logo Ne fait rien"
+                width="32"
+                height="32"
+              />Mettre mon message en avant
+            </td>
             <td>
               Élevez le débat en surlignant votre message. Si c’est marqué plus gros, c'est forcément que vous avez
               raison, non ?
@@ -62,7 +78,7 @@
           </tr>
         </tbody>
       </table>
-      <h3 class="text-indigo-150 font-bold mt-10">Commandes</h3>
+      <h3 class="text-indigo-150 text-lg font-bold mt-10">Commandes</h3>
       <table class="table bg-indigo-950 text-white p-2 text-sm w-full">
         <thead class="border-4 border-indigo-950">
           <tr>
