@@ -13,7 +13,7 @@
         alt="Millie La BG"
       />
       <div class="shadow-xl my-3 lg:my-16 bg-indigo-950 p-5 text-left border-2 border-solid rounded-md text-indigo-150">
-        <h3 class="text-2xl font-bold mb-5">Ça se prononce [Té-Trille]</h3>
+        <h3 class="text-2xl font-bold mb-5">Ça se prononce [Té&#8209;Trille]</h3>
         <p>
           Moi, c'est Tetryl, je joue aux jeux vidéo depuis fort longtemps. J'aime beaucoup les RPG, et c'est même le
           thème principal de cette chaîne, mais je joue à beaucoup de choses.
@@ -37,9 +37,9 @@
           Vous comprendez donc que chaque soutien, peu importe la forme, est d’autant plus gratifiant pour moi.
         </p>
         <p class="flex flex-row justify-center">
-          <img class="m-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote salut les glutos" />
-          <img class="m-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote salut les glutos" />
-          <img class="m-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote salut les glutos" />
+          <img class="m-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote GG Easy" />
+          <img class="m-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote GG Easy" />
+          <img class="m-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote GG Easy" />
         </p>
         <p>J'espère que vous apprécierez le contenu que je crée, j'espère à bientôt sur le Tchat de Twitch !</p>
       </div>

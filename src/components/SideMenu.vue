@@ -1,26 +1,31 @@
 <template>
   <div class="w-64 h-full">
-    <div class="fixed block top-0 left-0 h-5 w-7 m-3 z-40 lg:hidden" @click="toggleMenu">
-      <label class="h-5 w-7">
-        <span
-          class="absolute block top-0 left-0 h-0 w-7 ring-2 transition duration-1000 ease-in-out"
-          :class="{
-            'transform rotate-45 origin-top-left ring-indigo-150': showMenu,
-            '-rotate-0 origin-top-left ring-indigo-950': !showMenu,
-          }"
-        ></span>
-        <span
-          class="absolute block top-1/2 left-0 h-0 w-7 ring-2 transition duration-300 ease-in-out delay-200"
-          :class="{ 'ring-indigo-150 opacity-0': showMenu, ' ring-indigo-950': !showMenu }"
-        ></span>
-        <span
-          class="absolute block bottom-0 left-0 h-0 w-7 ring-2 transition duration-1000 ease-in-out"
-          :class="{
-            'transform -rotate-45 origin-bottom-left ring-2 ring-indigo-150': showMenu,
-            'rotate-0 origin-bottom-left ring-2 ring-indigo-950': !showMenu,
-          }"
-        ></span>
-      </label>
+    <div
+      class="lg:hidden z-40 fixed block top-0 left-0 h-9 w-11 ml-1 mt-1 rounded-lg transition duration-700 ease-in-out"
+      :class="{ 'bg-indigo-150': !showMenu }"
+    >
+      <div class="fixed top-0 left-0 h-5 w-7 m-3" @click="toggleMenu">
+        <label class="h-5 w-7">
+          <span
+            class="burger-bar ring-2 top-0 transition duration-1000 ease-in-out"
+            :class="{
+              'transform rotate-45 origin-top-left ring-indigo-150': showMenu,
+              '-rotate-0 origin-top-left ring-indigo-950': !showMenu,
+            }"
+          ></span>
+          <span
+            class="burger-bar ring-2 top-1/2 transition duration-300 ease-in-out delay-200"
+            :class="{ 'ring-indigo-150 opacity-0': showMenu, ' ring-indigo-950': !showMenu }"
+          ></span>
+          <span
+            class="burger-bar ring-2 bottom-0 transition duration-1000 ease-in-out"
+            :class="{
+              'transform -rotate-45 origin-bottom-left ring-2 ring-indigo-150': showMenu,
+              'rotate-0 origin-bottom-left ring-2 ring-indigo-950': !showMenu,
+            }"
+          ></span>
+        </label>
+      </div>
     </div>
 
     <div
@@ -126,4 +131,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.burger-bar {
+  @apply absolute block left-0 h-0 w-7;
+}
+</style>
