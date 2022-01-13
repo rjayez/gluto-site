@@ -2,7 +2,6 @@
   <div>
     <h1 class="page-title">Glutobot</h1>
     <h2 class="page-subtitle">pour vous servir !</h2>
-    <!--    <h2 class="text-5xl mt-20 text-center align-item-center">Bientôt sur votre écran !</h2>-->
     <div class="bg-indigo-950 p-4 mt-8 border-t-4 border-indigo-750 rounded-sm">
       <div class="flex flex-col lg:flex-row justify-center align-middle">
         <img src="../assets/webp/Glutobot.webp" class="w-40 h-40 mb-5 lg:mb-0 mx-auto lg:mx-0" alt="Glutobot" />
@@ -25,26 +24,32 @@
         </thead>
         <tbody class="border-indigo-950 m-4">
           <tr class="table-row m-2">
-            <td>
-              <img
-                class=""
-                src="../assets/rewards/ne_fait_rien.svg"
-                alt="logo Ne fait rien"
-                width="32"
-                height="32"
-              />Ceci ne fait absolument rien
+            <td class="">
+              <div class="flex flex-col lg:flex-row">
+                <img
+                  class="place-self-center lg:place-self-center lg:place-self-start mr-3 mb-2 mb-2"
+                  src="../assets/rewards/ne_fait_rien.svg"
+                  alt="logo Ne fait rien"
+                  width="32"
+                  height="32"
+                />
+                <label class="place-self-center">Ceci ne fait absolument rien</label>
+              </div>
             </td>
             <td>C’est vrai, ne vous donnez pas la peine de l’utiliser. Ça met GlutoBot de mauvaise humeur.</td>
           </tr>
           <tr class="table-row">
             <td>
-              <img
-                class=""
-                src="../assets/rewards/message_avant.svg"
-                alt="logo Ne fait rien"
-                width="32"
-                height="32"
-              />Mettre mon message en avant
+              <div class="flex flex-col lg:flex-row">
+                <img
+                  class="place-self-center lg:place-self-start mr-3 mb-2"
+                  src="../assets/rewards/message_avant.svg"
+                  alt="logo Ne fait rien"
+                  width="32"
+                  height="32"
+                />
+                <span class="place-self-center">Mettre mon message en avant</span>
+              </div>
             </td>
             <td>
               Élevez le débat en surlignant votre message. Si c’est marqué plus gros, c'est forcément que vous avez
@@ -52,25 +57,65 @@
             </td>
           </tr>
           <tr class="table-row">
-            <td>Choisir une émoticône à débloquer</td>
+            <td>
+              <div class="flex flex-col lg:flex-row">
+                <img
+                  class="place-self-center lg:place-self-start mr-3 mb-2"
+                  src="../assets/rewards/emote_unlock.svg"
+                  alt="logo Ne fait rien"
+                  width="32"
+                  height="32"
+                /><span class="place-self-center">Choisir une émoticône à débloquer</span>
+              </div>
+            </td>
             <td>
               Une émote de qualité faite à la main avec amour est débloquée, si vous êtes déjà un des héros de la chaîne
               via un Sub vous avez déjà accès à tout !
             </td>
           </tr>
           <tr class="table-row">
-            <td>Intense Réflexion</td>
+            <td>
+              <div class="flex flex-col lg:flex-row">
+                <img
+                  class="place-self-center lg:place-self-start mr-3 mb-2"
+                  src="../assets/rewards/Intense_reflexion.svg"
+                  alt="logo Ne fait rien"
+                  width="32"
+                  height="32"
+                /><span class="place-self-center">Intense Réflexion</span>
+              </div>
+            </td>
             <td>On a tous besoin d’un petit coup de pouce dans les moments où réfléchir c’est compliqué.</td>
           </tr>
           <tr class="table-row">
-            <td>Modifier une émoticône</td>
+            <td>
+              <div class="flex flex-col lg:flex-row">
+                <img
+                  class="place-self-center lg:place-self-start mr-3 mb-2"
+                  src="../assets/rewards/modif_emote.svg"
+                  alt="logo Ne fait rien"
+                  width="32"
+                  height="32"
+                /><span class="place-self-center">Modifier une émoticône</span>
+              </div>
+            </td>
             <td>
               Allez-y dites le que les émotes ne vous plaisent pas ! Vous voulez le faire à sa place ? Eh bien faites le
               !
             </td>
           </tr>
           <tr class="table-row">
-            <td>Succès débloqué</td>
+            <td>
+              <div class="flex flex-col lg:flex-row">
+                <img
+                  class="place-self-center lg:place-self-start mr-3 mb-2"
+                  src="../assets/rewards/Succes.svg"
+                  alt="logo Ne fait rien"
+                  width="32"
+                  height="32"
+                /><span class="place-self-center">Succès débloqué</span>
+              </div>
+            </td>
             <td>
               Vous voulez récompenser Tétryl ou au contraire vous moquer gentiment de lui ? Passez un succès spécial
               pendant le stream !
@@ -150,6 +195,6 @@ td:first-child {
 }
 
 td {
-  @apply table-cell bg-indigo-850 border-indigo-950 border-4 m-2 p-2;
+  @apply bg-indigo-850 border-indigo-950 border-4 m-2 p-2;
 }
 </style>
