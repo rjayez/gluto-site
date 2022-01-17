@@ -34,7 +34,7 @@
       :class="{ 'translate-x-0': showMenu, '-translate-x-full': !showMenu }"
     >
       <div class="mt-4 mb-6 mr-3 flex justify-center">
-        <img src="../assets/svg/logo.svg" height="200" width="200" alt="Logo du streamer Tetryl" />
+        <a href="/"><img src="../assets/svg/logo.svg" height="200" width="200" alt="Logo du streamer Tetryl" /></a>
       </div>
       <div class="flex justify-evenly mx-8 gap-4">
         <a class="hover:opacity-80" href="https://www.twitch.tv/letetryl"
