@@ -9,6 +9,12 @@
 
 @layer components{
 
+    html,
+    body {
+        height: 100%;
+        background-color: #f3f4f6;
+    }
+
     .page-title{
         @apply text-4xl text-center text-indigo-950 font-bold
     }

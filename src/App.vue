@@ -3,7 +3,7 @@
     <SideMenu />
     <!--  Div avec une marge de la largeur du side menu pour compenser la fixed position -->
     <div class="lg:ml-64">
-      <component id="page-component" class="mt-6 mx-5 md:mx-8 lg:mx-4 flex-auto" :is="CurrentComponent" />
+      <component id="page-component" class="pt-6 mx-5 md:mx-8 lg:mx-4 flex-auto" :is="CurrentComponent" />
     </div>
     <LiveNotification />
   </div>
@@ -43,12 +43,6 @@ export default {
 </script>
 
 <style>
-html,
-body {
-  height: 100%;
-  background-color: #f3f4f6;
-}
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

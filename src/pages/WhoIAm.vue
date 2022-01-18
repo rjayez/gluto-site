@@ -1,17 +1,17 @@
 <template>
-  <div id="page" class="block">
+  <div id="page" class="block lg:h-screen">
     <h1 class="block page-title">Bonjour</h1>
     <h2 class="mt-7 text-lg font-bold text-center md:mt-1 text-indigo-950">
       Ici c'est la fête tous les jours (sauf le lundi)
     </h2>
-    <div class="xl:flex xl:flex-row lg:justify-center justify-items-center mt-5 lg:h-screen">
+    <div class="xl:flex xl:flex-row lg:justify-center justify-items-center h-4/5 mt-5">
       <img
-        class="my-3 rounded-md border-2 border-solid md:my-4 border-indigo-150 h-4/5 max-w-1/2 justify-self-end"
+        class="my-3 rounded-md border-2 border-solid md:my-4 border-indigo-150 mx-auto xl:mx-0 max-w-1/2"
         src="../assets/webp/millie-bg.webp"
         alt="Millie La BG"
       />
 
-      <div class="flex flex-col xl:-ml-20 xl:w-1/2 lg:max-h-4/5">
+      <div class="flex flex-col xl:-ml-20 xl:w-1/2 lg:h-4/5">
         <img
           src="../assets/accueil/gluants-accueil.svg"
           alt="paire de gluants"
