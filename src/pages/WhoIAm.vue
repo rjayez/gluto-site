@@ -15,7 +15,7 @@
         <img
           src="../assets/accueil/gluants-accueil.svg"
           alt="paire de gluants"
-          class="z-10 ml-auto -mb-2 mr-5 max-h-28 justify-self-end"
+          class="z-0 ml-auto -mb-2 mr-5 max-h-28 justify-self-end"
         />
         <div
           class="p-5 mb-3 text-left rounded-md border-2 border-solid shadow-xl lg:mb-16 bg-indigo-950 text-indigo-150"
