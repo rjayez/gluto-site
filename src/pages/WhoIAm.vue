@@ -17,6 +17,8 @@
           src="../assets/accueil/gluants-accueil.svg"
           alt="paire de gluants"
           class="z-0 ml-auto -mb-2 mr-5 max-h-28 justify-self-end"
+          width="213"
+          height="112"
         />
         <div
           class="mb-3 rounded-md border-2 border-solid bg-indigo-950 p-5 text-left text-indigo-150 shadow-xl lg:mb-16"

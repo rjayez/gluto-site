@@ -19,7 +19,7 @@ module.exports = {
       },
       backgroundImage: {
         "no-stream":
-          "linear-gradient(to bottom, rgba(24,29,83,100), rgba(255,255,255,0)), url('./src/assets/planning/NoStream.svg')",
+          "linear-gradient(to bottom, rgba(24,29,83,100), rgba(255,255,255,0)), url('./src/assets/planning/NoStream.webp')",
       },
     },
     fontFamily: {

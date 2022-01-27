@@ -7,7 +7,7 @@
     src: url("src/assets/font/earwig_factory_rg.ttf");
 }
 
-@layer components{
+@layer components {
 
     html,
     body {
@@ -15,19 +15,19 @@
         background-color: #f3f4f6;
     }
 
-    .page-title{
-        @apply text-4xl text-center text-indigo-950 font-bold
+    .page-title {
+        @apply mt-4 text-4xl text-center text-indigo-950 font-bold
     }
 
-    .page-subtitle{
+    .page-subtitle {
         @apply text-lg mt-7 md:mt-1 px-2 text-center text-indigo-950 font-bold
     }
 
-    .menu-item-triangle{
+    .menu-item-triangle {
         @apply bg-transparent inline-block fill-current text-indigo-150 opacity-0 transition duration-500 ease-in-out group-hover:opacity-100 ml-auto;
     }
 
-    .menu-item{
+    .menu-item {
         @apply py-2 flex cursor-pointer;
     }
 
