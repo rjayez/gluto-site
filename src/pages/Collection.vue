@@ -1,4 +1,5 @@
 <template>
+  <title>La collection de carte</title>
   <div class="mx-0">
     <h1 class="page-title">Votre collection</h1>
     <h2 class="page-subtitle">Toutes vos cartes tirés durant les streams sont ici !</h2>

@@ -1,4 +1,5 @@
 <template>
+  <title>Glutobot, bot du stream, descriptions des commandes et récompenses de chaîne</title>
   <div>
     <h1 class="page-title">Glutobot</h1>
     <h2 class="page-subtitle">pour vous servir !</h2>

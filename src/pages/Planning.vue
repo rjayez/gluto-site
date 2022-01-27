@@ -1,4 +1,5 @@
 <template>
+  <title>Le planning de la chaine twitch LeTetryl</title>
   <div class="block">
     <h1 class="page-title">Planning</h1>
     <h2 class="page-subtitle">{{ getSubtitle() }}</h2>

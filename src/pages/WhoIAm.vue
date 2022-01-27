@@ -1,4 +1,5 @@
 <template>
+  <title>Je suis LeTetryl, streamer pour votre plus grand plaisir</title>
   <div id="page" class="block lg:h-screen">
     <h1 class="page-title block">Bonjour</h1>
     <h2 class="mt-7 text-center text-lg font-bold text-indigo-950 md:mt-1">
@@ -22,8 +23,8 @@
         >
           <h3 class="mb-3 text-2xl font-bold">Ça se prononce [Té&#8209;Trille]</h3>
           <p>
-            Moi, c'est Tetryl, je joue aux jeux vidéo depuis fort longtemps. J'aime beaucoup les RPG, et c'est même le
-            thème principal de cette chaîne, mais je joue à beaucoup de choses.
+            Moi, c'est LeTetryl ou Tetryl, je joue aux jeux vidéo depuis fort longtemps. J'aime beaucoup les RPG, et
+            c'est même le thème principal de cette chaîne, mais je joue à beaucoup de choses.
           </p>
           <p class="flex flex-row justify-center">
             <img
