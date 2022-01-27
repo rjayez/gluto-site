@@ -10,6 +10,8 @@
         class="max-w-1/2 my-3 mx-auto max-h-[600px] rounded-md border-2 border-solid border-indigo-150 md:my-4 lg:max-h-[800px] xl:mx-0"
         src="../assets/webp/millie-bg.webp"
         alt="Millie La BG"
+        height="985"
+        width="739"
       />
 
       <div class="flex flex-col lg:h-4/5 xl:-ml-20 xl:w-1/2">
