@@ -37,7 +37,7 @@
       </div>
       <div class="w-full">
         <p class="text-md text-center font-bold text-indigo-500">
-          <a href="https://discord.com/channels/702225866075275317/933721863027306576">
+          <a href="discord://discord.com/channels/702225866075275317/936288740450656316">
             <img class="inline-block" src="../assets/rs-discord.png" alt="logo discord" /> Le discord</a
           >
         </p>
