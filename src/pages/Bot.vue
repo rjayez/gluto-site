@@ -2,32 +2,32 @@
   <div>
     <h1 class="page-title">Glutobot</h1>
     <h2 class="page-subtitle">pour vous servir !</h2>
-    <div class="bg-indigo-950 p-4 mt-8 border-t-4 border-indigo-750 rounded-sm">
-      <div class="flex flex-col lg:flex-row justify-center align-middle">
-        <img src="../assets/webp/Glutobot.webp" class="w-40 h-40 mb-5 lg:mb-0 mx-auto lg:mx-0" alt="Glutobot" />
+    <div class="mt-8 rounded-sm border-t-4 border-indigo-750 bg-indigo-950 p-4">
+      <div class="flex flex-col justify-center align-middle lg:flex-row">
+        <img src="../assets/webp/Glutobot.webp" class="mx-auto mb-5 h-40 w-40 lg:mx-0 lg:mb-0" alt="Glutobot" />
         <div class="lg:my-auto">
           <p
-            class="bg-gradient-to-r from-indigo-775 to-indigo-650 rounded-md ring-2 ring-gray-200 p-2 lg:p-4 text-white md:mx-10"
+            class="rounded-md bg-gradient-to-r from-indigo-775 to-indigo-650 p-2 text-white ring-2 ring-gray-200 md:mx-10 lg:p-4"
           >
             Salut, moi, c'est GlutoBot. J’ai été créé pour vous aider à vous divertir de la meilleure des manières. Je
             dors beaucoup.
           </p>
         </div>
       </div>
-      <h3 class="text-indigo-150 text-lg font-bold mt-10">Point de chaine</h3>
-      <table class="table bg-indigo-950 text-white p-2 text-sm w-full">
+      <h3 class="mt-10 text-lg font-bold text-indigo-150">Point de chaine</h3>
+      <table class="table w-full bg-indigo-950 p-2 text-sm text-white">
         <thead class="border-4 border-indigo-950">
           <tr>
             <th class="w-1/5">Nom</th>
             <th class="w-4/5">Description</th>
           </tr>
         </thead>
-        <tbody class="border-indigo-950 m-4">
-          <tr class="table-row m-2">
+        <tbody class="m-4 border-indigo-950">
+          <tr class="m-2 table-row">
             <td class="">
               <div class="flex flex-col lg:flex-row">
                 <img
-                  class="place-self-center lg:place-self-center lg:place-self-start mr-3 mb-2 mb-2"
+                  class="mr-3 mb-2 mb-2 place-self-center lg:place-self-start lg:place-self-center"
                   src="../assets/rewards/ne_fait_rien.svg"
                   alt="logo Ne fait rien"
                   width="32"
@@ -42,7 +42,7 @@
             <td>
               <div class="flex flex-col lg:flex-row">
                 <img
-                  class="place-self-center lg:place-self-start mr-3 mb-2"
+                  class="mr-3 mb-2 place-self-center lg:place-self-start"
                   src="../assets/rewards/message_avant.svg"
                   alt="logo Ne fait rien"
                   width="32"
@@ -60,7 +60,7 @@
             <td>
               <div class="flex flex-col lg:flex-row">
                 <img
-                  class="place-self-center lg:place-self-start mr-3 mb-2"
+                  class="mr-3 mb-2 place-self-center lg:place-self-start"
                   src="../assets/rewards/emote_unlock.svg"
                   alt="logo Ne fait rien"
                   width="32"
@@ -77,7 +77,7 @@
             <td>
               <div class="flex flex-col lg:flex-row">
                 <img
-                  class="place-self-center lg:place-self-start mr-3 mb-2"
+                  class="mr-3 mb-2 place-self-center lg:place-self-start"
                   src="../assets/rewards/Intense_reflexion.svg"
                   alt="logo Ne fait rien"
                   width="32"
@@ -91,7 +91,7 @@
             <td>
               <div class="flex flex-col lg:flex-row">
                 <img
-                  class="place-self-center lg:place-self-start mr-3 mb-2"
+                  class="mr-3 mb-2 place-self-center lg:place-self-start"
                   src="../assets/rewards/modif_emote.svg"
                   alt="logo Ne fait rien"
                   width="32"
@@ -108,7 +108,7 @@
             <td>
               <div class="flex flex-col lg:flex-row">
                 <img
-                  class="place-self-center lg:place-self-start mr-3 mb-2"
+                  class="mr-3 mb-2 place-self-center lg:place-self-start"
                   src="../assets/rewards/Succes.svg"
                   alt="logo Ne fait rien"
                   width="32"
@@ -123,16 +123,16 @@
           </tr>
         </tbody>
       </table>
-      <h3 class="text-indigo-150 text-lg font-bold mt-10">Commandes</h3>
-      <table class="table bg-indigo-950 text-white p-2 text-sm w-full">
+      <h3 class="mt-10 text-lg font-bold text-indigo-150">Commandes</h3>
+      <table class="table w-full bg-indigo-950 p-2 text-sm text-white">
         <thead class="border-4 border-indigo-950">
           <tr>
             <th class="w-1/5">Commande</th>
             <th class="w-4/5">Description</th>
           </tr>
         </thead>
-        <tbody class="border-indigo-950 m-4">
-          <tr class="table-row m-2">
+        <tbody class="m-4 border-indigo-950">
+          <tr class="m-2 table-row">
             <td>!chaise</td>
             <td>
               N’hésitez pas à prévenir Tétryl que ce qu’il regarde depuis 2 minutes est en réalité un meuble destiné à
@@ -195,6 +195,6 @@ td:first-child {
 }
 
 td {
-  @apply bg-indigo-850 border-indigo-950 border-4 m-2 p-2;
+  @apply m-2 border-4 border-indigo-950 bg-indigo-850 p-2;
 }
 </style>

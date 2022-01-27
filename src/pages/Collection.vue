@@ -2,59 +2,59 @@
   <div class="mx-0">
     <h1 class="page-title">Votre collection</h1>
     <h2 class="page-subtitle">Toutes vos cartes tirés durant les streams sont ici !</h2>
-    <div class="flex flex-col md:flex-row m-2">
-      <select class="p-2 my-2 w-72 rounded-lg bg-indigo-950 text-indigo-150 mx-auto">
+    <div class="m-2 flex flex-col md:flex-row">
+      <select class="my-2 mx-auto w-72 rounded-lg bg-indigo-950 p-2 text-indigo-150">
         <option selected disabled>Sélectionne la série</option>
         <option>Le starter pack</option>
         <option class="bg-indigo-850">Les petites bouboules</option>
         <option>La commu</option>
       </select>
-      <select class="p-2 my-2 w-72 rounded-lg bg-indigo-950 text-indigo-150 mx-auto" name="Rareté">
+      <select class="my-2 mx-auto w-72 rounded-lg bg-indigo-950 p-2 text-indigo-150" name="Rareté">
         <option selected disabled>Rareté</option>
         <option>Commune</option>
         <option class="bg-indigo-850">Rare</option>
         <option>Légendaire</option>
       </select>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 px-4 justify-evenly my-5">
+    <div class="my-5 grid grid-cols-1 justify-evenly gap-5 px-4 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       <div v-for="card in cards" class="mx-auto my-4">
         <img
           v-if="card.revealed"
           :src="card.url"
           alt="Carte face recto"
-          class="object-scale-down h-[361px] w-[253px] hover:shadow-2xl hover:shadow-violet-500 hover:rounded-xl cursor-pointer"
+          class="h-[361px] w-[253px] cursor-pointer object-scale-down hover:rounded-xl hover:shadow-2xl hover:shadow-violet-500"
           @click="showDetails(card)"
         />
         <img
           v-else
           src="../assets/cards/back.png"
           alt="Carte face verso"
-          class="object-scale-down h-[361px] w-[253px] hover:shadow-2xl hover:shadow-violet-500 hover:rounded-xl"
+          class="h-[361px] w-[253px] object-scale-down hover:rounded-xl hover:shadow-2xl hover:shadow-violet-500"
         />
       </div>
     </div>
   </div>
   <div
     v-if="showCardDetails"
-    class="fixed top-0 left-0 h-screen w-screen pt-32 xl:pt-0 z-50 backdrop-grayscale backdrop-contrast-150 overflow-scroll backdrop-brightness-50 backdrop-blur-sm flex flex-col xl:flex-row justify-center items-center"
+    class="fixed top-0 left-0 z-50 flex h-screen w-screen flex-col items-center justify-center overflow-scroll pt-32 backdrop-blur-sm backdrop-brightness-50 backdrop-contrast-150 backdrop-grayscale xl:flex-row xl:pt-0"
   >
     <img
       :src="imgCard.card3"
       alt="Carte detaille"
-      class="object-scale-down mt-32 mb-8 max-w-[390px] mx-10 hover:shadow-2xl hover:shadow-violet-500 rounded-2xl cursor-pointer"
+      class="mx-10 mt-32 mb-8 max-w-[390px] cursor-pointer rounded-2xl object-scale-down hover:shadow-2xl hover:shadow-violet-500"
     />
-    <div class="text-indigo-150 max-w-[390px] text-xl px-4 mb-32 lg:ml-10">
+    <div class="mb-32 max-w-[390px] px-4 text-xl text-indigo-150 lg:ml-10">
       <p>Description</p>
       <p class="my-10">Incarnation : Glutobot</p>
       <p>Bienvenue dans la secte, installez vous, on a du fromage !</p>
     </div>
     <div
-      class="absolute block top-0 right-0 h-5 w-7 m-3 z-40 cursor-pointer opacity-100 scale-100 lg:scale-150"
+      class="absolute top-0 right-0 z-40 m-3 block h-5 w-7 scale-100 cursor-pointer opacity-100 lg:scale-150"
       @click="closeDetails"
     >
       <label class="h-5 w-7">
-        <span class="absolute block top-0 left-0 h-0 w-7 ring-2 ring-indigo-750 origin-top-left rotate-45"></span>
-        <span class="absolute block bottom-0 right-0 h-0 w-7 ring-2 ring-indigo-750 origin-top-left -rotate-45"></span>
+        <span class="absolute top-0 left-0 block h-0 w-7 origin-top-left rotate-45 ring-2 ring-indigo-750"></span>
+        <span class="absolute bottom-0 right-0 block h-0 w-7 origin-top-left -rotate-45 ring-2 ring-indigo-750"></span>
       </label>
     </div>
   </div>

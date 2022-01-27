@@ -1,22 +1,22 @@
 <template>
-  <div class="font-EarwigFactory text-center text-4xl">{{ planning.jour }}</div>
-  <div class="text-xl text-center mt-2">{{ getDateJourMois(planning.date) }}</div>
+  <div class="text-center font-EarwigFactory text-4xl">{{ planning.jour }}</div>
+  <div class="mt-2 text-center text-xl">{{ getDateJourMois(planning.date) }}</div>
 
   <div
     v-if="planning.streams.length === 0"
-    class="p-3 mt-3 bg-cover bg-no-repeat bg-center text-white h-96 shadow-2xl rounded-lg bg-no-stream"
+    class="mt-3 h-96 rounded-lg bg-no-stream bg-cover bg-center bg-no-repeat p-3 text-white shadow-2xl"
     :class="{ 'opacity-40': planning.estPassee }"
   >
-    <div class="text-left mt-4">Pas de stream prévu !</div>
+    <div class="mt-4 text-left">Pas de stream prévu !</div>
   </div>
 
   <div
     v-if="planning.streams.length === 1"
-    class="p-3 mt-3 bg-cover bg-no-repeat bg-center text-white h-96 shadow-2xl rounded-lg"
+    class="mt-3 h-96 rounded-lg bg-cover bg-center bg-no-repeat p-3 text-white shadow-2xl"
     :class="{ 'opacity-40': planning.streams[0].estPassee }"
     v-bind:style="getBackgroundStyle(planning.streams[0].imageJeuUrl)"
   >
-    <div class="text-left mt-4">{{ planning.streams[0].titre }}</div>
+    <div class="mt-4 text-left">{{ planning.streams[0].titre }}</div>
     <div class="text-left">{{ planning.streams[0].jeu }}</div>
     <div class="text-left">
       Débute à
@@ -26,11 +26,11 @@
 
   <div v-if="planning.streams.length > 1">
     <div
-      class="p-3 mt-3 bg-cover bg-no-repeat bg-center text-white h-[11.5rem] shadow-2xl rounded-lg"
+      class="mt-3 h-[11.5rem] rounded-lg bg-cover bg-center bg-no-repeat p-3 text-white shadow-2xl"
       :class="{ 'opacity-40': planning.streams[0].estPassee }"
       v-bind:style="getBackgroundStyle(planning.streams[0].imageJeuUrl)"
     >
-      <div class="text-left mt-4">{{ planning.streams[0].titre }}</div>
+      <div class="mt-4 text-left">{{ planning.streams[0].titre }}</div>
       <div class="text-left">{{ planning.streams[0].jeu }}</div>
       <div class="text-left">
         Débute à
@@ -39,11 +39,11 @@
     </div>
 
     <div
-      class="p-3 mt-3 bg-cover bg-no-repeat bg-center text-white h-[11.5rem] shadow-2xl rounded-lg"
+      class="mt-3 h-[11.5rem] rounded-lg bg-cover bg-center bg-no-repeat p-3 text-white shadow-2xl"
       :class="{ 'opacity-40': planning.streams[1].estPassee }"
       v-bind:style="getBackgroundStyle(planning.streams[1].imageJeuUrl)"
     >
-      <div class="text-left mt-4">{{ planning.streams[1].titre }}</div>
+      <div class="mt-4 text-left">{{ planning.streams[1].titre }}</div>
       <div class="text-left">{{ planning.streams[1].jeu }}</div>
       <div class="text-left">
         Débute à

@@ -1,24 +1,24 @@
 <template>
   <div id="page" class="block lg:h-screen">
-    <h1 class="block page-title">Bonjour</h1>
-    <h2 class="mt-7 text-lg font-bold text-center md:mt-1 text-indigo-950">
+    <h1 class="page-title block">Bonjour</h1>
+    <h2 class="mt-7 text-center text-lg font-bold text-indigo-950 md:mt-1">
       Ici c'est la fête tous les jours (sauf le lundi)
     </h2>
-    <div class="xl:flex xl:flex-row lg:justify-center justify-items-center h-4/5 mt-5">
+    <div class="mt-5 justify-items-center lg:justify-center xl:flex xl:flex-row">
       <img
-        class="my-3 rounded-md border-2 border-solid md:my-4 border-indigo-150 mx-auto xl:mx-0 max-w-1/2"
+        class="max-w-1/2 my-3 mx-auto max-h-[600px] rounded-md border-2 border-solid border-indigo-150 md:my-4 lg:max-h-[800px] xl:mx-0"
         src="../assets/webp/millie-bg.webp"
         alt="Millie La BG"
       />
 
-      <div class="flex flex-col xl:-ml-20 xl:w-1/2 lg:h-4/5">
+      <div class="flex flex-col lg:h-4/5 xl:-ml-20 xl:w-1/2">
         <img
           src="../assets/accueil/gluants-accueil.svg"
           alt="paire de gluants"
           class="z-0 ml-auto -mb-2 mr-5 max-h-28 justify-self-end"
         />
         <div
-          class="p-5 mb-3 text-left rounded-md border-2 border-solid shadow-xl lg:mb-16 bg-indigo-950 text-indigo-150"
+          class="mb-3 rounded-md border-2 border-solid bg-indigo-950 p-5 text-left text-indigo-150 shadow-xl lg:mb-16"
         >
           <h3 class="mb-3 text-2xl font-bold">Ça se prononce [Té&#8209;Trille]</h3>
           <p>
