@@ -1,14 +1,13 @@
 import { createApp, h } from "vue";
 
 import App from "./App.vue";
-// import Drops from "./Drops.vue";
 import "../index.css";
 
 const NotFoundComponent = { template: "<p>Page not found</p>" };
 
 const routes = {
   "/": App,
-  // "/drops": Drops,
+  "/drops": () => import("./Drops.vue"),
 };
 
 const Router = {
