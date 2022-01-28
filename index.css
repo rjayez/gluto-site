@@ -16,7 +16,7 @@
     }
 
     .page-title {
-        @apply mt-4 text-4xl text-center text-indigo-950 font-bold
+        @apply pt-4 text-4xl text-center text-indigo-950 font-bold
     }
 
     .page-subtitle {
