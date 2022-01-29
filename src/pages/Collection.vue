@@ -2,38 +2,39 @@
   <title>La collection de carte</title>
   <div class="mx-0">
     <h1 class="page-title">Votre collection</h1>
-    <h2 class="page-subtitle">Toutes vos cartes tirés durant les streams sont ici !</h2>
-    <div class="m-2 flex flex-col md:flex-row">
-      <select class="my-2 mx-auto w-72 rounded-lg bg-indigo-950 p-2 text-indigo-150">
-        <option selected disabled>Sélectionne la série</option>
-        <option>Le starter pack</option>
-        <option class="bg-indigo-850">Les petites bouboules</option>
-        <option>La commu</option>
-      </select>
-      <select class="my-2 mx-auto w-72 rounded-lg bg-indigo-950 p-2 text-indigo-150" name="Rareté">
-        <option selected disabled>Rareté</option>
-        <option>Commune</option>
-        <option class="bg-indigo-850">Rare</option>
-        <option>Légendaire</option>
-      </select>
-    </div>
-    <div class="my-5 grid grid-cols-1 justify-evenly gap-5 px-4 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-      <div v-for="card in cards" class="mx-auto my-4">
-        <img
-          v-if="card.revealed"
-          :src="card.url"
-          alt="Carte face recto"
-          class="h-[361px] w-[253px] cursor-pointer object-scale-down hover:rounded-xl hover:shadow-2xl hover:shadow-violet-500"
-          @click="showDetails(card)"
-        />
-        <img
-          v-else
-          src="../assets/cards/back.png"
-          alt="Carte face verso"
-          class="h-[361px] w-[253px] object-scale-down hover:rounded-xl hover:shadow-2xl hover:shadow-violet-500"
-        />
-      </div>
-    </div>
+    <!--    <h2 class="page-subtitle">Toutes vos cartes tirés durant les streams sont ici !</h2>-->
+    <img src="../assets/webp/Cartes-WIP.webp" height="678" width="900" class="mx-auto mt-12" />
+    <!--    <div class="m-2 flex flex-col md:flex-row">-->
+    <!--      <select class="my-2 mx-auto w-72 rounded-lg bg-indigo-950 p-2 text-indigo-150">-->
+    <!--        <option selected disabled>Sélectionne la série</option>-->
+    <!--        <option>Le starter pack</option>-->
+    <!--        <option class="bg-indigo-850">Les petites bouboules</option>-->
+    <!--        <option>La commu</option>-->
+    <!--      </select>-->
+    <!--      <select class="my-2 mx-auto w-72 rounded-lg bg-indigo-950 p-2 text-indigo-150" name="Rareté">-->
+    <!--        <option selected disabled>Rareté</option>-->
+    <!--        <option>Commune</option>-->
+    <!--        <option class="bg-indigo-850">Rare</option>-->
+    <!--        <option>Légendaire</option>-->
+    <!--      </select>-->
+    <!--    </div>-->
+    <!--    <div class="my-5 grid grid-cols-1 justify-evenly gap-5 px-4 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">-->
+    <!--      <div v-for="card in cards" class="mx-auto my-4">-->
+    <!--        <img-->
+    <!--          v-if="card.revealed"-->
+    <!--          :src="card.url"-->
+    <!--          alt="Carte face recto"-->
+    <!--          class="h-[361px] w-[253px] cursor-pointer object-scale-down hover:rounded-xl hover:shadow-2xl hover:shadow-violet-500"-->
+    <!--          @click="showDetails(card)"-->
+    <!--        />-->
+    <!--        <img-->
+    <!--          v-else-->
+    <!--          src="../assets/cards/back.png"-->
+    <!--          alt="Carte face verso"-->
+    <!--          class="h-[361px] w-[253px] object-scale-down hover:rounded-xl hover:shadow-2xl hover:shadow-violet-500"-->
+    <!--        />-->
+    <!--      </div>-->
+    <!--    </div>-->
   </div>
   <div
     v-if="showCardDetails"

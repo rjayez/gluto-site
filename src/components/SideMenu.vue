@@ -38,19 +38,22 @@
       </div>
       <div class="mx-8 flex justify-evenly gap-4">
         <a class="hover:opacity-80" href="https://www.twitch.tv/letetryl"
-        ><img class="h-5" src="../assets/svg/rs-twitch.svg" alt="icone twitch"
+          ><img class="h-5" height="20" src="../assets/svg/rs-twitch.svg" alt="icone twitch"
         /></a>
         <a class="hover:opacity-80" href="https://www.youtube.com/user/DilanNoKaze"
-        ><img class="h-5" src="../assets/svg/rs-youtube.svg" alt="icone youtube"
+          ><img class="h-5" height="20" src="../assets/svg/rs-youtube.svg" alt="icone youtube"
         /></a>
         <a class="hover:opacity-80" href="https://twitter.com/LeTetryl"
-        ><img class="h-5" src="../assets/svg/rs-twitter.svg" alt="icone twitter"
+          ><img class="h-5" height="20" src="../assets/svg/rs-twitter.svg" alt="icone twitter"
         /></a>
         <a class="hover:opacity-80" href="https://www.instagram.com/tetryl_"
-        ><img class="h-5" src="../assets/svg/rs-insta.svg" alt="icone instagram"
+          ><img class="h-5" height="20" src="../assets/svg/rs-insta.svg" alt="icone instagram"
         /></a>
         <a class="hover:opacity-80" href="https://discord.gg/K22x6Qkwwu"
-        ><img class="h-5" src="../assets/svg/rs-discord.svg" alt="icone discord"
+          ><img class="h-5" height="20" src="../assets/svg/rs-discord.svg" alt="icone discord"
+        /></a>
+        <a class="hover:opacity-80" href="https://www.tiktok.com/@letetryl"
+          ><img class="h-5" height="20" src="../assets/svg/rs-tiktok.svg" alt="icone tiktok"
         /></a>
       </div>
 
@@ -93,7 +96,7 @@
         </div>
       </nav>
       <a class="absolute bottom-1 ml-10 mb-10 block text-lg" @click="showIssueModal = true"
-      ><label class="cursor-pointer">Un bug / une idée ?</label></a
+        ><label class="cursor-pointer">Un bug / une idée ?</label></a
       >
     </div>
   </div>
