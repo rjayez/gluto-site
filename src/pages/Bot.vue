@@ -70,8 +70,8 @@
               </div>
             </td>
             <td>
-              Une émote de qualité faite à la main avec amour est débloquée, si vous êtes déjà un des héros de la chaîne
-              via un Sub vous avez déjà accès à tout !
+              Une émote de qualité faite à la main avec amour est débloquée, si vous êtes déjà l'un des héros de la
+              chaîne via un Sub vous avez déjà accès à tout !
             </td>
           </tr>
           <tr class="table-row">
@@ -101,7 +101,7 @@
               </div>
             </td>
             <td>
-              Allez-y dites le que les émotes ne vous plaisent pas ! Vous voulez le faire à sa place ? Eh bien faites le
+              Allez-y dites-le que les émotes ne vous plaisent pas ! Vous voulez le faire à sa place ? Eh bien faites-le
               !
             </td>
           </tr>
@@ -118,7 +118,7 @@
               </div>
             </td>
             <td>
-              Vous voulez récompenser Tétryl ou au contraire vous moquer gentiment de lui ? Passez un succès spécial
+              Vous désirez récompenser Tétryl ou au contraire vous moquer gentiment de lui ? Passez un succès spécial
               pendant le stream !
             </td>
           </tr>

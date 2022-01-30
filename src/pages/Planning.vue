@@ -38,7 +38,6 @@ export default {
   methods: {
     fetchSchedules: async function () {
       this.streams = await getSchedule();
-      console.log(this.streams);
     },
     getSubtitle: function () {
       const debutSemaine = DateTime.now().set({ weekday: 1 });

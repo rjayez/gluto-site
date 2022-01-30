@@ -66,7 +66,7 @@
           </p>
 
           <p>
-            Tout ce que vous verrez comme overlay, emote, alerte est réalisée avec amour par moi-même ! J’ai envie que
+            Tout ce que vous verrez comme overlay, emote, alerte est réalisé avec amour par moi-même ! J’ai envie que
             cette chaîne me ressemble, c’est pour cela que je cherche à faire un maximum de choses avec mes petites
             mains. Vous comprendrez ainsi que chaque soutien, peu importe la forme, me fait ultra plaisir&nbsp;!
           </p>
