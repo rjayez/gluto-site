@@ -3,7 +3,7 @@
     <SideMenu />
     <!--  Div avec une marge de la largeur du side menu pour compenser la fixed position -->
     <div class="lg:ml-64">
-      <component id="page-component" class="mx-5 flex-auto pt-6 md:mx-8 lg:mx-4" :is="CurrentComponent" />
+      <component id="page-component" class="mx-2 flex-auto pt-6 md:mx-8 lg:mx-4" :is="CurrentComponent" />
     </div>
     <LiveNotification />
   </div>

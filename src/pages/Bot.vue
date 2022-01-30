@@ -3,7 +3,7 @@
   <div>
     <h1 class="page-title">Glutobot</h1>
     <h2 class="page-subtitle">pour vous servir !</h2>
-    <div class="mx-2 mt-8 rounded-sm border-t-4 border-indigo-750 bg-indigo-950 p-4 lg:mx-8">
+    <div class="mt-8 rounded-sm border-t-4 border-indigo-750 bg-indigo-950 p-4 lg:mx-8">
       <div class="flex flex-col justify-center align-middle lg:flex-row">
         <img src="../assets/webp/Glutobot.webp" class="mx-auto mb-5 h-40 w-40 lg:mx-0 lg:mb-0" alt="Glutobot" />
         <div class="lg:my-auto">
