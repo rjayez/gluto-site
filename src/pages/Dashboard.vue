@@ -1,17 +1,20 @@
 <template>
-  <input type="button" value="coucou" @click="test" />
-  <form enctype="multipart/form-data" id="uploadForm" @submit="upload">
-    <label>File:</label>
-    <input type="file" name="file" required /> <br />
-    <input type="submit" name="submit" value="Upload to Amazon S3" />
-  </form>
+  <div class="flex">
+    <DashboardMenu class="" />
+    <div class="flex pt-6">
+      <CardAdd />
+    </div>
+  </div>
 </template>
 
 <script>
 import { uploadCards } from "../services/cards";
+import DashboardMenu from "../components/dashboard/DashboardMenu.vue";
+import CardAdd from "../components/dashboard/CardAdd.vue";
 
 export default {
   name: "Dashboard",
+  components: { CardAdd, DashboardMenu },
   methods: {
     upload: function (event) {
       event.preventDefault();
