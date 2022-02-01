@@ -3,9 +3,9 @@
   <div id="page" class="block lg:h-screen">
     <h1 class="page-title block">Le Tétryl</h1>
     <h2 class="mt-7 text-center text-lg font-bold text-indigo-950 md:mt-1">Steamer RPG et pas que&nbsp;!</h2>
-    <div class="mt-5 justify-items-center lg:justify-center xl:flex xl:flex-row">
+    <div class="mt-4 justify-items-center lg:justify-center xl:flex xl:flex-row">
       <img
-        class="max-w-1/2 my-3 mx-auto max-h-[600px] rounded-md border-2 border-solid border-indigo-150 md:my-4 lg:max-h-[800px] xl:mx-0"
+        class="max-w-1/2 my-3 mx-auto max-h-[600px] rounded-md border-2 border-solid border-indigo-150 md:mt-3 lg:max-h-[800px] xl:mx-0"
         src="../assets/webp/millie-bg.webp"
         alt="Millie La BG"
         height="985"
@@ -32,28 +32,28 @@
           </p>
           <p class="flex flex-row justify-center">
             <img
-              class="my-2 mx-4"
+              class="my-0.5 mx-4"
               src="../assets/emotes/Emote_Salut.svg"
               width="32"
               height="32"
               alt="emote salut les glutos"
             />
             <img
-              class="my-2 mx-4"
+              class="my-0.5 mx-4"
               src="../assets/emotes/Emote_Salut.svg"
               width="32"
               height="32"
               alt="emote salut les glutos"
             />
             <img
-              class="my-2 mx-4"
+              class="my-0.5 mx-4"
               src="../assets/emotes/Emote_Salut.svg"
               width="32"
               height="32"
               alt="emote salut les glutos"
             />
           </p>
-          <h3 class="mt-5 mb-3 text-2xl font-bold">Pourquoi Twitch&nbsp;?</h3>
+          <h3 class="mb-3 text-2xl font-bold">Pourquoi Twitch&nbsp;?</h3>
           <p>
             Vous l’aurez compris je suis donc un streamer Français, et j’ai créé mon Twitch pour partager ma passion du
             RPG et ma bonne humeur. Je joue sur tous supports, mais majoritairement sur Switch, si vous aimez ce que
@@ -72,13 +72,13 @@
           </p>
 
           <p class="flex flex-row justify-center">
-            <img class="my-2 mx-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote GG Easy" />
-            <img class="my-2 mx-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote GG Easy" />
-            <img class="my-2 mx-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote GG Easy" />
+            <img class="my-0.5 mx-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote GG Easy" />
+            <img class="my-0.5 mx-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote GG Easy" />
+            <img class="my-0.5 mx-4" src="../assets/emotes/GGEZ.svg" width="32" height="32" alt="emote GG Easy" />
           </p>
           <p>J'espère que vous apprécierez le contenu que je crée, j'espère à bientôt sur le Tchat de Twitch&nbsp;!</p>
 
-          <a class="mt-7 mb-2 flex justify-center" href="https://twitch.tv/letetryl">
+          <a class="mt-51 flex justify-center" href="https://twitch.tv/letetryl">
             <button
               type="button"
               class="flex w-full items-center justify-center rounded-lg bg-indigo-750 py-2 px-4 text-center text-base font-semibold text-white shadow-md transition duration-200 ease-in hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-200"
