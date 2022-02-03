@@ -1,5 +1,4 @@
 <template>
-  <!--  <title>Glutobot, bot du stream, descriptions des commandes et récompenses de chaîne</title>-->
   <div>
     <h1 class="page-title">Glutobot</h1>
     <h2 class="page-subtitle">pour vous servir !</h2>
@@ -8,8 +7,7 @@
         <img src="../assets/webp/Glutobot.webp" class="mx-auto mb-5 h-40 w-40 lg:mx-0 lg:mb-0" alt="Glutobot" />
         <div class="lg:my-auto">
           <p
-            class="rounded-md bg-gradient-to-r from-indigo-775 to-indigo-650 p-2 text-white ring-2 ring-gray-200 md:mx-10 lg:p-4"
-          >
+            class="rounded-md bg-gradient-to-r from-indigo-775 to-indigo-650 p-2 text-white ring-2 ring-gray-200 md:mx-10 lg:p-4">
             Salut, moi, c'est GlutoBot. J’ai été créé pour vous aider à vous divertir de la meilleure des manières. Je
             dors beaucoup.
           </p>
@@ -32,8 +30,7 @@
                   src="../assets/rewards/ne_fait_rien.svg"
                   alt="logo Ne fait rien"
                   width="32"
-                  height="32"
-                />
+                  height="32" />
                 <label class="place-self-center">Ceci ne fait absolument rien</label>
               </div>
             </td>
@@ -47,8 +44,7 @@
                   src="../assets/rewards/message_avant.svg"
                   alt="logo Ne fait rien"
                   width="32"
-                  height="32"
-                />
+                  height="32" />
                 <span class="place-self-center">Mettre mon message en avant</span>
               </div>
             </td>
@@ -65,8 +61,7 @@
                   src="../assets/rewards/emote_unlock.svg"
                   alt="logo Ne fait rien"
                   width="32"
-                  height="32"
-                /><span class="place-self-center">Choisir une émoticône à débloquer</span>
+                  height="32" /><span class="place-self-center">Choisir une émoticône à débloquer</span>
               </div>
             </td>
             <td>
@@ -82,8 +77,7 @@
                   src="../assets/rewards/Intense_reflexion.svg"
                   alt="logo Ne fait rien"
                   width="32"
-                  height="32"
-                /><span class="place-self-center">Intense Réflexion</span>
+                  height="32" /><span class="place-self-center">Intense Réflexion</span>
               </div>
             </td>
             <td>On a tous besoin d’un petit coup de pouce dans les moments où réfléchir c’est compliqué.</td>
@@ -96,8 +90,7 @@
                   src="../assets/rewards/modif_emote.svg"
                   alt="logo Ne fait rien"
                   width="32"
-                  height="32"
-                /><span class="place-self-center">Modifier une émoticône</span>
+                  height="32" /><span class="place-self-center">Modifier une émoticône</span>
               </div>
             </td>
             <td>
@@ -113,8 +106,7 @@
                   src="../assets/rewards/Succes.svg"
                   alt="logo Ne fait rien"
                   width="32"
-                  height="32"
-                /><span class="place-self-center">Succès débloqué</span>
+                  height="32" /><span class="place-self-center">Succès débloqué</span>
               </div>
             </td>
             <td>
@@ -186,7 +178,7 @@
 
 <script>
 export default {
-  name: "Bot!",
+  name: "Bot",
 };
 </script>
 

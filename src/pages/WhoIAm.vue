@@ -1,16 +1,15 @@
 <template>
   <title>Je suis LeTetryl, streamer pour votre plus grand plaisir</title>
-  <div id="page" class="block lg:h-screen">
+  <div id="page" class="mx-0 block lg:mx-2 lg:h-screen">
     <h1 class="page-title block">Le Tétryl</h1>
     <h2 class="mt-7 text-center text-lg font-bold text-indigo-950 md:mt-1">Steamer RPG et pas que&nbsp;!</h2>
     <div class="mt-4 justify-items-center lg:justify-center xl:flex xl:flex-row">
       <img
-        class="max-w-1/2 my-3 mx-auto max-h-[600px] rounded-md border-2 border-solid border-indigo-150 md:mt-3 lg:max-h-[800px] xl:mx-0"
-        src="../assets/webp/millie-bg.webp"
+        class="max-w-1/2 my-3 mx-auto mx-auto flex w-[513px] rounded-md border-solid border-indigo-150 object-contain sm:h-[400px] md:mt-3 md:h-[600px] lg:h-[800px] lg:w-[685px] lg:border-2 xl:mx-0"
+        src="../assets/accueil/Angoisse_V2.webp"
         alt="Millie La BG"
-        height="985"
-        width="739"
-      />
+        height="942"
+        width="806" />
 
       <div class="flex flex-col lg:h-4/5 xl:-ml-20 xl:w-1/2">
         <img
@@ -18,11 +17,9 @@
           alt="paire de gluants"
           class="z-0 ml-auto -mb-2 mr-5 max-h-28 justify-self-end"
           width="213"
-          height="112"
-        />
+          height="112" />
         <div
-          class="mb-3 rounded-md border-2 border-solid bg-indigo-950 p-5 text-left text-indigo-150 shadow-xl lg:mb-16"
-        >
+          class="mb-3 rounded-md border-2 border-solid bg-indigo-950 p-5 text-left text-indigo-150 shadow-xl lg:mb-16">
           <h3 class="mb-3 text-2xl font-bold">Ça se prononce [Té&#8209;Trille]</h3>
           <p>
             Moi, c'est LeTetryl ou Tetryl, je joue aux jeux vidéo depuis fort longtemps. J'aime beaucoup les RPG. C'est
@@ -36,22 +33,19 @@
               src="../assets/emotes/Emote_Salut.svg"
               width="32"
               height="32"
-              alt="emote salut les glutos"
-            />
+              alt="emote salut les glutos" />
             <img
               class="my-0.5 mx-4"
               src="../assets/emotes/Emote_Salut.svg"
               width="32"
               height="32"
-              alt="emote salut les glutos"
-            />
+              alt="emote salut les glutos" />
             <img
               class="my-0.5 mx-4"
               src="../assets/emotes/Emote_Salut.svg"
               width="32"
               height="32"
-              alt="emote salut les glutos"
-            />
+              alt="emote salut les glutos" />
           </p>
           <h3 class="mb-3 text-2xl font-bold">Pourquoi Twitch&nbsp;?</h3>
           <p>
@@ -81,8 +75,7 @@
           <a class="mt-51 flex justify-center" href="https://twitch.tv/letetryl">
             <button
               type="button"
-              class="flex w-full items-center justify-center rounded-lg bg-indigo-750 py-2 px-4 text-center text-base font-semibold text-white shadow-md transition duration-200 ease-in hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-200"
-            >
+              class="flex w-full items-center justify-center rounded-lg bg-indigo-750 py-2 px-4 text-center text-base font-semibold text-white shadow-md transition duration-200 ease-in hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-200">
               <img src="../assets/rs-twitch.png" alt="icone twitch" class="mr-3 h-6" /> Venez me découvrir !
             </button>
           </a>
