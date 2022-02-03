@@ -5,7 +5,7 @@
     <h2 class="mt-7 text-center text-lg font-bold text-indigo-950 md:mt-1">Steamer RPG et pas que&nbsp;!</h2>
     <div class="mt-4 justify-items-center lg:justify-center xl:flex xl:flex-row">
       <img
-        class="max-w-1/2 my-3 mx-auto mx-auto flex w-[513px] rounded-md border-solid border-indigo-150 object-contain sm:h-[400px] md:mt-3 md:h-[600px] lg:h-[800px] lg:w-[685px] lg:border-2 xl:mx-0"
+        class="max-w-1/2 mx-auto mx-auto mt-3 flex h-[400px] w-[513px] rounded-md border-solid border-indigo-150 object-contain md:mt-3 md:h-[600px] lg:h-[800px] lg:w-[685px] lg:border-2 xl:mx-0"
         src="../assets/accueil/Angoisse_V2.webp"
         alt="Millie La BG"
         height="942"
