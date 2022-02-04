@@ -13,9 +13,11 @@ const routes = {
 };
 
 const Router = {
-  data: () => ({
-    currentRoute: window.location.pathname,
-  }),
+  data() {
+    return {
+      currentRoute: window.location.pathname,
+    };
+  },
   computed: {
     CurrentComponent() {
       return routes[this.currentRoute] || App;

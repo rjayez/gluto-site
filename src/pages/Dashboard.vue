@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <DashboardMenu class="" />
+    <DashboardMenu />
     <div class="flex pt-6">
       <CardAdd />
     </div>

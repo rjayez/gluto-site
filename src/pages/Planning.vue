@@ -7,7 +7,8 @@
     <div v-if="!loading && streams.length === 0" class="mt-24 text-center text-xl font-bold">
       Désolé, mais GlutoBot n'a pas réussi à trouver le planning !
     </div>
-    <div class="mt-10 flex grid justify-items-center gap-3 pb-4 md:gap-6 md:px-10 lg:px-0" :class="gridCol">
+    <div
+      class="mt-10 flex grid justify-items-center gap-3 pb-4 md:grid-cols-2 md:gap-6 md:px-10 lg:px-0 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-7">
       <div class="w-52 justify-items-center" v-for="stream in streams">
         <Stream :planning="stream" />
       </div>
@@ -24,16 +25,11 @@ import Stream from "../components/Stream.vue";
 export default {
   name: "Planning",
   components: { Stream, Loader },
-  data: function () {
+  data() {
     return {
       streams: [],
       loading: true,
     };
-  },
-  computed: {
-    gridCol() {
-      return `md:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-4 3xl:grid-cols-7`;
-    },
   },
   methods: {
     fetchSchedules: async function () {

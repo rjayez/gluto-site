@@ -12,7 +12,6 @@
 <script>
 import SideMenu from "./components/SideMenu.vue";
 import WhoIAm from "./pages/WhoIAm.vue";
-import HelloWorld from "./components/HelloWorld.vue";
 import Planning from "./pages/Planning.vue";
 import Collection from "./pages/Collection.vue";
 import Bot from "./pages/Bot.vue";
@@ -20,7 +19,6 @@ import LiveNotification from "./components/LiveNotification.vue";
 
 const routes = {
   "/": WhoIAm,
-  "/test": HelloWorld,
   "/planning": Planning,
   "/collection": Collection,
   "/bot": Bot,
@@ -31,9 +29,11 @@ export default {
   props: {
     titre: String,
   },
-  data: () => ({
-    currentRoute: window.location.pathname,
-  }),
+  data() {
+    return {
+      currentRoute: window.location.pathname,
+    };
+  },
   computed: {
     CurrentComponent() {
       return routes[this.currentRoute];

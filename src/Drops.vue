@@ -14,10 +14,12 @@ import Cards from "./components/Cards.vue";
 
 export default defineComponent({
   components: { Cards },
-  data: () => ({
-    seen: ref(false),
-    pseudo: "tEsT",
-  }),
+  data() {
+    return {
+      seen: ref(false),
+      pseudo: "tEsT",
+    };
+  },
   methods: {
     handleClick() {
       this.seen = true;

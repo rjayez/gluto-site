@@ -3,7 +3,12 @@
   <div class="mx-0">
     <h1 class="page-title">Votre collection</h1>
     <!--    <h2 class="page-subtitle">Toutes vos cartes tirés durant les streams sont ici !</h2>-->
-    <img src="../assets/webp/Cartes-WIP.webp" height="678" width="900" class="mx-auto mt-12" />
+    <img
+      src="../assets/webp/Cartes-WIP.webp"
+      height="678"
+      width="900"
+      class="mx-auto mt-12"
+      alt="Image Work In Progress" />
     <!--    <div class="m-2 flex flex-col md:flex-row">-->
     <!--      <select class="my-2 mx-auto w-72 rounded-lg bg-indigo-950 p-2 text-indigo-150">-->
     <!--        <option selected disabled>Sélectionne la série</option>-->
@@ -38,13 +43,11 @@
   </div>
   <div
     v-if="showCardDetails"
-    class="fixed top-0 left-0 z-50 flex h-screen w-screen flex-col items-center justify-center overflow-scroll pt-32 backdrop-blur-sm backdrop-brightness-50 backdrop-contrast-150 backdrop-grayscale xl:flex-row xl:pt-0"
-  >
+    class="fixed top-0 left-0 z-50 flex h-screen w-screen flex-col items-center justify-center overflow-scroll pt-32 backdrop-blur-sm backdrop-brightness-50 backdrop-contrast-150 backdrop-grayscale xl:flex-row xl:pt-0">
     <img
       :src="imgCard.card3"
       alt="Carte detaille"
-      class="mx-10 mt-32 mb-8 max-w-[390px] cursor-pointer rounded-2xl object-scale-down hover:shadow-2xl hover:shadow-violet-500"
-    />
+      class="mx-10 mt-32 mb-8 max-w-[390px] cursor-pointer rounded-2xl object-scale-down hover:shadow-2xl hover:shadow-violet-500" />
     <div class="mb-32 max-w-[390px] px-4 text-xl text-indigo-150 lg:ml-10">
       <p>Description</p>
       <p class="my-10">Incarnation : Glutobot</p>
@@ -52,8 +55,7 @@
     </div>
     <div
       class="absolute top-0 right-0 z-40 m-3 block h-5 w-7 scale-100 cursor-pointer opacity-100 lg:scale-150"
-      @click="closeDetails"
-    >
+      @click="closeDetails">
       <label class="h-5 w-7">
         <span class="absolute top-0 left-0 block h-0 w-7 origin-top-left rotate-45 ring-2 ring-indigo-750"></span>
         <span class="absolute bottom-0 right-0 block h-0 w-7 origin-top-left -rotate-45 ring-2 ring-indigo-750"></span>
@@ -67,56 +69,58 @@ import cards from "../assets/cards";
 
 export default {
   name: "Collection",
-  data: () => ({
-    imgCard: cards,
-    cards: [
-      {
-        id: 1,
-        url: cards.card3,
-        revealed: true,
-        rarete: "",
-      },
-      {
-        id: 2,
-        revealed: false,
-      },
-      {
-        id: 3,
-        revealed: false,
-      },
-      {
-        id: 4,
-        revealed: false,
-      },
-      {
-        id: 5,
-        revealed: false,
-      },
-      {
-        id: 1,
-        url: cards.card3,
-        revealed: false,
-        rarete: "",
-      },
-      {
-        id: 2,
-        revealed: false,
-      },
-      {
-        id: 3,
-        revealed: false,
-      },
-      {
-        id: 4,
-        revealed: false,
-      },
-      {
-        id: 5,
-        revealed: false,
-      },
-    ],
-    showCardDetails: false,
-  }),
+  data() {
+    return {
+      imgCard: cards,
+      cards: [
+        {
+          id: 1,
+          url: cards.card3,
+          revealed: true,
+          rarete: "",
+        },
+        {
+          id: 2,
+          revealed: false,
+        },
+        {
+          id: 3,
+          revealed: false,
+        },
+        {
+          id: 4,
+          revealed: false,
+        },
+        {
+          id: 5,
+          revealed: false,
+        },
+        {
+          id: 1,
+          url: cards.card3,
+          revealed: false,
+          rarete: "",
+        },
+        {
+          id: 2,
+          revealed: false,
+        },
+        {
+          id: 3,
+          revealed: false,
+        },
+        {
+          id: 4,
+          revealed: false,
+        },
+        {
+          id: 5,
+          revealed: false,
+        },
+      ],
+      showCardDetails: false,
+    };
+  },
   methods: {
     showDetails(card) {
       this.showCardDetails = true;

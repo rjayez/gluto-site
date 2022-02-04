@@ -11,7 +11,7 @@
       </div>
       <div class="space-y-6 bg-white">
         <div class="w-full items-center space-y-4 p-4 text-gray-500 md:inline-flex md:space-y-0">
-          <h2 class="mx-auto max-w-sm md:w-1/3">Image</h2>
+          <h2 class="mr-auto max-w-sm pl-5 md:w-1/3">Image</h2>
           <div>
             <div class="relative"><input type="file" name="file" required /> <br /></div>
             <div class="relative">
@@ -21,7 +21,7 @@
         </div>
         <hr />
         <div class="w-full items-center space-y-4 p-4 py-2 text-gray-500 md:inline-flex md:space-y-0">
-          <h2 class="mx-auto max-w-sm md:w-1/3">Rareté</h2>
+          <h2 class="mr-auto max-w-sm pl-5 md:w-1/3">Rareté</h2>
           <select
             id="rarete"
             class="focus:ring-primary-500 focus:border-primary-500 block w-52 rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:outline-none"
@@ -35,7 +35,7 @@
         </div>
         <hr />
         <div class="w-full items-center space-y-4 p-4 py-2 text-gray-500 md:inline-flex md:space-y-0">
-          <h2 class="mx-auto max-w-sm md:w-1/3">Set</h2>
+          <h2 class="mr-auto max-w-sm pl-5 md:w-1/3">Set</h2>
 
           <select
             id="animals"
@@ -45,32 +45,6 @@
             <option value="">Sélectionne un set</option>
             <option value="dog">Starter Pack</option>
           </select>
-        </div>
-        <hr />
-        <div class="w-full items-center space-y-4 p-4 py-2 text-gray-500 md:inline-flex md:space-y-0">
-          <h2 class="mx-auto max-w-sm md:w-1/3">Personal info</h2>
-          <div class="mx-auto max-w-sm space-y-5 md:w-2/3">
-            <div>
-              <div class="relative">
-                <input
-                  type="text"
-                  id="user-info-name"
-                  class="w-full flex-1 appearance-none rounded-lg border border-transparent border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600"
-                  placeholder="Name"
-                />
-              </div>
-            </div>
-            <div>
-              <div class="relative">
-                <input
-                  type="text"
-                  id="user-info-phone"
-                  class="w-full flex-1 appearance-none rounded-lg border border-transparent border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600"
-                  placeholder="Phone number"
-                />
-              </div>
-            </div>
-          </div>
         </div>
         <hr />
         <div class="flex justify-end px-4 pb-4 text-gray-500">

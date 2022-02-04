@@ -88,9 +88,6 @@
 <script>
 export default {
   name: "WhoIAm",
-  props: {
-    titre: String,
-  },
 };
 </script>
 
