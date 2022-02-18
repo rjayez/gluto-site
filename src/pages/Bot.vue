@@ -133,6 +133,18 @@
             </td>
           </tr>
           <tr class="table-row">
+            <td>!qi</td>
+            <td>
+              N’hésitez pas à me demander de calculer votre QI !
+            </td>
+          </tr>
+          <tr class="table-row">
+            <td>!age</td>
+            <td>
+              J’arrive à déterminer votre âge grâce à cette commande.
+            </td>
+          </tr>
+          <tr class="table-row">
             <td>!digestif</td>
             <td>
               Besoin d’un conseil pour ambiancer vos fins de soirée ? Cette commande est sponsorisée par @Romanus89
