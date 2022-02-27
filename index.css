@@ -31,5 +31,34 @@
         @apply py-2 flex cursor-pointer;
     }
 
+    /**
+        SECTION DASHBOARD
+     */
+    .form-label-section {
+        @apply mr-auto max-w-sm pl-5 md:w-1/3;
+    }
+
+    .error-message {
+        @apply mt-2 ml-2 block font-bold text-red-500;
+    }
+
+    .input-section {
+        @apply w-full items-center space-y-4 p-4 py-0 text-gray-500 md:inline-flex md:space-y-0;
+    }
+
+    .input-select {
+        @apply focus:border-indigo-300 focus:border-indigo-300 block w-60 rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:outline-none;
+
+    }
+
+    .input-text {
+        @apply w-full appearance-none rounded-lg border border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500
+    }
+
+    .form-button {
+        @apply rounded-lg bg-blue-600 py-2 px-4 text-center text-base font-semibold text-white shadow-md transition duration-200 ease-in hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200
+    }
+
+
 }
 

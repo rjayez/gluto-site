@@ -1,6 +1,6 @@
 import axios from "axios";
+import { HOST } from "../constants";
 
-const HOST = import.meta.env.VITE_APP_HOST_API;
 const URL = `${HOST}/cards`;
 
 async function getPresignedUploadUrl(type) {
@@ -36,16 +36,17 @@ export function createAndUploadCard(formData) {
   });
 }
 
-export function getRarities() {
+export function getCards() {
   return axios
-    .get(HOST + "/rarities")
-    .then(result => result.data)
-    .catch(err => []);
+    .get(URL)
+    .then(data => data.data)
+    .catch(_ => []);
 }
 
-export function getSeries() {
-  return axios
-    .get(HOST + "/series")
-    .then(result => result.data)
-    .catch(err => []);
+export function updateCard(id, updatedCard) {
+  return axios.put(URL + "/" + id, updatedCard);
+}
+
+export function deleteCard(card) {
+  return axios.delete(URL + "/" + card._id);
 }

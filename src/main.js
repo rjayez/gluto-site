@@ -3,6 +3,14 @@ import { createApp, h } from "vue";
 import App from "./App.vue";
 import "../index.css";
 import Dashboard from "./pages/Dashboard.vue";
+import { configure } from "vee-validate";
+import Notifications from "@kyvg/vue3-notification";
+
+configure({
+  validateOnBlur: false,
+  validateOnChange: false,
+  validateOnInput: false,
+});
 
 const NotFoundComponent = { template: "<p>Page not found</p>" };
 
@@ -28,4 +36,4 @@ const Router = {
   },
 };
 
-createApp(Router).mount("#app");
+createApp(Router).use(Notifications).mount("#app");
