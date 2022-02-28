@@ -95,6 +95,7 @@ export default {
   props: {
     selectedCard: Object,
   },
+  emits: ["refresh"],
   components: { Form, Field, ErrorMessage },
   data() {
     const schema = yup.object().shape({
@@ -117,6 +118,7 @@ export default {
     deleteCard() {
       deleteCard(this.selectedCard).then(() => {
         notify({ title: "Carte supprimée !", type: "success" });
+        this.$emit("refresh");
       });
     },
     getSeries() {

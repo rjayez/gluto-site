@@ -5,7 +5,7 @@
       <CardAdd />
     </div>
     <div class="flex w-screen pl-5 pt-6" v-if="VUE.EDITION_CARTE === vue">
-      <CardEdition />
+      <CollectionEdition />
     </div>
     <div class="flex w-screen pl-5 pt-6" v-if="VUE.GESTION_COLLECTION === vue">
       <RarityAdd />
@@ -27,11 +27,11 @@ import DashboardMenu from "../components/dashboard/DashboardMenu.vue";
 import CardAdd from "../components/dashboard/create/CardAdd.vue";
 import RarityAdd from "../components/dashboard/create/RarityAdd.vue";
 import { DASHBOARD_VUE } from "../components/dashboard/constants";
-import CardEdition from "../components/dashboard/CardEdition.vue";
+import CollectionEdition from "../components/dashboard/CollectionEdition.vue";
 
 export default {
   name: "Dashboard",
-  components: { CardEdition, RarityAdd, CardAdd, DashboardMenu },
+  components: { CollectionEdition, RarityAdd, CardAdd, DashboardMenu },
   setup() {
     return {
       VUE: DASHBOARD_VUE,
