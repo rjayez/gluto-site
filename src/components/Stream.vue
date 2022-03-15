@@ -5,8 +5,7 @@
   <div
     v-if="planning.streams.length === 0"
     class="mt-3 h-96 rounded-lg bg-no-stream bg-cover bg-center bg-no-repeat p-3 text-white shadow-2xl"
-    :class="{ 'opacity-40': planning.estPassee }"
-  >
+    :class="{ 'opacity-40': planning.estPassee }">
     <div class="mt-4 text-left">Pas de stream prévu !</div>
   </div>
 
@@ -14,8 +13,7 @@
     v-if="planning.streams.length === 1"
     class="mt-3 h-96 rounded-lg bg-cover bg-center bg-no-repeat p-3 text-white shadow-2xl"
     :class="{ 'opacity-40': planning.estPassee }"
-    v-bind:style="getBackgroundStyle(planning.streams[0].imageJeuUrl)"
-  >
+    v-bind:style="getBackgroundStyle(planning.streams[0].imageJeuUrl)">
     <div class="mt-4 text-left">{{ planning.streams[0].titre }}</div>
     <div class="text-left">{{ planning.streams[0].jeu }}</div>
     <div class="text-left">
@@ -28,8 +26,7 @@
     <div
       class="mt-3 h-[11.5rem] rounded-lg bg-cover bg-center bg-no-repeat p-3 text-white shadow-2xl"
       :class="{ 'opacity-40': planning.estPassee }"
-      v-bind:style="getBackgroundStyle(planning.streams[0].imageJeuUrl)"
-    >
+      v-bind:style="getBackgroundStyle(planning.streams[0].imageJeuUrl)">
       <div class="mt-4 text-left">{{ planning.streams[0].titre }}</div>
       <div class="text-left">{{ planning.streams[0].jeu }}</div>
       <div class="text-left">
@@ -41,8 +38,7 @@
     <div
       class="mt-3 h-[11.5rem] rounded-lg bg-cover bg-center bg-no-repeat p-3 text-white shadow-2xl"
       :class="{ 'opacity-40': planning.estPassee }"
-      v-bind:style="getBackgroundStyle(planning.streams[1].imageJeuUrl)"
-    >
+      v-bind:style="getBackgroundStyle(planning.streams[1].imageJeuUrl)">
       <div class="mt-4 text-left">{{ planning.streams[1].titre }}</div>
       <div class="text-left">{{ planning.streams[1].jeu }}</div>
       <div class="text-left">
@@ -53,6 +49,8 @@
   </div>
 </template>
 <script>
+import { DateTime } from "luxon";
+
 export default {
   name: "Stream",
   props: {
@@ -60,7 +58,8 @@ export default {
   },
   methods: {
     getDateJourMois: function (date) {
-      return new Date(date).toLocaleString(undefined, { day: "2-digit", month: "2-digit" });
+      let dateDuStream = DateTime.fromISO(date);
+      return dateDuStream.toFormat("dd/MM");
     },
     getJourSemaine: function (date) {
       return new Date(date).toLocaleString("fr-FR", { weekday: "long" }).replace(/^\w/, c => c.toUpperCase());
