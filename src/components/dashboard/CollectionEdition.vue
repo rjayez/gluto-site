@@ -37,7 +37,9 @@ export default {
       this.scrollToTop();
     },
     refreshCollection() {
-      this.getCollection().then(() => notify({ title: "Collection à jour !", type: "info" }));
+      this.getCollection()
+        .then(() => notify({ title: "Collection à jour !", type: "info" }))
+        .catch(err => notify({ title: "Erreur :'(", text: "Problème pour rafraichir la collection.", type: "error" }));
       this.selectedCard = undefined;
     },
     scrollToTop() {

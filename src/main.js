@@ -10,6 +10,8 @@ configure({
   validateOnBlur: false,
   validateOnChange: false,
   validateOnInput: false,
+  validateOnModelUpdate: false,
+  bails: false,
 });
 
 const NotFoundComponent = { template: "<p>Page not found</p>" };

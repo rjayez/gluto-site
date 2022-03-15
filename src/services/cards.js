@@ -18,10 +18,16 @@ export async function uploadCards(file) {
   });
   formData.append("file", file);
 
-  return axios.post(presignedPost.url, formData).then(res => {
-    const location = res.headers["location"];
-    return decodeURIComponent(location);
-  });
+  return axios
+    .post(presignedPost.url, formData)
+    .then(res => {
+      const location = res.headers["location"];
+      return decodeURIComponent(location);
+    })
+    .catch(err => {
+      console.debug(err);
+      throw err;
+    });
 }
 
 export function createAndUploadCard(formData) {
@@ -30,23 +36,37 @@ export function createAndUploadCard(formData) {
     ...formData,
   };
 
-  return uploadCards(file).then(location => {
-    body.pictureUrl = location;
-    return axios.post(HOST + "/cards", body);
-  });
+  return uploadCards(file)
+    .then(location => {
+      body.pictureUrl = location;
+      return axios.post(HOST + "/cards", body);
+    })
+    .catch(err => {
+      console.debug(err);
+      throw err;
+    });
 }
 
 export function getCards() {
   return axios
     .get(URL)
     .then(data => data.data)
-    .catch(_ => []);
+    .catch(err => {
+      console.debug(err);
+      throw err;
+    });
 }
 
 export function updateCard(id, updatedCard) {
-  return axios.put(URL + "/" + id, updatedCard);
+  return axios.put(URL + "/" + id, updatedCard).catch(err => {
+    console.debug(err);
+    throw err;
+  });
 }
 
 export function deleteCard(card) {
-  return axios.delete(URL + "/" + card._id);
+  return axios.delete(URL + "/" + card._id).catch(err => {
+    console.debug(err);
+    throw err;
+  });
 }

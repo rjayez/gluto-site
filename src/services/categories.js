@@ -5,16 +5,38 @@ export function getCategories() {
   return axios
     .get(HOST + "/categories")
     .then(result => result.data)
-    .catch(err => []);
+    .catch(err => {
+      console.debug(err);
+      throw err;
+    });
 }
 
-export function createCategorie(name, description) {
+export function createCategorie({ name, description, order }) {
   const body = {
     name,
     description,
+    order,
   };
   return axios
     .post(HOST + "/categories", body)
     .then(result => result.data)
-    .catch(err => []);
+    .catch(err => {
+      console.debug(err);
+      throw err;
+    });
+}
+
+export function updateCategorie(id, { name, description, order }) {
+  const body = {
+    name,
+    description,
+    order,
+  };
+  return axios
+    .put(HOST + "/categories", body)
+    .then(result => result.data)
+    .catch(err => {
+      console.debug(err);
+      throw err;
+    });
 }

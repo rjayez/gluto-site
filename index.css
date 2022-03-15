@@ -43,11 +43,11 @@
     }
 
     .input-section {
-        @apply w-full items-center space-y-4 p-4 py-0 text-gray-500 md:inline-flex md:space-y-0;
+        @apply w-full items-center space-y-1 p-4 py-0 text-gray-500 md:inline-flex md:space-y-0;
     }
 
     .input-select {
-        @apply focus:border-indigo-300 focus:border-indigo-300 block w-60 rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:outline-none;
+        @apply focus:border-indigo-300 focus:border-indigo-300 block w-72 rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:outline-none;
 
     }
 
