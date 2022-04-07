@@ -35,10 +35,20 @@ export function updateRarity(id, { name, description, rate, order }) {
     order,
   };
   return axios
-    .put(HOST + "/rarities", body)
+    .put(HOST + `/rarities/${id}`, body)
     .then(result => result.data)
     .catch(err => {
       console.debug(err);
       throw err;
     });
+}
+
+export function deleteRarity(id) {
+
+  return axios.delete(HOST + `/rarities/${id}`)
+    .catch(err => {
+      console.debug(err);
+      throw err;
+    })
+
 }

@@ -8,7 +8,7 @@
       <CollectionEdition />
     </div>
     <div class="flex w-screen pl-5 pt-6" v-if="VUE.GESTION_COLLECTION === vue">
-      <RarityAdd />
+      <RarityAddV2 />
     </div>
     <div class="flex w-screen pl-5 pt-6" v-if="VUE.GESTION_STREAM === vue">
       <!--   TODO   -->
@@ -28,10 +28,11 @@ import CardAdd from "../components/dashboard/create/CardAdd.vue";
 import RarityAdd from "../components/dashboard/create/RarityAdd.vue";
 import { DASHBOARD_VUE } from "../components/dashboard/constants";
 import CollectionEdition from "../components/dashboard/CollectionEdition.vue";
+import RarityAddV2 from "../components/dashboard/create/RarityAddV2.vue";
 
 export default {
   name: "Dashboard",
-  components: { CollectionEdition, RarityAdd, CardAdd, DashboardMenu },
+  components: { CollectionEdition, RarityAdd, RarityAddV2, CardAdd, DashboardMenu },
   setup() {
     return {
       VUE: DASHBOARD_VUE,
