@@ -35,10 +35,17 @@ export function updateSerie(id, { name, description, dropEnabled, order }) {
     order,
   };
   return axios
-    .put(HOST + "/series", body)
+    .put(HOST + `/series/${id}`, body)
     .then(result => result.data)
     .catch(err => {
       console.debug(err);
       throw err;
     });
+}
+
+export function deleteSerie(id) {
+  return axios.delete(HOST + `/series/${id}`).catch(err => {
+    console.debug(err);
+    throw err;
+  });
 }

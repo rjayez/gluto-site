@@ -4,12 +4,12 @@
       <div class="w-full md:mx-0">
         <div class="flex inline-flex w-full items-center space-x-4">
           <a href="#" class="relative block" />
-          <h1 class="text-gray-600">Rareté</h1>
+          <h1 class="text-gray-600">Sous Catégorie</h1>
           <div class="grow" />
           <select class="input-select" @change.prevent="this.onSelectChange" v-model="this.selectedValue">
-            <option value="new">Nouvelle rareté</option>
+            <option value="new">Nouvelle Sous catégorie</option>
             <option disabled>-----------</option>
-            <option v-for="rarity in rarities" :value="rarity.name">Modifier: {{ rarity.name }}</option>
+            <option v-for="rarity in subCategories" :value="rarity.name">Modifier: {{ rarity.name }}</option>
           </select>
         </div>
       </div>
@@ -38,19 +38,22 @@
       </div>
       <hr />
       <div class="input-section">
-        <h2 class="form-label-section">Taux de drop</h2>
+        <h2 class="form-label-section">Catégorie</h2>
         <div class="relative w-full">
-          <input
-            type="number"
-            name="rate"
-            v-model="rate"
-            id="rate"
-            class="input-text"
-            step="0.1"
-            min="0.1"
-            max="99.9"
-            placeholder="Le taux de drop" />
-          <span class="error-message">{{ errors.rate }}</span>
+          <div class="flex">
+            <select
+              name="category"
+              class="input-select inline-block"
+              @change.prevent="this.onSelectChangeCategorie"
+              v-model="category">
+              <option disabled value="">Sélectionne une catégorie</option>
+              <option v-for="category in categories" :value="category.name">{{ category.name }}</option>
+            </select>
+            <button type="button" class="form-button ml-auto" @click="getCategories">
+              <SvgRefresh />
+            </button>
+          </div>
+          <span class="error-message">{{ errors.category }}</span>
         </div>
       </div>
       <hr />
@@ -95,39 +98,45 @@
 </template>
 
 <script>
-import { ErrorMessage, Field, Form, useResetForm, useForm, useField } from "vee-validate";
+import {
+  createSubCategorie,
+  deleteSubCategorie,
+  getSubCategories,
+  updateSubCategorie,
+} from "../../../services/subcategories";
+import { getCategories } from "../../../services/categories";
 import * as yup from "yup";
+import { useField, useForm } from "vee-validate";
 import SvgPlus from "../../../assets/svg/SvgPlus.vue";
-import { createRarity, deleteRarity, getRarities, updateRarity } from "../../../services/rarities";
-import Modal from "../../Modal.vue";
 import { notify } from "@kyvg/vue3-notification";
+import SvgRefresh from "../../../assets/svg/SvgRefresh.vue";
 import { toRaw } from "vue";
-
-const reset = useResetForm();
+import Modal from "../../Modal.vue";
 
 export default {
-  name: "RarityAdd",
-  components: { Modal, SvgPlus, Form, Field, ErrorMessage },
+  name: "SubCategoryForm",
+  components: { Modal, SvgRefresh, SvgPlus },
   setup() {
     const schema = yup.object().shape({
       name: yup.string().required("Remplis moi :'("),
       description: yup.string().required("Moi aussi :("),
-      rate: yup.number().min(0.1, "Le minimum c'est 0.1%").max(99.9, "Le maximum c'est 99.9%").required("Eh oh !"),
+      category: yup.string().min(1, "Déroule moi !").required("Déroule moi !"),
       order: yup.number().min(1, "Le minimum c'est 1").required("(ノ`Д ́)ノ"),
     });
-    const { errors, handleSubmit, setValues, resetForm } = useForm({ validationSchema: schema });
+    const { errors, handleSubmit, setValues, resetForm, meta } = useForm({ validationSchema: schema });
 
     const { value: name } = useField("name");
     const { value: description } = useField("description");
-    const { value: rate } = useField("rate");
+    const { value: category } = useField("category", {}, { initialValue: "" });
     const { value: order } = useField("order");
 
     return {
       schema,
+      meta,
       errors,
       name,
       description,
-      rate,
+      category,
       order,
       setValues,
       resetForm,
@@ -136,19 +145,25 @@ export default {
   },
   data() {
     return {
-      rarities: [],
+      subCategories: [],
+      categories: [],
       selected: null,
       selectedValue: "new",
+      selectedCategorie: "",
       onSubmit: () => {},
     };
   },
   methods: {
-    deleteRarity() {
-      console.debug(this.rarities.indexOf(this.selected));
-      deleteRarity(this.selected._id)
+    deleteSubCategory() {
+      console.debug(this.subCategories.indexOf(this.selected));
+      deleteSubCategorie(this.selected._id)
         .then(e => {
-          this.getRarities();
-          notify({ title: "Suppression réussi !", text: "La rareté fût supprimé et la liste à jour", type: "success" });
+          this.getSubCategories();
+          notify({
+            title: "Suppression réussi !",
+            text: "La sous catégorie fût supprimé et la liste à jour",
+            type: "success",
+          });
           this.selectedValue = "new";
           this.selected = null;
           // Remplissage des champs du formulaire
@@ -156,11 +171,21 @@ export default {
         })
         .catch(_ => notify({ title: "Suppression échoué !", type: "error" }));
     },
-    getRarities() {
-      getRarities().then(rarities => {
-        this.rarities = rarities;
+    getSubCategories() {
+      getSubCategories().then(subCategories => {
+        this.subCategories = subCategories;
         notify({ title: "Liste à jour.", type: "success" });
       });
+    },
+    getCategories() {
+      return getCategories()
+        .then(categories => (this.categories = categories))
+        .then(_ =>
+          notify({
+            title: "Catégorie à jour !",
+            type: "success",
+          })
+        );
     },
     onSelectChange(event) {
       const value = event.target.value;
@@ -169,41 +194,52 @@ export default {
         this.selected = null;
         this.resetForm();
       } else {
-        let selected = this.rarities.filter(rarity => rarity.name === value)[0];
+        let selected = this.subCategories.filter(subCategory => subCategory.name === value)[0];
         this.selected = selected;
+        console.debug({ selected });
         this.setValues({
-          name: selected.name,
-          description: selected.description,
-          rate: selected.rate,
-          order: selected.order,
+          ...selected,
+          category: toRaw(selected).category.name,
         });
       }
+    },
+    onSelectChangeCategorie(event) {
+      const value = event.target.value;
+      console.log("onSelectChangeCategorie", value);
+      this.selectedCategorie = value;
     },
     onCancelModal() {
       this.$refs.modal.closeModal();
     },
     onConfirmModal() {
       this.$refs.modal.closeModal();
-      this.deleteRarity();
+      this.deleteSubCategory();
     },
   },
   computed: {
     descriptionModal() {
-      return `T'es sûr de supprimer la rareté ${this.selected?.name || ""}`;
+      return `T'es sûr de supprimer la sous catégorie ${this.selected?.name || ""}`;
     },
   },
   mounted() {
-    this.getRarities();
+    this.getSubCategories();
+    this.getCategories().then(_ => {
+      // this.category = this.categories?.[0]?.name || "";
+    });
     this.onSubmit = this.handleSubmit(values => {
       console.info("Valeur du formulaire", values);
-      console.debug(this.selected);
       let upsert;
       if (this.selected === null) {
-        upsert = createRarity(values);
+        upsert = createSubCategorie(values)
+          .then(_ => notify({ title: "Création réussi !", type: "success" }))
+          .catch(_ => notify({ title: "Création échoué :'(", type: "error" }));
       } else {
-        upsert = updateRarity(this.selected._id, values);
+        upsert = updateSubCategorie(this.selected._id, values)
+          .then(_ => notify({ title: "Modification réussi !", type: "success" }))
+          .catch(_ => notify({ title: "Modification échoué :'(", type: "error" }));
       }
-      upsert.then(_ => this.getRarities());
+      upsert.then(_ => this.getSubCategories());
+      this.selectedValue = values.name;
     });
   },
 };

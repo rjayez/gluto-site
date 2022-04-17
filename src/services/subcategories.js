@@ -11,10 +11,11 @@ export function getSubCategories() {
     });
 }
 
-export function createSubCategorie({ name, description, order }) {
+export function createSubCategorie({ name, description, category, order }) {
   const body = {
     name,
     description,
+    category,
     order,
   };
   return axios
@@ -26,17 +27,25 @@ export function createSubCategorie({ name, description, order }) {
     });
 }
 
-export function updateSubCategorie(id, { name, description, order }) {
+export function updateSubCategorie(id, { name, description, order, category }) {
   const body = {
     name,
     description,
     order,
+    category,
   };
   return axios
-    .put(HOST + "/sub-categories", body)
+    .put(HOST + `/sub-categories/${id}`, body)
     .then(result => result.data)
     .catch(err => {
       console.debug(err);
       throw err;
     });
+}
+
+export function deleteSubCategorie(id) {
+  return axios.delete(HOST + `/sub-categories/${id}`).catch(err => {
+    console.debug(err);
+    throw err;
+  });
 }

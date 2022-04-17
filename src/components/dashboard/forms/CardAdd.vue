@@ -153,7 +153,6 @@ export default {
       reset();
     },
     onSubmit(value) {
-      // TODO Ajout bulle notif quand l'ajout de carte à réussi
       console.debug(value);
       createAndUploadCard(value).then(res => {
         console.info("Uploadé !");

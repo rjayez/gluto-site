@@ -72,6 +72,32 @@
           </div>
         </div>
         <hr />
+        <div class="input-section">
+          <h2 class="form-label-section">Catégorie</h2>
+          <div class="relative w-full">
+            <Field as="select" id="category" class="input-select" name="category" v-model="selectedCard.category.name">
+              <!--              <option disabled value="">Sélectionne une catégorie</option>-->
+              <option v-for="category in categories" :value="category.name">{{ category.name }}</option>
+            </Field>
+            <ErrorMessage name="category" class="error-message" />
+          </div>
+        </div>
+        <hr />
+        <div class="input-section">
+          <h2 class="form-label-section">Sous-catégorie</h2>
+          <div class="relative w-full">
+            <Field
+              as="select"
+              id="subCategory"
+              class="input-select"
+              name="subCategory"
+              v-model="selectedCard.subCategory.name">
+              <option disabled value="">Sélectionne une sous-catégorie</option>
+              <option v-for="subCategory in subCategories" :value="subCategory.name">{{ subCategory.name }}</option>
+            </Field>
+            <ErrorMessage name="subCategory" class="error-message" />
+          </div>
+        </div>
         <div class="flex justify-end px-4 pb-4 text-gray-500">
           <button type="button" class="form-button bg-red-600 hover:bg-red-700" @click="deleteCard">Supprimer</button>
           <div class="grow" />
@@ -87,6 +113,8 @@ import * as yup from "yup";
 import { ErrorMessage, Field, Form } from "vee-validate";
 import { getSeries } from "../../../services/series";
 import { getRarities } from "../../../services/rarities";
+import { getCategories } from "../../../services/categories";
+import { getSubCategories } from "../../../services/subcategories";
 import { deleteCard, updateCard } from "../../../services/cards";
 import { notify } from "@kyvg/vue3-notification";
 
@@ -103,12 +131,16 @@ export default {
       serie: yup.string().required("Faut cliquez ici !"),
       name: yup.string().required("Remplis moi :'("),
       description: yup.string().required("Moi aussi :("),
+      category: yup.string().required("___*( ￣皿￣)/#____"),
+      subCategory: yup.string().required("(╯°□°）╯︵ ┻━┻"),
     });
 
     return {
       schema,
       series: [],
       rarities: [],
+      categories: [],
+      subCategories: [],
     };
   },
   methods: {
@@ -127,10 +159,18 @@ export default {
     getRarities() {
       getRarities().then(rarities => (this.rarities = rarities));
     },
+    getCategories() {
+      getCategories().then(categories => (this.categories = categories));
+    },
+    getSubCategories() {
+      getSubCategories().then(subCategories => (this.subCategories = subCategories));
+    },
   },
   mounted() {
     this.getRarities();
     this.getSeries();
+    this.getCategories();
+    this.getSubCategories();
   },
 };
 </script>

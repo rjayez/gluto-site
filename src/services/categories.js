@@ -33,10 +33,17 @@ export function updateCategorie(id, { name, description, order }) {
     order,
   };
   return axios
-    .put(HOST + "/categories", body)
+    .put(HOST + `/categories/${id}`, body)
     .then(result => result.data)
     .catch(err => {
       console.debug(err);
       throw err;
     });
+}
+
+export function deleteCategorie(id) {
+  return axios.delete(HOST + `/categories/${id}`).catch(err => {
+    console.debug(err);
+    throw err;
+  });
 }

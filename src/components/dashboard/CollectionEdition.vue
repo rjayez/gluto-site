@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import CardEdit from "./update/CardEdit.vue";
+import CardEdit from "./forms/CardEdit.vue";
 import { getCards } from "../../services/cards";
 import { notify } from "@kyvg/vue3-notification";
 
