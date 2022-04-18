@@ -8,10 +8,12 @@
       <CollectionEdition />
     </div>
     <div class="flex w-screen pl-5 pt-6" v-if="VUE.GESTION_COLLECTION === vue">
-      <SeriesForm />
-      <CategoryForm />
-      <SubCategoryForm />
-      <RarityForm />
+      <div class="grid grid-cols-2 gap-7">
+        <SeriesForm />
+        <CategoryForm />
+        <SubCategoryForm />
+        <RarityForm />
+      </div>
     </div>
     <div class="flex w-screen pl-5 pt-6" v-if="VUE.GESTION_STREAM === vue">
       <ActionStream />
