@@ -12,23 +12,19 @@
       <hr />
       <div v-if="selectedCard === undefined" class="p-5 text-center">Pas de carte sélectionnée</div>
 
-      <Form
-        v-if="selectedCard !== undefined"
-        :validation-schema="schema"
-        @submit="onSubmit"
-        class="space-y-6 bg-white pt-3">
+      <form v-if="selectedCard !== undefined" @submit="onSubmit" class="space-y-6 bg-white pt-3">
         <div class="input-section">
           <img :src="selectedCard.pictureUrl" alt="image card selectionné" class="mx-auto h-[350px]" />
         </div>
         <div class="input-section">
           <h2 class="form-label-section">Rareté</h2>
           <div class="relative w-full">
-            <Field as="select" id="rarete" class="input-select" name="rarity" v-model="selectedCard.rarity.name">
-              <!--              <option disabled value="">Sélectionne une rareté</option>-->
+            <select id="rarete" class="input-select" name="rarity" v-model="rarity">
+              <option disabled value="">Sélectionne une rareté</option>
               <option v-for="rarity in rarities" :value="rarity.name">
                 {{ rarity.name }}
               </option>
-            </Field>
+            </select>
             <ErrorMessage name="rarity" class="error-message" />
           </div>
         </div>
@@ -36,10 +32,10 @@
         <div class="input-section">
           <h2 class="form-label-section">Set</h2>
           <div class="relative w-full">
-            <Field as="select" id="series" class="input-select" name="serie" v-model="selectedCard.serie.name">
-              <!--              <option disabled value="">Sélectionne une série</option>-->
+            <select id="series" class="input-select" name="serie" v-model="serie">
+              <option disabled value="">Sélectionne une série</option>
               <option v-for="serie in series" :value="serie.name">{{ serie.name }}</option>
-            </Field>
+            </select>
             <ErrorMessage name="serie" class="error-message" />
           </div>
         </div>
@@ -47,12 +43,7 @@
         <div class="input-section">
           <h2 class="form-label-section">Nom</h2>
           <div class="relative w-full">
-            <Field
-              name="name"
-              :model-value="selectedCard?.name"
-              id="name"
-              class="input-text"
-              placeholder="Remplis moi" />
+            <input name="name" v-model="name" id="name" class="input-text" placeholder="Remplis moi" />
             <ErrorMessage name="name" class="error-message" />
           </div>
         </div>
@@ -60,9 +51,8 @@
         <div class="input-section">
           <h2 class="form-label-section">Description</h2>
           <div class="relative w-full">
-            <Field
-              :model-value="selectedCard.description"
-              as="textarea"
+            <textarea
+              v-model="description"
               name="description"
               id="description"
               class="input-text"
@@ -75,10 +65,10 @@
         <div class="input-section">
           <h2 class="form-label-section">Catégorie</h2>
           <div class="relative w-full">
-            <Field as="select" id="category" class="input-select" name="category" v-model="selectedCard.category.name">
-              <!--              <option disabled value="">Sélectionne une catégorie</option>-->
+            <select id="category" class="input-select" name="category" v-model="category">
+              <option disabled value="">Sélectionne une catégorie</option>
               <option v-for="category in categories" :value="category.name">{{ category.name }}</option>
-            </Field>
+            </select>
             <ErrorMessage name="category" class="error-message" />
           </div>
         </div>
@@ -86,15 +76,10 @@
         <div class="input-section">
           <h2 class="form-label-section">Sous-catégorie</h2>
           <div class="relative w-full">
-            <Field
-              as="select"
-              id="subCategory"
-              class="input-select"
-              name="subCategory"
-              v-model="selectedCard.subCategory.name">
+            <select id="subCategory" class="input-select" name="subCategory" v-model="subCategory">
               <option disabled value="">Sélectionne une sous-catégorie</option>
               <option v-for="subCategory in subCategories" :value="subCategory.name">{{ subCategory.name }}</option>
-            </Field>
+            </select>
             <ErrorMessage name="subCategory" class="error-message" />
           </div>
         </div>
@@ -103,14 +88,14 @@
           <div class="grow" />
           <button type="submit" class="form-button">Modifier</button>
         </div>
-      </Form>
+      </form>
     </section>
   </div>
 </template>
 
 <script>
 import * as yup from "yup";
-import { ErrorMessage, Field, Form } from "vee-validate";
+import { ErrorMessage, Field, Form, useField, useForm } from "vee-validate";
 import { getSeries } from "../../../services/series";
 import { getRarities } from "../../../services/rarities";
 import { getCategories } from "../../../services/categories";
@@ -125,7 +110,7 @@ export default {
   },
   emits: ["refresh"],
   components: { Form, Field, ErrorMessage },
-  data() {
+  setup(props) {
     const schema = yup.object().shape({
       rarity: yup.string().required("Tu m'as oublié"),
       serie: yup.string().required("Faut cliquez ici !"),
@@ -135,18 +120,42 @@ export default {
       subCategory: yup.string().required("(╯°□°）╯︵ ┻━┻"),
     });
 
+    const { selectedCard } = props;
+
+    const { errors, handleSubmit, setValues, setFieldValue } = useForm({ validationSchema: schema });
+
+    console.debug({ selectedCard });
+    const { value: rarity } = useField("rarity", {}, { initialValue: selectedCard?.rarity?.name || "" });
+    const { value: serie } = useField("serie", {}, { initialValue: selectedCard?.serie?.name || "" });
+    const { value: name } = useField("name", {}, { initialValue: selectedCard?.name || "" });
+    const { value: description } = useField("description", {}, { initialValue: selectedCard?.description || "" });
+    const { value: category } = useField("category", {}, { initialValue: selectedCard?.category?.name || "" });
+    const { value: subCategory } = useField("subCategory", {}, { initialValue: selectedCard?.subCategory?.name || "" });
+
     return {
-      schema,
+      rarity,
+      serie,
+      name,
+      description,
+      category,
+      subCategory,
+      errors,
+      handleSubmit,
+      setValues,
+    };
+  },
+  data(props) {
+    console.debug("data", { props });
+
+    return {
       series: [],
       rarities: [],
       categories: [],
       subCategories: [],
+      onSubmit: () => {},
     };
   },
   methods: {
-    onSubmit(value) {
-      updateCard(this.selectedCard._id, value);
-    },
     deleteCard() {
       deleteCard(this.selectedCard).then(() => {
         notify({ title: "Carte supprimée !", type: "success" });
@@ -165,12 +174,36 @@ export default {
     getSubCategories() {
       getSubCategories().then(subCategories => (this.subCategories = subCategories));
     },
+    log(value) {
+      console.info(value);
+    },
+  },
+  watch: {
+    selectedCard(oldSelectedCard, newSelectedCard) {
+      console.debug("watch new ", newSelectedCard);
+      console.debug("watch old", oldSelectedCard);
+      const card = newSelectedCard || oldSelectedCard;
+      console.debug("watch card", card);
+      this.setValues({
+        rarity: card?.rarity?.name || "",
+        serie: card?.serie?.name || "",
+        name: card?.name || "",
+        description: card?.description || "",
+        category: card?.category?.name || "",
+        subCategory: card?.subCategory?.name || "",
+      });
+    },
   },
   mounted() {
     this.getRarities();
     this.getSeries();
     this.getCategories();
     this.getSubCategories();
+
+    this.onSubmit = this.handleSubmit(values => {
+      console.info("Valeur du formulaire", values);
+      updateCard(this.selectedCard._id, value);
+    });
   },
 };
 </script>

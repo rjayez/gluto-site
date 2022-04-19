@@ -199,7 +199,7 @@ export default {
         console.debug({ selected });
         this.setValues({
           ...selected,
-          category: toRaw(selected).category.name,
+          category: toRaw(selected).category?.name || "",
         });
       }
     },
