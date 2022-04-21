@@ -102,6 +102,7 @@ import { getCategories } from "../../../services/categories";
 import { getSubCategories } from "../../../services/subcategories";
 import { deleteCard, updateCard } from "../../../services/cards";
 import { notify } from "@kyvg/vue3-notification";
+import { toRaw } from "vue";
 
 export default {
   name: "CardEdit",
@@ -180,9 +181,9 @@ export default {
   },
   watch: {
     selectedCard(oldSelectedCard, newSelectedCard) {
-      console.debug("watch new ", newSelectedCard);
-      console.debug("watch old", oldSelectedCard);
-      const card = newSelectedCard || oldSelectedCard;
+      console.debug("watch new ", toRaw(newSelectedCard));
+      console.debug("watch old", toRaw(oldSelectedCard));
+      const card = toRaw(oldSelectedCard) || toRaw(newSelectedCard);
       console.debug("watch card", card);
       this.setValues({
         rarity: card?.rarity?.name || "",
