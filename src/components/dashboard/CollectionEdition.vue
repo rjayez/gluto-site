@@ -5,7 +5,10 @@
     <div>
       <button class="form-button ml-3 mb-3" @click="refreshCollection">Refresh</button>
       <div class="grid auto-rows-min grid-cols-4 gap-3">
-        <div v-for="card in collection" class="mx-auto h-fit w-40 shadow-2xl hover:shadow-indigo-850">
+        <div
+          v-for="card in collection"
+          class="mx-auto h-fit w-40 shadow-2xl hover:shadow-indigo-850"
+          :class="{ 'shadow-amber-700': selectedCard?.name === card.name }">
           <img :src="card.pictureUrl" alt="image carte" class="h-fit w-40" @click="selectCard(card)" />
         </div>
       </div>
