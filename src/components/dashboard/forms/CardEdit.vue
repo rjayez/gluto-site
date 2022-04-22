@@ -84,12 +84,21 @@
           </div>
         </div>
         <div class="flex justify-end px-4 pb-4 text-gray-500">
-          <button type="button" class="form-button bg-red-600 hover:bg-red-700" @click="deleteCard">Supprimer</button>
+          <button type="button" class="form-button bg-red-600 hover:bg-red-700" @click="this.$refs.modal.openModal()">
+            Supprimer
+          </button>
           <div class="grow" />
           <button type="submit" class="form-button">Modifier</button>
         </div>
       </form>
     </section>
+    <Modal
+      ref="modal"
+      titre="Confirmation de suppression"
+      :description="descriptionModal"
+      close-on-backdrop
+      @cancel="onCancelModal"
+      @confirm="onConfirmModal" />
   </div>
 </template>
 
@@ -101,6 +110,7 @@ import { getRarities } from "../../../services/rarities";
 import { getCategories } from "../../../services/categories";
 import { getSubCategories } from "../../../services/subcategories";
 import { deleteCard, updateCard } from "../../../services/cards";
+import Modal from "../../Modal.vue";
 import { notify } from "@kyvg/vue3-notification";
 import { toRaw } from "vue";
 
@@ -110,7 +120,7 @@ export default {
     selectedCard: Object,
   },
   emits: ["refresh"],
-  components: { Form, Field, ErrorMessage },
+  components: { Form, Field, ErrorMessage, Modal },
   setup(props) {
     const schema = yup.object().shape({
       rarity: yup.string().required("Tu m'as oublié"),
@@ -178,13 +188,22 @@ export default {
     log(value) {
       console.info(value);
     },
+    onCancelModal() {
+      this.$refs.modal.closeModal();
+    },
+    onConfirmModal() {
+      this.$refs.modal.closeModal();
+      this.deleteCard();
+    },
+  },
+  computed: {
+    descriptionModal() {
+      return `T'es sûr de supprimer la carte ${this.selectedCard?.name || ""}`;
+    },
   },
   watch: {
     selectedCard(oldSelectedCard, newSelectedCard) {
-      console.debug("watch new ", toRaw(newSelectedCard));
-      console.debug("watch old", toRaw(oldSelectedCard));
       const card = toRaw(oldSelectedCard) || toRaw(newSelectedCard);
-      console.debug("watch card", card);
       this.setValues({
         rarity: card?.rarity?.name || "",
         serie: card?.serie?.name || "",
