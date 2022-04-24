@@ -83,6 +83,21 @@
             <ErrorMessage name="subCategory" class="error-message" />
           </div>
         </div>
+        <hr />
+        <div class="input-section">
+          <h2 class="form-label-section">Ordre</h2>
+          <div class="relative w-full">
+            <input
+              type="number"
+              min="1"
+              name="order"
+              id="order"
+              v-model="order"
+              class="input-text"
+              placeholder="C'est un chiffre ici" />
+            <span class="error-message">{{ errors.order }}</span>
+          </div>
+        </div>
         <div class="flex justify-end px-4 pb-4 text-gray-500">
           <button type="button" class="form-button bg-red-600 hover:bg-red-700" @click="this.$refs.modal.openModal()">
             Supprimer
@@ -129,11 +144,12 @@ export default {
       description: yup.string().required("Moi aussi :("),
       category: yup.string().required("___*( ￣皿￣)/#____"),
       subCategory: yup.string().required("(╯°□°）╯︵ ┻━┻"),
+      order: yup.number().required("(⊙x⊙;)"),
     });
 
     const { selectedCard } = props;
 
-    const { errors, handleSubmit, setValues, setFieldValue } = useForm({ validationSchema: schema });
+    const { errors, handleSubmit, setValues } = useForm({ validationSchema: schema });
 
     console.debug({ selectedCard });
     const { value: rarity } = useField("rarity", {}, { initialValue: selectedCard?.rarity?.name || "" });
@@ -142,6 +158,7 @@ export default {
     const { value: description } = useField("description", {}, { initialValue: selectedCard?.description || "" });
     const { value: category } = useField("category", {}, { initialValue: selectedCard?.category?.name || "" });
     const { value: subCategory } = useField("subCategory", {}, { initialValue: selectedCard?.subCategory?.name || "" });
+    const { value: order } = useField("order", {}, { initialValue: selectedCard?.order });
 
     return {
       rarity,
@@ -150,6 +167,7 @@ export default {
       description,
       category,
       subCategory,
+      order,
       errors,
       handleSubmit,
       setValues,
@@ -211,6 +229,7 @@ export default {
         description: card?.description || "",
         category: card?.category?.name || "",
         subCategory: card?.subCategory?.name || "",
+        order: card?.order,
       });
     },
   },
@@ -222,7 +241,7 @@ export default {
 
     this.onSubmit = this.handleSubmit(values => {
       console.info("Valeur du formulaire", values);
-      updateCard(this.selectedCard._id, value);
+      updateCard(this.selectedCard._id, values);
     });
   },
 };
