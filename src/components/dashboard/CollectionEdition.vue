@@ -92,7 +92,6 @@ export default {
         let collection = data.sort(this.sortCard);
         this.collection = collection;
         this.filteredCollection = collection;
-        // this.collection = data;
       });
     },
     getSeries() {
