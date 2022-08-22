@@ -46,14 +46,24 @@
         <img
           v-if="card.revealed"
           :src="card.pictureUrl"
+          @mouseout="mouseOutCard"
+          @mousedown="mouseDown"
+          @mouseup="mouseUp"
+          @mousemove="handleMove"
           alt="Carte face recto"
-          class="h-[361px] w-[253px] cursor-pointer object-scale-down hover:rounded-xl hover:shadow-2xl hover:shadow-violet-500"
-          @click="showDetails(card)" />
+          class="del h-[361px] w-[253px] cursor-pointer object-scale-down hover:rounded-xl hover:shadow-2xl hover:shadow-violet-500"
+          @click="showDetails(card)"
+          style="transition: box-shadow 0.1s, transform 0.1s" />
         <img
           v-else
+          @mouseout="mouseOutCard"
+          @mousedown="mouseDown"
+          @mouseup="mouseUp"
+          @mousemove="handleMove"
           src="../assets/webp/back.webp"
           alt="Carte face verso"
-          class="h-[361px] w-[253px] object-scale-down" />
+          class="h-[361px] w-[253px] object-scale-down transition transition-shadow delay-100"
+          style="transition: box-shadow 0.1s, transform 0.1s" />
       </div>
     </div>
     <Loader :loading="loading" />
@@ -160,6 +170,31 @@ export default {
         subCategories.sort((subCategory1, subCategory2) => subCategory1.order - subCategory2.order);
         this.subCategories = subCategories;
       });
+    },
+    mouseOutCard(event) {
+      event.target.style.transform = "perspective(500px) scale(1) rotateX(0) rotateY(0)";
+    },
+    mouseDown(event) {
+      event.target.style.transform = "perspective(500px) scale(0.9) rotateX(0) rotateY(0)";
+    },
+    mouseUp(event) {
+      event.target.style.transform = "perspective(500px) scale(1.1) rotateX(0) rotateY(0)";
+    },
+    handleMove(event) {
+      // Source : https://codepen.io/technokami/pen/abojmZa
+      const xVal = event.layerX;
+      const yVal = event.layerY;
+      const element = event.target;
+      /*
+       * Calculate rotation valuee along the Y-axis * Here the multiplier 20 is to control the rotation
+       * You can change the value and see the results
+       */
+      const yRotation = 20 * ((xVal - element.width / 2) / element.width);
+      /* Calculate the rotation along the X-axis */
+      const xRotation = -20 * ((yVal - element.height / 2) / element.height);
+      /* Generate string for CSS transform property and apply*/
+      element.style.transform =
+        "perspective(500px) scale(1.1) rotateX(" + xRotation + "deg) rotateY(" + yRotation + "deg)";
     },
     filterAndSort() {
       console.debug("COUCOU filterAndSort");
