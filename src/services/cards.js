@@ -31,10 +31,12 @@ export async function uploadCards(file) {
 }
 
 export function createAndUploadCard(formData) {
-  const file = formData.file[0];
+  const file = formData.fileInput[0];
   const body = {
     ...formData,
   };
+
+  delete body.fileInput;
 
   return uploadCards(file)
     .then(location => {

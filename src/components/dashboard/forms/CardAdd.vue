@@ -1,24 +1,16 @@
 <template>
-  <div class="grid grid-cols-2 gap-7">
-    <section class="container mx-4 h-fit w-[600px] max-w-xl bg-gray-100 bg-opacity-50 shadow-md">
-      <div class="w-full rounded-lg border-t-2 border-indigo-400 bg-gray-100 bg-opacity-5 p-4">
-        <div class="mx-auto max-w-sm md:mx-0 md:w-full">
-          <div class="inline-flex items-center space-x-4">
-            <a href="#" class="relative block"> </a>
-            <h1 class="text-gray-600">Ajout de cartes</h1>
+  <form @submit="onSubmit" class="bg-transparent">
+    <div class="grid grid-cols-2 gap-7 space-y-3.5">
+      <section class="container mx-4 h-fit w-[600px] max-w-xl bg-gray-100 bg-opacity-50 shadow-md">
+        <div class="w-full rounded-lg border-t-2 border-indigo-400 bg-gray-100 bg-opacity-5 p-4">
+          <div class="mx-auto max-w-sm md:mx-0 md:w-full">
+            <div class="inline-flex items-center space-x-4">
+              <a href="#" class="relative block"> </a>
+              <h1 class="text-gray-600">Ajout de cartes</h1>
+            </div>
           </div>
         </div>
-      </div>
-      <form @submit="onSubmit" class="space-y-3.5 bg-white">
-        <!--        <div class="input-section pt-6">-->
-        <!--          <h2 class="form-label-section">Image</h2>-->
-        <!--          <div class="relative w-full">-->
-        <!--            <Field @change="upload" id="file" type="file" name="file" />-->
-        <!--            <ErrorMessage name="file" class="error-message" />-->
-        <!--          </div>-->
-        <!--        </div>-->
-        <!--        <hr />-->
-        <div class="input-section">
+        <div class="input-section space-y-3.5">
           <h2 class="form-label-section">Rareté</h2>
           <div class="relative w-full">
             <select id="rarete" class="input-select" name="rarity" v-model="rarity">
@@ -29,7 +21,7 @@
           </div>
         </div>
         <hr />
-        <div class="input-section">
+        <div class="input-section space-y-3.5">
           <h2 class="form-label-section">Série</h2>
           <div class="relative w-full">
             <select id="series" class="input-select" name="serie" v-model="serie">
@@ -40,7 +32,7 @@
           </div>
         </div>
         <hr />
-        <div class="input-section">
+        <div class="input-section space-y-3.5">
           <h2 class="form-label-section">Nom</h2>
           <div class="relative w-full">
             <input name="name" id="name" class="input-text" placeholder="Remplis moi" v-model="name" />
@@ -48,7 +40,7 @@
           </div>
         </div>
         <hr />
-        <div class="input-section">
+        <div class="input-section space-y-3.5">
           <h2 class="form-label-section">Description</h2>
           <div class="relative w-full">
             <textarea
@@ -105,42 +97,44 @@
             <SvgPlus />
           </button>
         </div>
-      </form>
-    </section>
-    <section class="container mx-4 h-fit max-w-xl bg-gray-100 bg-opacity-50 shadow-md">
-      <div class="w-full rounded-lg border-t-2 border-indigo-400 bg-gray-100 bg-opacity-5 p-4">
-        <div class="mx-auto max-w-sm md:mx-0 md:w-full">
-          <div class="inline-flex items-center space-x-4">
-            <a href="#" class="relative block"> </a>
-            <h1 class="text-gray-600">Upload de l'image</h1>
+      </section>
+      <section class="container mx-4 h-fit max-w-xl bg-gray-100 bg-opacity-50 shadow-md">
+        <div class="w-full rounded-lg border-t-2 border-indigo-400 bg-gray-100 bg-opacity-5 p-4">
+          <div class="mx-auto max-w-sm md:mx-0 md:w-full">
+            <div class="inline-flex items-center space-x-4">
+              <a href="#" class="relative block"> </a>
+              <h1 class="text-gray-600">Upload de l'image</h1>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        @dragover.prevent="dragover"
-        @dragleave.prevent="dragleave"
-        @drop="drop"
-        class="m-4 flex h-96 flex-col items-center justify-center rounded-lg border-4 border-indigo-750 shadow-2xl">
-        <input
-          type="file"
-          name="fields[assetsFieldHandle][]"
-          id="assetsFieldHandle"
-          class="absolute h-px w-px overflow-hidden opacity-0"
-          @change="onChange"
-          ref="file"
-          accept=".pdf,.jpg,.jpeg,.png" />
-        <span>Lâche moi cette carte 🃏</span>
-        <span class="m-2"><SvgUpload /></span>
-        <ul class="mt-4" v-if="this.filelist.length" v-cloak>
-          <li class="p-1 text-sm" v-for="file in filelist">
-            <strong>{{ file.name }}</strong>
-            <button class="ml-2" type="button" title="Remove file">remove</button>
-          </li>
-        </ul>
-        <ErrorMessage name="file" class="error-message" />
-      </div>
-    </section>
-  </div>
+        <div
+          @dragover.prevent="dragover"
+          @dragleave.prevent="dragleave"
+          @drop="drop"
+          class="m-4 flex h-96 flex-col items-center justify-center rounded-lg border-4 border-indigo-750 shadow-2xl">
+          <input
+            type="file"
+            name="fields[assetsFieldHandle][]"
+            id="assetsFieldHandle"
+            class="absolute h-px w-px overflow-hidden opacity-0"
+            @change="onChange"
+            multiple
+            ref="file"
+            accept=".pdf,.jpg,.jpeg,.png" />
+          <span>Lâche moi cette carte 🃏</span>
+          <span class="m-2"><SvgUpload /></span>
+          <ul class="mt-4" v-if="this.filelist.length" v-cloak>
+            <li class="p-1 text-sm" v-for="file in filelist">
+              <strong>{{ file.name }}</strong>
+              <button class="ml-2" type="button" title="Remove file">remove</button>
+            </li>
+          </ul>
+          <p class="error-message">{{ errorMessageFile }}</p>
+          <ErrorMessage name="fileValue" class="error-message" />
+        </div>
+      </section>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -165,7 +159,7 @@ export default {
   components: { SvgUpload, Notification, SvgPlus, Form, Field, ErrorMessage },
   setup() {
     const schema = yup.object().shape({
-      fileValue: yup.array().min(1, "LE FICHUEZ").required("Et mon fichier ?!"),
+      fileInput: yup.array().min(1, "LE FICHUEZ").required("Et mon fichier ?!"),
       rarity: yup.string().required("Tu m'as oublié"),
       serie: yup.string().required("Faut cliquez ici !"),
       name: yup.string().required("Remplis moi :'("),
@@ -175,15 +169,15 @@ export default {
       order: yup.number().required("(╬▔皿▔)╯"),
     });
 
-    const { errors, handleSubmit, setValues } = useForm({ validationSchema: schema });
+    const { errors, handleSubmit, setValues, setFieldValue } = useForm({ validationSchema: schema });
 
-    const { value: fileValue } = useField(
-      "fileInput",
-      {},
-      {
-        initialValue: [],
-      }
-    );
+    const {
+      value: fileValue,
+      errorMessage: errorMessageFile,
+      setValue: setFileValue,
+    } = useField("fileInput", () => this.filelist.length > 0, {
+      initialValue: [],
+    });
     const { value: rarity } = useField("rarity");
     const { value: serie } = useField("serie");
     const { value: name } = useField("name");
@@ -202,22 +196,13 @@ export default {
       subCategory,
       order,
       errors,
+      errorMessageFile,
       handleSubmit,
+      setFieldValue,
       setValues,
     };
   },
   data() {
-    // const schema = yup.object().shape({
-    //   file: yup.array().required("Et mon fichier ?!"),
-    //   rarity: yup.string().required("Tu m'as oublié"),
-    //   serie: yup.string().required("Faut cliquez ici !"),
-    //   name: yup.string().required("Remplis moi :'("),
-    //   description: yup.string().required("Moi aussi :("),
-    //   category: yup.string().required("___*( ￣皿￣)/#____"),
-    //   subCategory: yup.string().required("(╯°□°）╯︵ ┻━┻"),
-    //   order: yup.number().required("(╬▔皿▔)╯"),
-    // });
-
     return {
       series: [],
       rarities: [],
@@ -239,6 +224,7 @@ export default {
       this.filelist = [...this.$refs.file.files];
       // this.fileValue = [...this.$refs.file.files];
       console.debug("onChange", ...this.$refs.file.files);
+      this.setFieldValue("fileInput", this.filelist);
       // this.file = event.target.files[0];
     },
     getSeries() {
@@ -256,13 +242,13 @@ export default {
     resetForm() {
       reset();
     },
-    // onSubmit(value) {
-    //   console.debug(value);
-    //   createAndUploadCard(value).then(res => {
-    //     console.info("Uploadé !");
-    //     notify({ title: "Création réussi !", text: "La carte est dans la collection", type: "success" });
-    //   });
-    // },
+    onSubmit(value) {
+      console.debug(value);
+      // createAndUploadCard(value).then(res => {
+      //   console.info("Uploadé !");
+      //   notify({ title: "Création réussi !", text: "La carte est dans la collection", type: "success" });
+      // });
+    },
     dragover(event) {
       console.debug("dragover", event);
       if (!event.currentTarget.classList.contains("bg-green-300")) {
@@ -282,7 +268,7 @@ export default {
       event.preventDefault();
       console.debug("drop", { event });
 
-      // this.$refs.file.files = toRaw(event.dataTransfer.files);
+      this.$refs.file.files = toRaw(event.dataTransfer.files);
       this.onChange(); // Trigger the onChange event manually
       // Clean up
       event.currentTarget.classList.add("bg-gray-100");
