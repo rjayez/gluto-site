@@ -99,6 +99,7 @@
         </div>
       </section>
       <section class="container mx-4 h-fit max-w-xl bg-gray-100 bg-opacity-50 shadow-md">
+        <!--  Source drag&drop  https://codepen.io/stenvdb/pen/wvBoYQO    -->
         <div class="w-full rounded-lg border-t-2 border-indigo-400 bg-gray-100 bg-opacity-5 p-4">
           <div class="mx-auto max-w-sm md:mx-0 md:w-full">
             <div class="inline-flex items-center space-x-4">
@@ -119,6 +120,7 @@
             class="absolute h-px w-px overflow-hidden opacity-0"
             @change="onChange"
             ref="file"
+            multiple
             accept=".pdf,.jpg,.jpeg,.png" />
           <span>Lâche moi cette carte 🃏</span>
           <span class="m-2"><SvgUpload /></span>
