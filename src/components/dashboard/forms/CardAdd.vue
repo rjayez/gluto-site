@@ -1,7 +1,42 @@
 <template>
   <form @submit="onSubmit" class="bg-transparent">
-    <div class="grid grid-cols-2 gap-7">
-      <section class="container mx-4 h-fit w-[600px] max-w-xl space-y-3.5 bg-gray-100 bg-opacity-50 shadow-md">
+    <div class="flex flex-col gap-4 2xl:flex-row">
+      <section class="container mx-4 h-fit w-[600px] max-w-xl bg-gray-100 bg-opacity-50 shadow-md">
+        <!--  Source drag&drop  https://codepen.io/stenvdb/pen/wvBoYQO    -->
+        <div class="w-full rounded-lg border-t-2 border-indigo-400 bg-gray-100 bg-opacity-5 p-4">
+          <div class="mx-auto max-w-sm md:mx-0 md:w-full">
+            <div class="inline-flex items-center space-x-4">
+              <a href="#" class="relative block"> </a>
+              <h1 class="font-bold text-gray-600">Upload de l'image</h1>
+            </div>
+          </div>
+        </div>
+        <div
+          @dragover.prevent="dragover"
+          @dragleave.prevent="dragleave"
+          @drop.prevent="drop"
+          class="m-4 flex h-40 flex-col items-center justify-center rounded-lg border-4 border-indigo-750 shadow-2xl">
+          <input
+            type="file"
+            name="fields[assetsFieldHandle][]"
+            id="assetsFieldHandle"
+            class="absolute h-px w-px overflow-hidden opacity-0"
+            @change="onChange"
+            ref="file"
+            multiple
+            accept=".pdf,.jpg,.jpeg,.png" />
+          <span>Lâche moi cette carte 🃏</span>
+          <span class="m-2"><SvgUpload /></span>
+          <ul class="mt-4" v-if="this.filelist.length" v-cloak>
+            <li class="p-1 text-sm">
+              <strong>{{ filelist[0].name }}</strong>
+              <button class="ml-2" type="button" title="Remove file" @click="removeCard">remove</button>
+            </li>
+          </ul>
+          <ErrorMessage name="fileInput" class="error-message" />
+        </div>
+      </section>
+      <section class="container mx-4 h-fit w-[600px] space-y-3.5 bg-gray-100 bg-opacity-50 shadow-md">
         <div class="w-full rounded-lg border-t-2 border-indigo-400 bg-gray-100 bg-opacity-5 p-4">
           <div class="mx-auto max-w-sm md:mx-0 md:w-full">
             <div class="inline-flex items-center space-x-4">
@@ -96,41 +131,6 @@
           <button type="submit" class="form-button">
             <SvgPlus />
           </button>
-        </div>
-      </section>
-      <section class="container mx-4 h-fit max-w-xl bg-gray-100 bg-opacity-50 shadow-md">
-        <!--  Source drag&drop  https://codepen.io/stenvdb/pen/wvBoYQO    -->
-        <div class="w-full rounded-lg border-t-2 border-indigo-400 bg-gray-100 bg-opacity-5 p-4">
-          <div class="mx-auto max-w-sm md:mx-0 md:w-full">
-            <div class="inline-flex items-center space-x-4">
-              <a href="#" class="relative block"> </a>
-              <h1 class="font-bold text-gray-600">Upload de l'image</h1>
-            </div>
-          </div>
-        </div>
-        <div
-          @dragover.prevent="dragover"
-          @dragleave.prevent="dragleave"
-          @drop.prevent="drop"
-          class="m-4 flex h-96 flex-col items-center justify-center rounded-lg border-4 border-indigo-750 shadow-2xl">
-          <input
-            type="file"
-            name="fields[assetsFieldHandle][]"
-            id="assetsFieldHandle"
-            class="absolute h-px w-px overflow-hidden opacity-0"
-            @change="onChange"
-            ref="file"
-            multiple
-            accept=".pdf,.jpg,.jpeg,.png" />
-          <span>Lâche moi cette carte 🃏</span>
-          <span class="m-2"><SvgUpload /></span>
-          <ul class="mt-4" v-if="this.filelist.length" v-cloak>
-            <li class="p-1 text-sm">
-              <strong>{{ filelist[0].name }}</strong>
-              <button class="ml-2" type="button" title="Remove file" @click="removeCard">remove</button>
-            </li>
-          </ul>
-          <ErrorMessage name="fileInput" class="error-message" />
         </div>
       </section>
     </div>

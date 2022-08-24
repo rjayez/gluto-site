@@ -73,6 +73,7 @@
             <label for="dropEnabled" class="block h-6 cursor-pointer overflow-hidden rounded-full bg-gray-300"> </label>
             <span class="error-message">{{ errors.dropEnabled }}</span>
           </div>
+          <label class="ml-2.5" v-if="dropEnabled">/!\ Pense à activer la visiblité</label>
         </div>
       </div>
       <hr v-if="configField.dropEnabled" />
