@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import { uploadCards } from "../services/cards";
 import DashboardMenu from "../components/dashboard/DashboardMenu.vue";
 import CardAdd from "../components/dashboard/forms/CardAdd.vue";
 import { DASHBOARD_VUE } from "../components/dashboard/constants";
@@ -57,11 +56,6 @@ export default {
     };
   },
   methods: {
-    upload: function (event) {
-      event.preventDefault();
-      const file = event.target.elements.file.files[0];
-      uploadCards(file).then(res => console.log(res));
-    },
     changeVue(vue) {
       console.log(vue);
       this.vue = vue;

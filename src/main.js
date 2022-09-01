@@ -5,6 +5,7 @@ import "../index.css";
 import Dashboard from "./pages/Dashboard.vue";
 import { configure } from "vee-validate";
 import Notifications from "@kyvg/vue3-notification";
+import Drops from "./Drops.vue";
 
 configure({
   validateOnBlur: false,
@@ -18,7 +19,7 @@ const NotFoundComponent = { template: "<p>Page not found</p>" };
 
 const routes = {
   "/": App,
-  "/drops": () => import("./Drops.vue"),
+  "/drops": Drops,
   "/dashboard": Dashboard,
 };
 
