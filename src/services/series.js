@@ -1,9 +1,10 @@
 import axios from "axios";
 import { HOST } from "../constants";
+import { bool, boolean } from "yup";
 
-export function getSeries() {
+export function getSeries(enabled) {
   return axios
-    .get(HOST + "/series")
+    .get(HOST + `/series?enabled=${enabled}`)
     .then(result => result.data)
     .catch(err => {
       console.debug(err);

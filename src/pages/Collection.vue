@@ -4,21 +4,20 @@
     <h1 class="page-title">Votre collection</h1>
     <h2 class="page-subtitle">Toutes vos cartes tirés durant les streams sont ici !</h2>
     <div class="mt-5">
-      <!--      <button class="form-button ml-3 mb-3" @click="refreshCollection">-->
-      <!--        <SvgRefresh />-->
-      <!--      </button>-->
       <div class="flex place-content-evenly">
         <select
           class="my-2 mx-auto w-72 rounded-lg bg-indigo-950 p-2 text-indigo-150"
-          @change="event => (this.seriesFilter = event.target.value)">
+          @change="filterSeries"
+          v-model="seriesFilter">
           <option selected value="">Toutes les séries</option>
           <option v-for="serie in series" :value="serie.name">{{ serie.name }}</option>
         </select>
-        <button class="form-button ml-3 mb-3" @click="filterAndSort">Filtrer</button>
-
+        <!--        <button class="form-button ml-3 mb-3" @click="filterAndSort">Filtrer</button>-->
+        <button class="form-button ml-3 mb-3" @click="resetFilter">Reset</button>
         <select
           class="my-2 mx-auto w-72 rounded-lg bg-indigo-950 p-2 text-indigo-150"
-          @change="event => (this.categoriesFilter = event.target.value)">
+          @change="filterCategories"
+          v-model="categoriesFilter">
           <option selected value="">Toutes les catégories</option>
           <option v-for="category in categories" :value="category.name">{{ category.name }}</option>
         </select>
@@ -26,7 +25,8 @@
       <div class="flex place-content-evenly">
         <select
           class="my-2 mx-auto w-72 rounded-lg bg-indigo-950 p-2 text-indigo-150"
-          @change="event => (this.raritiesFilter = event.target.value)">
+          @change="filterRarities"
+          v-model="raritiesFilter">
           <option selected value="">Toutes les raretés</option>
           <option v-for="rarity in rarities" :value="rarity.name">
             {{ rarity.name }}
@@ -35,7 +35,8 @@
         <div class="w-24" />
         <select
           class="my-2 mx-auto w-72 rounded-lg bg-indigo-950 p-2 text-indigo-150"
-          @change="event => (this.subCategoriesFilter = event.target.value)">
+          @change="filterSubCategories"
+          v-model="subCategoriesFilter">
           <option selected value="">Toutes les sous catégories</option>
           <option v-for="subCategory in subCategories" :value="subCategory.name">{{ subCategory.name }}</option>
         </select>
@@ -112,7 +113,6 @@ export default {
     return {
       selectedCard: undefined,
       collection: [],
-      // cards: [],
       filteredCollection: [],
       series: [],
       rarities: [],
@@ -147,8 +147,24 @@ export default {
         })
         .finally(() => (this.loading = false));
     },
+    filterSeries(event) {
+      this.seriesFilter = event.target.value;
+      this.filterAndSort();
+    },
+    filterRarities(event) {
+      this.raritiesFilter = event.target.value;
+      this.filterAndSort();
+    },
+    filterCategories(event) {
+      this.categoriesFilter = event.target.value;
+      this.filterAndSort();
+    },
+    filterSubCategories(event) {
+      this.subCategoriesFilter = event.target.value;
+      this.filterAndSort();
+    },
     getSeries() {
-      getSeries().then(series => {
+      getSeries("true").then(series => {
         series.sort((serie1, serie2) => serie1.order - serie2.order);
         this.series = series;
       });
@@ -170,6 +186,13 @@ export default {
         subCategories.sort((subCategory1, subCategory2) => subCategory1.order - subCategory2.order);
         this.subCategories = subCategories;
       });
+    },
+    resetFilter() {
+      this.seriesFilter = "";
+      this.categoriesFilter = "";
+      this.raritiesFilter = "";
+      this.subCategoriesFilter = "";
+      this.filterAndSort();
     },
     mouseOutCard(event) {
       event.target.style.transform = "perspective(500px) scale(1) rotateX(0) rotateY(0)";
