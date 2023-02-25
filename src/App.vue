@@ -1,10 +1,10 @@
 <template>
   <div class="h-full">
-    <SideMenu />
-    <!--  Div avec une marge de la largeur du side menu pour compenser la fixed position -->
-    <div class="mx-2 flex-auto md:mx-8 lg:mx-0 lg:ml-64">
-      <component id="page-component" :is="CurrentComponent" />
-    </div>
+    <SideMenu>
+      <div class="mx-2 flex-auto md:mx-8 lg:mx-0 lg:ml-64">
+        <component id="page-component" :is="CurrentComponent" />
+      </div>
+    </SideMenu>
     <LiveNotification />
   </div>
 </template>
@@ -43,10 +43,14 @@ export default {
 </script>
 
 <style>
+html {
+  height: auto;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*height: 100%;*/
+  height: 100%;
 }
 </style>
