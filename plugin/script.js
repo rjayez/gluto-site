@@ -4,8 +4,7 @@ let ff7anim = anime.timeline();
 let valeurcarte = anime.timeline();
 let cardCount = document.querySelectorAll(".achievement-card-box").length;
 
-var myAudio = new Audio('card-sound.wav');
-
+var myAudio = new Audio("card-sound.wav");
 
 ff7anim
   // .add({
@@ -34,10 +33,8 @@ ff7anim
     transformOrigin: ["50% 100%", "50% 100%"],
     specialEasing: {
       width: "linear",
-      height: "easeInBounce"
+      height: "easeInBounce",
     },
-  
-    
     scale: [0, 0.8],
     delay: 3000,
     opacity: 1,
@@ -63,11 +60,7 @@ cardAnim
     offset: "-=500",
   })
   .add({
-    targets: [
-      "#achievement-header",
-      "#achievement-title",
-      "#achievement-description",
-    ],
+    targets: ["#achievement-header", "#achievement-title", "#achievement-description"],
     opacity: [0, 1],
     duration: 400,
     offset: "-=400",
@@ -92,39 +85,36 @@ cardAnim
     },
     complete: function () {
       animationDone = true;
-       pulse();
-       
+      pulse();
+
       myAudio.play();
     },
     elasticity: 100,
     duration: 800,
   });
 
-  function pulse() {
-    cardAnim = anime({
-      targets: ".achievement-card-box",
-      scale: [1, 0.95],
-      rotateZ: function (el, i) {
-        return [
-          Math.floor(cardCount / 2) * -15 + i * 15 + "deg",
-          Math.floor(cardCount / 2) * -17 + i * 17 + "deg",
-        ];
-      },
-      translateX: function (el, i) {
-        return Math.floor(cardCount / 2) * -112 + i * 112 + "px";
-      },
-      easing: "easeInOutCubic",
-      duration: 5000,
-      loop: true,
-      direction: "alternate",
-    });
+function pulse() {
+  cardAnim = anime({
+    targets: ".achievement-card-box",
+    scale: [1, 0.95],
+    rotateZ: function (el, i) {
+      return [Math.floor(cardCount / 2) * -15 + i * 15 + "deg", Math.floor(cardCount / 2) * -17 + i * 17 + "deg"];
+    },
+    translateX: function (el, i) {
+      return Math.floor(cardCount / 2) * -112 + i * 112 + "px";
+    },
+    easing: "easeInOutCubic",
+    duration: 5000,
+    loop: true,
+    direction: "alternate",
+  });
 
   valeurcarte.add({
     targets: ".rare",
     boxShadow: ["0 0 0px rgba(5,255,245,0)", "0 0 40px rgba(5,255,245,1)"],
     easing: "easeInOutCubic",
     loop: true,
-  })
+  });
 
   // .add({
   //   targets: ".legendaire",
@@ -133,10 +123,4 @@ cardAnim
   //   easing:""
   //   loop: true,
   // })
-
-  
-
-
-
 }
-

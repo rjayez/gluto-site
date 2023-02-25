@@ -1,9 +1,5 @@
-import card1 from "./1.png";
-import card2 from "./2.png";
-import card3 from "./3.png";
+import back from "./back.png";
 
 export default {
-  card1,
-  card2,
-  card3,
+  back,
 };
