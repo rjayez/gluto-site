@@ -1,251 +1,257 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 15px;
-  background-color: #0c0c0c;
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  background-image: url("sword-tetryl.svg");
-  background-position:top center;
-  background-repeat: no-repeat;
-  background-size: 20%;
-  background-position-y: 20px;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 15px;
+    background-color: #0c0c0c;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+. . background-image: url("sword-tetryl.svg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position-y: 20px;
 }
 
 #crystals {
-  top:0;
-  left:0;
-  width:480px;
-  height:100%;
-  background:transparent;
-  margin: auto;
-  margin-top: -20px;
-  
-}
-.crystal_01 {
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:url(http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_01.png)repeat-y;
+    top: 0;
+    left: 0;
+    width: 480px;
+    height: 100%;
+    background: transparent;
+    margin: auto;
+    margin-top: -20px;
 
-  -webkit-animation-name: MOVE-CRISTAL;
-  -webkit-animation-duration: 100s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
+}
+
+.crystal_01 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_01.png) repeat-y;
+
+    -webkit-animation-name: MOVE-CRISTAL;
+    -webkit-animation-duration: 100s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
 }
 
 .crystal_02 {
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:url(http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_02.png)repeat-y;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_02.png) repeat-y;
 
-  -webkit-animation-name: MOVE-CRISTAL;
-  -webkit-animation-duration: 80s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: MOVE-CRISTAL;
+    -webkit-animation-duration: 80s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
 }
 
 .crystal_03 {
-  position:absolute;
-  width:100%;
-  height:100%;
-  left:50%;
-  margin-left:-180px;
-      background:url(http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_03.png)repeat-y;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    margin-left: -180px;
+    background: url(http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_03.png) repeat-y;
 
-  -webkit-animation-name: MOVE-CRISTAL;
-  -webkit-animation-duration: 50s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite; 
+    -webkit-animation-name: MOVE-CRISTAL;
+    -webkit-animation-duration: 50s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
 }
 
 .container {
-  width: 100%;
-  max-width: 400px;
-  min-width: 300px;
-  margin: 40px auto;
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+    margin: 40px auto;
 }
 
 /* TITRE */
 
-@media only screen and (min-width: 100px) and (max-width: 400px){
-  .title{
-    font-size:70px !important;
-  }
+@media only screen and (min-width: 100px) and (max-width: 400px) {
+    .title {
+        font-size: 70px !important;
+    }
 }
 
-.title{
-  font-weight: 1000;
-  color: transparent;
-  font-size:120px;
-  background: url("map.png") repeat;
-  -webkit-background-clip: text;
-  position:relative;
-  text-align:center;
-  line-height:90px;
-  letter-spacing: -10px;
+.title {
+    font-weight: 1000;
+    color: transparent;
+    font-size: 120px;
+    background: url("map.png") repeat;
+    -webkit-background-clip: text;
+    position: relative;
+    text-align: center;
+    line-height: 90px;
+    letter-spacing: -10px;
 
-  -webkit-animation-name: MOVE-BG;
-  -webkit-animation-duration: 100s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: MOVE-BG;
+    -webkit-animation-duration: 100s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
 }
 
 
 @-webkit-keyframes MOVE-BG {
-  from {
-      background-position: 0% 0%
-  }
-  to { 
-      background-position: 187% 0%
-  }
+    from {
+        background-position: 0% 0%
+    }
+    to {
+        background-position: 187% 0%
+    }
 }
 
 @-webkit-keyframes MOVE-CRISTAL {
-  from {
-      background-position: 0% 200%
-  }
-  to { 
-      background-position: 0% 0%
-  }
+    from {
+        background-position: 0% 200%
+    }
+    to {
+        background-position: 0% 0%
+    }
 }
 
-  /* LIENS CONTENUS */
+/* LIENS CONTENUS */
 
 .links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-shadow: 1px 1px 2px black;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-shadow: 1px 1px 2px black;
 }
+
 .links ul li {
-  margin: 14px 0;
+    margin: 14px 0;
 }
+
 .link {
-  padding: 14px;
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: ease all 0.3s;
-  color: #FFF;
+    padding: 14px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: ease all 0.3s;
+    color: #FFF;
 }
 
 .card {
-  padding: 10px;
-  color: #FFF;
-  text-align: center;
+    padding: 10px;
+    color: #FFF;
+    text-align: center;
 }
+
 .card h3 {
-  margin: 0;
-  color: #FFF;
-  font-size: 30px;
+    margin: 0;
+    color: #FFF;
+    font-size: 30px;
 }
+
 .card p {
-  margin: 5px 0;
-  font-size: 13px;
-  color: #FFF;
+    margin: 5px 0;
+    font-size: 13px;
+    color: #FFF;
 }
 
-.links ul li.crea{
-  border: solid 1px #424542;
-  box-shadow: 1px 1px #e7dfe7,
-              -1px -1px #e7dfe7,
-              1px -1px #e7dfe7,
-              -1px 1px #e7dfe7,
-              0 -2px #9c9a9c,
-              -2px 0 #7b757b,
-              0 2px #424542;
-  
-  background: #732DD6;
-  background: linear-gradient(-45deg, #9258ef, #743dcc, #351568, #732DD6);
-	background-size: 500% 500%;
-	animation: gradient 20s ease infinite;
-   
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
+.links ul li.crea {
+    border: solid 1px #424542;
+    box-shadow: 1px 1px #e7dfe7,
+    -1px -1px #e7dfe7,
+    1px -1px #e7dfe7,
+    -1px 1px #e7dfe7,
+    0 -2px #9c9a9c,
+    -2px 0 #7b757b,
+    0 2px #424542;
 
-  position:relative;
+    background: #732DD6;
+    background: linear-gradient(-45deg, #9258ef, #743dcc, #351568, #732DD6);
+    background-size: 500% 500%;
+    animation: gradient 20s ease infinite;
+
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+
+    position: relative;
 
 }
-.links ul li.crea*{
-  color: #eff1ff;
-  text-shadow: 2px 2px #212421,
-                1px 1px #212021;
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-weight: normal;
-  margin: 5px 0;
+
+.links ul li.crea * {
+    color: #eff1ff;
+    text-shadow: 2px 2px #212421,
+    1px 1px #212021;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 5px 0;
 }
 
-.links ul li.crea:hover{
-  background: linear-gradient(-45deg, #90ee52, #6acc3d, #156845, #2dd6ba);
-  transition:1s;
+.links ul li.crea:hover {
+    background: linear-gradient(-45deg, #90ee52, #6acc3d, #156845, #2dd6ba);
+    transition: 1s;
 }
 
 /* LIENS RS */
 
-  .links ul li.reseaux{
-  border: solid 1px #424542;
-  box-shadow: 1px 1px #e7dfe7,
-              -1px -1px #e7dfe7,
-              1px -1px #e7dfe7,
-              -1px 1px #e7dfe7,
-              0 -2px #9c9a9c,
-              -2px 0 #7b757b,
-              0 2px #424542;
-  
-  background: #120a58;
-  background: linear-gradient(-45deg, #52caee, #15408f, #120a58, #4923d5);
-	background-size: 500% 500%;
-	animation: gradient 20s ease infinite;
+.links ul li.reseaux {
+    border: solid 1px #424542;
+    box-shadow: 1px 1px #e7dfe7,
+    -1px -1px #e7dfe7,
+    1px -1px #e7dfe7,
+    -1px 1px #e7dfe7,
+    0 -2px #9c9a9c,
+    -2px 0 #7b757b,
+    0 2px #424542;
 
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
+    background: #120a58;
+    background: linear-gradient(-45deg, #52caee, #15408f, #120a58, #4923d5);
+    background-size: 500% 500%;
+    animation: gradient 20s ease infinite;
 
-  position:relative;
-  }
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
 
-  .links ul li.reseaux*{
+    position: relative;
+}
+
+.links ul li.reseaux * {
     color: #eff1ff;
     text-shadow: 2px 2px #212421,
-                 1px 1px #212021;
+    1px 1px #212021;
     font-family: Verdana, sans-serif;
     font-size: 20px;
     font-weight: normal;
     margin: 5px 0;
-  }
+}
 
-  .links ul li.reseaux:hover{
+.links ul li.reseaux:hover {
     background: linear-gradient(-45deg, #90ee52, #6acc3d, #156845, #2dd6ba);
-    transition:1s;
-  }
+    transition: 1s;
+}
 
-  .links ul li.entete {
+.links ul li.entete {
     color: #eff1ff;
     text-shadow: 2px 2px #212421,
-                 1px 1px #212021;
+    1px 1px #212021;
     font-family: Verdana, sans-serif;
     font-size: 20px;
     font-weight: normal;
     margin: 5px 0;
     text-align: center;
     animation: apparition 1s forwards;
-  }
+}
 
-  .links ul li.mail {
+.links ul li.mail {
     color: #eff1ff;
     text-shadow: 2px 2px #212421,
-                 1px 1px #212021;
+    1px 1px #212021;
     font-family: Verdana, sans-serif;
     font-size: 15px;
     font-weight: normal;
@@ -254,28 +260,28 @@ body {
     text-align: center;
 
     animation: apparition 3s forwards;
-  }
+}
 
-  /* ANIMATIONS */
+/* ANIMATIONS */
 @keyframes apparition {
-  0% {
-    transform: translateX(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
