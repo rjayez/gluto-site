@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-crystal z-10 flex h-full flex-col items-center bg-[#0c0c0c] bg-top bg-no-repeat py-10 text-white">
+  <div class="relative z-10 flex flex-col items-center py-10 text-white">
     <h3 class="titre">LE TETRYL</h3>
     <div class="text-center text-sm">
       <p>Créateur de contenus spécialisé JRPG</p>
@@ -62,6 +62,7 @@
     </div>
     <p class="mail text-sm italic">Mail pro : tetryl.pro @ gmail.com</p>
   </div>
+  <div class="bg-crystal fixed top-0 z-0 m-auto h-screen w-full"></div>
 </template>
 
 <script>
@@ -94,6 +95,7 @@ export default {
 }
 
 .bg-crystal {
+  height: 100vh;
   background-color: #0c0c0c;
   background-image: url("../assets/linktree/crystal_01.png"), url("../assets/linktree/crystal_02.png"),
     url("../assets/linktree/crystal_03.png");
