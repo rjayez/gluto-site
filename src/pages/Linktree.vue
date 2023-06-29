@@ -25,6 +25,12 @@
           Les Streams
         </button>
       </a>
+      <a href="https://www.patreon.com/tetryl">
+        <button class="btn-contenu">
+          <font-awesome-icon icon="fa-brands fa-patreon" />
+          Le Patreon
+        </button>
+      </a>
     </div>
 
     <div class="mt-2 flex flex-col items-center">
@@ -98,7 +104,7 @@ export default {
   height: 100vh;
   background-color: #0c0c0c;
   background-image: url("../assets/linktree/crystal_01.png"), url("../assets/linktree/crystal_02.png"),
-    url("../assets/linktree/crystal_03.png");
+  url("../assets/linktree/crystal_03.png");
   background-repeat: repeat-y, repeat-y, repeat-y;
   background-position: center, center, center;
   background-size: auto, auto, auto;
@@ -129,7 +135,7 @@ p {
   animation: gradient 20s ease infinite;
 
   box-shadow: 1px 1px #e7dfe7, 0 -1px #e7dfe7, 1px -1px #e7dfe7, -1px 1px #e7dfe7, 0 -2px #9c9a9c, -2px 0 #7b757b,
-    0 2px #424542;
+  0 2px #424542;
 }
 
 .btn-contenu:hover {

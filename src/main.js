@@ -7,7 +7,15 @@ import Linktree from "./pages/Linktree.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
-import { faDiscord, faInstagram, faTiktok, faTwitch, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faDiscord,
+  faInstagram,
+  faPatreon,
+  faTiktok,
+  faTwitch,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 const NotFoundComponent = { template: "<p>Page not found</p>" };
 
@@ -31,6 +39,6 @@ const Router = {
   },
 };
 
-library.add(faDiscord, faTwitter, faYoutube, faTwitch, faInstagram, faTiktok, faMobileAlt);
+library.add(faDiscord, faTwitter, faYoutube, faTwitch, faInstagram, faTiktok, faMobileAlt, faPatreon);
 
 createApp(Router).use(Notifications).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
